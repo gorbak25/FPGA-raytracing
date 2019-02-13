@@ -1,0 +1,86 @@
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx50t-ff1136-2 fixed_add.ngc fixed_add.ngd  
+map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir off -pr off -lc off -power off -o fixed_add_map.ncd fixed_add.ngd fixed_add.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx50t-ff1136-2 fixed_add.ngc fixed_add.ngd  
+map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir off -pr off -lc off -power off -o fixed_add_map.ncd fixed_add.ngd fixed_add.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx50t-ff1136-2 fixed_add.ngc fixed_add.ngd  
+map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir off -pr off -lc off -power off -o fixed_add_map.ncd fixed_add.ngd fixed_add.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx50t-ff1136-2 fixed_add.ngc fixed_add.ngd  
+map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir off -pr off -lc off -power off -o fixed_add_map.ncd fixed_add.ngd fixed_add.pcf 
+par -w -intstyle ise -ol high -mt off fixed_add_map.ncd fixed_add.ncd fixed_add.pcf 
+trce -intstyle ise -v 3 -tsi fixed_add.tsi -s 2 -n 3 -fastpaths -xml fixed_add.twx fixed_add.ncd -o fixed_add.twr fixed_add.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim fixed_add.ngc fixed_add_synthesis.v 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_add.ngc fixed_add.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_add.ngd fixed_add_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_add.xst" -ofn "/home/test/FPGA/raytracing/fixed_add.syr" 

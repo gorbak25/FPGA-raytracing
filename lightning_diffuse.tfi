@@ -1,0 +1,16 @@
+
+
+
+// Instantiate the module
+lightning_diffuse instance_name (
+    .clk(clk), 
+    .hit_matterial_diffuse_color(hit_matterial_diffuse_color), 
+    .hit_normal(hit_normal), 
+    .light_color(light_color), 
+    .to_light(to_light), 
+    .diffuse_component(diffuse_component), 
+    .new_data(new_data), 
+    .output_valid(output_valid)
+    );
+
+

@@ -1,0 +1,14 @@
+Release 14.7 Drc P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Wed Feb 13 10:44:16 2019
+
+drc -z top.ncd top.pcf
+
+INFO:PhysDesignRules:1437 - To achieve optimal frequency synthesis performance
+   with the CLKFX and CLKFX180 outputs of the DCM_ADV comp dcm_rclk, consult the
+   device Data Sheet.
+INFO:PhysDesignRules:1437 - To achieve optimal frequency synthesis performance
+   with the CLKFX and CLKFX180 outputs of the DCM_ADV comp dcm_vclk, consult the
+   device Data Sheet.
+DRC detected 0 errors and 0 warnings.

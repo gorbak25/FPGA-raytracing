@@ -1,0 +1,2 @@
+verilog isim_temp "netgen/translate/ray_hit_pipeline_translate.v"
+verilog isim_temp "ray_hit_pipeline_test.v"

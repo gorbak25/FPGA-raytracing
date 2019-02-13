@@ -1,0 +1,6 @@
+verilog work "fixed.v"
+verilog work "vector_sub.v"
+verilog work "signal_pipe.v"
+verilog work "ray_sphere_normal_pipeline.v"
+verilog work "ray_plane_normal_pipeline.v"
+verilog work "ray_unified_normal_pipeline.v"

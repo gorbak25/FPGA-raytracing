@@ -1,0 +1,16 @@
+
+
+
+// Instantiate the module
+ray_unified_normal_pipeline instance_name (
+    .clk(clk), 
+    .input_obj_type(input_obj_type), 
+    .plane_normal(plane_normal), 
+    .sphere_center(sphere_center), 
+    .hit_point(hit_point), 
+    .hit_normal_unnormalized(hit_normal_unnormalized), 
+    .new_data(new_data), 
+    .output_valid(output_valid)
+    );
+
+

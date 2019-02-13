@@ -1,0 +1,461 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: traced_materials.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "traced_materials.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "traced_materials"
+Output Format                      : NGC
+Target Device                      : xc5vfx130t-2-ff1738
+
+---- Source Options
+Top Module Name                    : traced_materials
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Off
+Reduce Control Sets                : Off
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : NO
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "traced_materials.v" in library work
+Module <traced_materials> compiled
+No errors in compilation
+Analysis of file <"traced_materials.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <traced_materials> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <traced_materials>.
+INFO:Xst:1433 - Contents of array <material_definitions_l2> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <material_definitions_l1> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Module <traced_materials> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <traced_materials>.
+    Related source file is "traced_materials.v".
+    Found 8x289-bit dual-port RAM <Mram_material_definitions_l2> for signal <material_definitions_l2>.
+    Found 8x289-bit dual-port RAM <Mram_material_definitions_l1> for signal <material_definitions_l1>.
+    Found 4-bit comparator less for signal <and0000$cmp_lt0000> created at line 128.
+    Found 289-bit register for signal <flush_buff>.
+    Found 1-bit register for signal <flush_delay>.
+    Found 4-bit register for signal <flushing>.
+    Found 4-bit adder for signal <flushing$addsub0000> created at line 134.
+    Found 4-bit comparator greatequal for signal <flushing$cmp_ge0000> created at line 128.
+    Found 289-bit register for signal <l1_output_buff>.
+INFO:Xst:738 - HDL ADVISOR - 289 flip-flops were inferred for signal <l1_output_buff>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+INFO:Xst:738 - HDL ADVISOR - 289 flip-flops were inferred for signal <flush_buff>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   2 RAM(s).
+	inferred 583 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <traced_materials> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 8x289-bit dual-port RAM                               : 2
+# Adders/Subtractors                                   : 1
+ 4-bit adder                                           : 1
+# Registers                                            : 4
+ 1-bit register                                        : 1
+ 289-bit register                                      : 2
+ 4-bit register                                        : 1
+# Comparators                                          : 2
+ 4-bit comparator greatequal                           : 1
+ 4-bit comparator less                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <traced_materials>.
+INFO:Xst:3226 - The RAM <Mram_material_definitions_l1> will be implemented as a BLOCK RAM, absorbing the following register(s): <l1_output_buff>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 289-bit                    |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <flush_delay_0> | high     |
+    |     addrA          | connected to signal <flushing>      |          |
+    |     diA            | connected to signal <flush_buff>    |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 289-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <rst>           | low      |
+    |     addrB          | connected to signal <mat_id>        |          |
+    |     doB            | connected to signal <ambient_color> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3226 - The RAM <Mram_material_definitions_l2> will be implemented as a BLOCK RAM, absorbing the following register(s): <flush_buff>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 289-bit                    |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <l2_write_enable_0> | high     |
+    |     addrA          | connected to signal <l2_write_id>   |          |
+    |     diA            | connected to signal <l2_write_material> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 289-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <flush_buff_not0001> | high     |
+    |     addrB          | connected to signal <flushing>      |          |
+    |     doB            | connected to signal <flush_buff>    |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <traced_materials> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 8x289-bit dual-port block RAM                         : 2
+# Adders/Subtractors                                   : 1
+ 4-bit adder                                           : 1
+# Registers                                            : 5
+ Flip-Flops                                            : 5
+# Comparators                                          : 2
+ 4-bit comparator greatequal                           : 1
+ 4-bit comparator less                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <traced_materials> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block traced_materials, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 5
+ Flip-Flops                                            : 5
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : traced_materials.ngr
+Top Level Output File Name         : traced_materials
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 588
+
+Cell Usage :
+# BELS                             : 13
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 4
+#      LUT3                        : 3
+#      LUT4                        : 1
+#      LUT5                        : 2
+#      VCC                         : 1
+# FlipFlops/Latches                : 5
+#      FDRE                        : 4
+#      FDSE                        : 1
+# RAMS                             : 18
+#      RAMB18                      : 2
+#      RAMB18SDP                   : 16
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 587
+#      IBUF                        : 298
+#      OBUF                        : 289
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vfx130tff1738-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:               5  out of  81920     0%  
+ Number of Slice LUTs:                   11  out of  81920     0%  
+    Number used as Logic:                11  out of  81920     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     11
+   Number with an unused Flip Flop:       6  out of     11    54%  
+   Number with an unused LUT:             0  out of     11     0%  
+   Number of fully used LUT-FF pairs:     5  out of     11    45%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                         588
+ Number of bonded IOBs:                 588  out of    840    70%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                9  out of    298     3%  
+    Number using Block RAM only:          9
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 23    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 2.477ns (Maximum Frequency: 403.779MHz)
+   Minimum input arrival time before clock: 2.320ns
+   Maximum output required time after clock: 4.322ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.477ns (frequency: 403.779MHz)
+  Total number of paths / destination ports: 160 / 108
+-------------------------------------------------------------------------
+Delay:               2.477ns (Levels of Logic = 0)
+  Source:            Mram_material_definitions_l29 (RAM)
+  Destination:       Mram_material_definitions_l19 (RAM)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: Mram_material_definitions_l29 to Mram_material_definitions_l19
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB18:CLKB->DOB0     1   1.892   0.286  Mram_material_definitions_l29 (flush_buff<288>)
+     RAMB18:DIA0               0.299          Mram_material_definitions_l19
+    ----------------------------------------
+    Total                      2.477ns (2.191ns logic, 0.286ns route)
+                                       (88.5% logic, 11.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 473 / 439
+-------------------------------------------------------------------------
+Offset:              2.320ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       Mram_material_definitions_l19 (RAM)
+  Destination Clock: clk rising
+
+  Data Path: rst to Mram_material_definitions_l19
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             9   0.694   0.637  rst_IBUF (rst_IBUF)
+     LUT3:I0->O           34   0.086   0.394  flush_delay11 (flush_delay_0)
+     RAMB18:WEA0               0.509          Mram_material_definitions_l19
+    ----------------------------------------
+    Total                      2.320ns (1.289ns logic, 1.031ns route)
+                                       (55.6% logic, 44.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.322ns (Levels of Logic = 1)
+  Source:            Mram_material_definitions_l19 (RAM)
+  Destination:       is_diffuse (PAD)
+  Source Clock:      clk rising
+
+  Data Path: Mram_material_definitions_l19 to is_diffuse
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB18:CLKB->DOB0     1   1.892   0.286  Mram_material_definitions_l19 (is_diffuse_OBUF)
+     OBUF:I->O                 2.144          is_diffuse_OBUF (is_diffuse)
+    ----------------------------------------
+    Total                      4.322ns (4.036ns logic, 0.286ns route)
+                                       (93.4% logic, 6.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.80 secs
+ 
+--> 
+
+
+Total memory usage is 548596 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+

@@ -1,0 +1,8 @@
+verilog work "signal_pipe.v"
+verilog work "leading_one_detect.v"
+verilog work "ipcore_dir/inv_LUT.v"
+verilog work "fixed.v"
+verilog work "ipcore_dir/isqrt_LUT.v"
+verilog work "fixed_isqrt_pipeline.v"
+verilog work "fixed_inv_pipeline.v"
+verilog work "fixed_sqrt_pipeline.v"

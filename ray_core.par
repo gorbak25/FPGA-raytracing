@@ -1,0 +1,133 @@
+Release 14.7 par P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+waznastrona::  Mon Jan 21 15:06:30 2019
+
+par -w -intstyle ise -ol std -mt 2 ray_core_map.ncd ray_core.ncd ray_core.pcf 
+
+
+Constraints file: ray_core.pcf.
+Loading device for application Rf_Device from file '5vfx130t.nph' in environment /opt/Xilinx/14.7/ISE_DS/ISE/.
+   "ray_core" is an NCD, version 3.2, device xc5vfx130t, package ff1738, speed -2
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 0.950 Volts. (default - Range: 0.950 to 1.050 Volts)
+
+INFO:Par:282 - No user timing constraints were detected or you have set the option to ignore timing constraints ("par
+   -x"). Place and Route will run in "Performance Evaluation Mode" to automatically improve the performance of all
+   internal clocks in this design. Because there are not defined timing requirements, a timing score will not be
+   reported in the PAR report in this mode. The PAR timing summary will list the performance achieved for each clock.
+   Note: For the fastest runtime, set the effort level to "std".  For best performance, set the effort level to "high".
+
+Device speed data version:  "PRODUCTION 1.73 2013-10-13".
+
+
+
+Device Utilization Summary:
+
+   Number of BUFGs                           3 out of 32      9%
+   Number of DSP48Es                       246 out of 320    76%
+   Number of External IOBs                 625 out of 840    74%
+      Number of LOCed IOBs                   0 out of 625     0%
+
+   Number of RAMB36_EXPs                    15 out of 298     5%
+   Number of Slices                       5522 out of 20480  26%
+   Number of Slice Registers             11665 out of 81920  12%
+      Number used as Flip Flops          10038
+      Number used as Latches              1627
+      Number used as LatchThrus              0
+
+   Number of Slice LUTS                  17175 out of 81920  20%
+   Number of Slice LUT-Flip Flop pairs   19275 out of 81920  23%
+
+
+Overall effort level (-ol):   Standard 
+Router effort level (-rl):    Standard 
+
+WARNING:Par:545 - Multi-threading ("-mt" option) is not supported for the Performance Evaluation Mode. PAR will use only
+   one processor.
+
+Starting initial Timing Analysis.  REAL time: 53 secs 
+Finished initial Timing Analysis.  REAL time: 53 secs 
+
+Starting Router
+
+
+Phase  1  : 128777 unrouted;      REAL time: 55 secs 
+
+Phase  2  : 68240 unrouted;      REAL time: 59 secs 
+
+Phase  3  : 9440 unrouted;      REAL time: 1 mins 33 secs 
+
+Phase  4  : 21714 unrouted; (Par is working to improve performance)     REAL time: 2 mins 20 secs 
+
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 2 mins 41 secs 
+
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 2 mins 41 secs 
+
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 2 mins 41 secs 
+
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 2 mins 45 secs 
+
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 2 mins 50 secs 
+
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 2 mins 52 secs 
+Total REAL time to Router completion: 2 mins 52 secs 
+Total CPU time to Router completion: 2 mins 56 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+INFO:Par:459 - The Clock Report is not displayed in the non timing-driven mode.
+Timing Score: 0 (Setup: 0, Hold: 0)
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|    19.883ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.188ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net vec | SETUP       |         N/A|     0.940ns|     N/A|           0
+  tor_reflector_pipeline_instance/output_va | HOLD        |     0.657ns|            |       0|           0
+  lid                                       |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+
+
+All constraints were met.
+INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the 
+   constraint is not analyzed due to the following: No paths covered by this 
+   constraint; Other constraints intersect with this constraint; or This 
+   constraint was disabled by a Path Tracing Control. Please run the Timespec 
+   Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 3 mins 16 secs 
+Total CPU time to PAR completion: 3 mins 20 secs 
+
+Peak Memory Usage:  1597 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 1
+Number of info messages: 2
+
+Writing design to file ray_core.ncd
+
+
+
+PAR done!

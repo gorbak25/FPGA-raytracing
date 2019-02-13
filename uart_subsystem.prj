@@ -1,0 +1,4 @@
+verilog work "uart_receiver.v"
+verilog work "uart_processor.v"
+verilog work "uart.v"
+verilog work "uart_subsystem.v"

@@ -1,0 +1,17 @@
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.syr" 
+vhdtdtfi -lang verilog -prj raytracing -o /home/test/FPGA/raytracing/ray_unified_intersection_pipeline.tfi -lib work /home/test/FPGA/raytracing//ray_unified_intersection_pipeline.v -module ray_unified_intersection_pipeline -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_unified_intersection_pipeline.ngc ray_unified_intersection_pipeline.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_unified_intersection_pipeline.ngd ray_unified_intersection_pipeline_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim ray_unified_intersection_pipeline.ngc ray_unified_intersection_pipeline_synthesis.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_unified_intersection_pipeline.ngc ray_unified_intersection_pipeline.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_unified_intersection_pipeline.ngd ray_unified_intersection_pipeline_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.syr" 

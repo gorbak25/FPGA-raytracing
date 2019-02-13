@@ -1,0 +1,407 @@
+Release 14.7 - reportgen P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Sun Jan  6 19:35:22 2019
+
+File: fixed_add.dly
+
+ The 20 worst nets by delay are:
++-----------------+-----------+
+| Max Delay       | Netname   |
++-----------------+-----------+
+   2.197            r_10_OBUF
+   1.750            a_19_IBUF
+   1.671            b_17_IBUF
+   1.652            a_7_IBUF
+   1.642            a_14_IBUF
+   1.583            a_12_IBUF
+   1.568            a_17_IBUF
+   1.536            a_2_IBUF
+   1.521            a_11_IBUF
+   1.520            a_31_IBUF
+   1.518            b_25_IBUF
+   1.513            b_16_IBUF
+   1.505            a_29_IBUF
+   1.496            b_21_IBUF
+   1.483            a_4_IBUF
+   1.476            a_18_IBUF
+   1.455            b_3_IBUF
+   1.422            b_24_IBUF
+   1.402            a_8_IBUF
+   1.381            b_0_IBUF
+---------------------------------
+
+-------------------------------------------------------------------------------
+                               Net Delays
+-------------------------------------------------------------------------------
+
+Madd_tmp_cy<11>
+   Madd_tmp_cy<11>.COUT
+         0.000  Madd_tmp_cy<15>.CIN
+
+Madd_tmp_cy<15>
+   Madd_tmp_cy<15>.COUT
+         0.000  Madd_tmp_cy<19>.CIN
+
+Madd_tmp_cy<19>
+   Madd_tmp_cy<19>.COUT
+         0.000  Madd_tmp_cy<23>.CIN
+
+Madd_tmp_cy<23>
+   Madd_tmp_cy<23>.COUT
+         0.000  Madd_tmp_cy<27>.CIN
+
+Madd_tmp_cy<27>
+   Madd_tmp_cy<27>.COUT
+         0.000  Madd_tmp_cy<31>.CIN
+
+Madd_tmp_cy<31>
+   Madd_tmp_cy<31>.COUT
+         0.000  tmp<32>.CIN
+
+Madd_tmp_cy<3>
+   Madd_tmp_cy<3>.COUT
+         0.000  Madd_tmp_cy<7>.CIN
+
+Madd_tmp_cy<7>
+   Madd_tmp_cy<7>.COUT
+         0.000  Madd_tmp_cy<11>.CIN
+
+a_0_IBUF
+   a<0>.I
+         1.142  Madd_tmp_cy<3>.A5
+         0.670  Madd_tmp_cy<3>.AX
+
+a_10_IBUF
+   a<10>.I
+         1.128  Madd_tmp_cy<11>.C5
+         0.951  Madd_tmp_cy<11>.CX
+
+a_11_IBUF
+   a<11>.I
+         1.521  Madd_tmp_cy<11>.D5
+         1.129  Madd_tmp_cy<11>.DX
+
+a_12_IBUF
+   a<12>.I
+         1.583  Madd_tmp_cy<15>.A5
+         1.461  Madd_tmp_cy<15>.AX
+
+a_13_IBUF
+   a<13>.I
+         1.362  Madd_tmp_cy<15>.B5
+         1.183  Madd_tmp_cy<15>.BX
+
+a_14_IBUF
+   a<14>.I
+         1.642  Madd_tmp_cy<15>.C5
+         1.592  Madd_tmp_cy<15>.CX
+
+a_15_IBUF
+   a<15>.I
+         1.040  Madd_tmp_cy<15>.D5
+         0.772  Madd_tmp_cy<15>.DX
+
+a_16_IBUF
+   a<16>.I
+         1.045  Madd_tmp_cy<19>.A5
+         0.916  Madd_tmp_cy<19>.AX
+
+a_17_IBUF
+   a<17>.I
+         1.140  Madd_tmp_cy<19>.B5
+         1.568  Madd_tmp_cy<19>.BX
+
+a_18_IBUF
+   a<18>.I
+         1.388  Madd_tmp_cy<19>.C5
+         1.476  Madd_tmp_cy<19>.CX
+
+a_19_IBUF
+   a<19>.I
+         1.750  Madd_tmp_cy<19>.D5
+         1.646  Madd_tmp_cy<19>.DX
+
+a_1_IBUF
+   a<1>.I
+         1.317  Madd_tmp_cy<3>.B5
+         0.812  Madd_tmp_cy<3>.BX
+
+a_20_IBUF
+   a<20>.I
+         1.361  Madd_tmp_cy<23>.A5
+         1.159  Madd_tmp_cy<23>.AX
+
+a_21_IBUF
+   a<21>.I
+         1.036  Madd_tmp_cy<23>.B5
+         1.071  Madd_tmp_cy<23>.BX
+
+a_22_IBUF
+   a<22>.I
+         0.777  Madd_tmp_cy<23>.C5
+         0.908  Madd_tmp_cy<23>.CX
+
+a_23_IBUF
+   a<23>.I
+         1.161  Madd_tmp_cy<23>.D5
+         0.979  Madd_tmp_cy<23>.DX
+
+a_24_IBUF
+   a<24>.I
+         1.134  Madd_tmp_cy<27>.A5
+         1.072  Madd_tmp_cy<27>.AX
+
+a_25_IBUF
+   a<25>.I
+         1.132  Madd_tmp_cy<27>.B5
+         0.933  Madd_tmp_cy<27>.BX
+
+a_26_IBUF
+   a<26>.I
+         1.122  Madd_tmp_cy<27>.C5
+         0.945  Madd_tmp_cy<27>.CX
+
+a_27_IBUF
+   a<27>.I
+         1.373  Madd_tmp_cy<27>.D5
+         1.191  Madd_tmp_cy<27>.DX
+
+a_28_IBUF
+   a<28>.I
+         1.095  Madd_tmp_cy<31>.A5
+         1.157  Madd_tmp_cy<31>.AX
+
+a_29_IBUF
+   a<29>.I
+         1.505  Madd_tmp_cy<31>.B5
+         1.448  Madd_tmp_cy<31>.BX
+
+a_2_IBUF
+   a<2>.I
+         1.106  Madd_tmp_cy<3>.C5
+         1.536  Madd_tmp_cy<3>.CX
+
+a_30_IBUF
+   a<30>.I
+         1.342  Madd_tmp_cy<31>.C5
+         1.109  Madd_tmp_cy<31>.CX
+
+a_31_IBUF
+   a<31>.I
+         1.226  Madd_tmp_cy<31>.D5
+         1.044  Madd_tmp_cy<31>.DX
+         1.520  tmp<32>.A5
+
+a_3_IBUF
+   a<3>.I
+         1.202  Madd_tmp_cy<3>.D5
+         0.895  Madd_tmp_cy<3>.DX
+
+a_4_IBUF
+   a<4>.I
+         1.483  Madd_tmp_cy<7>.A5
+         1.144  Madd_tmp_cy<7>.AX
+
+a_5_IBUF
+   a<5>.I
+         1.202  Madd_tmp_cy<7>.B5
+         1.244  Madd_tmp_cy<7>.BX
+
+a_6_IBUF
+   a<6>.I
+         1.117  Madd_tmp_cy<7>.C5
+         0.940  Madd_tmp_cy<7>.CX
+
+a_7_IBUF
+   a<7>.I
+         1.652  Madd_tmp_cy<7>.D5
+         1.593  Madd_tmp_cy<7>.DX
+
+a_8_IBUF
+   a<8>.I
+         0.967  Madd_tmp_cy<11>.A5
+         1.402  Madd_tmp_cy<11>.AX
+
+a_9_IBUF
+   a<9>.I
+         1.035  Madd_tmp_cy<11>.B5
+         1.142  Madd_tmp_cy<11>.BX
+
+b_0_IBUF
+   b<0>.I
+         1.381  Madd_tmp_cy<3>.A6
+
+b_10_IBUF
+   b<10>.I
+         0.636  Madd_tmp_cy<11>.C6
+
+b_11_IBUF
+   b<11>.I
+         1.225  Madd_tmp_cy<11>.D6
+
+b_12_IBUF
+   b<12>.I
+         1.127  Madd_tmp_cy<15>.A6
+
+b_13_IBUF
+   b<13>.I
+         1.259  Madd_tmp_cy<15>.B6
+
+b_14_IBUF
+   b<14>.I
+         0.823  Madd_tmp_cy<15>.C6
+
+b_15_IBUF
+   b<15>.I
+         0.647  Madd_tmp_cy<15>.D6
+
+b_16_IBUF
+   b<16>.I
+         1.513  Madd_tmp_cy<19>.A6
+
+b_17_IBUF
+   b<17>.I
+         1.671  Madd_tmp_cy<19>.B6
+
+b_18_IBUF
+   b<18>.I
+         0.649  Madd_tmp_cy<19>.C6
+
+b_19_IBUF
+   b<19>.I
+         1.243  Madd_tmp_cy<19>.D6
+
+b_1_IBUF
+   b<1>.I
+         1.027  Madd_tmp_cy<3>.B6
+
+b_20_IBUF
+   b<20>.I
+         1.305  Madd_tmp_cy<23>.A6
+
+b_21_IBUF
+   b<21>.I
+         1.496  Madd_tmp_cy<23>.B6
+
+b_22_IBUF
+   b<22>.I
+         1.155  Madd_tmp_cy<23>.C6
+
+b_23_IBUF
+   b<23>.I
+         0.636  Madd_tmp_cy<23>.D6
+
+b_24_IBUF
+   b<24>.I
+         1.422  Madd_tmp_cy<27>.A6
+
+b_25_IBUF
+   b<25>.I
+         1.518  Madd_tmp_cy<27>.B6
+
+b_26_IBUF
+   b<26>.I
+         0.941  Madd_tmp_cy<27>.C6
+
+b_27_IBUF
+   b<27>.I
+         0.647  Madd_tmp_cy<27>.D6
+
+b_28_IBUF
+   b<28>.I
+         1.177  Madd_tmp_cy<31>.A6
+
+b_29_IBUF
+   b<29>.I
+         1.154  Madd_tmp_cy<31>.B6
+
+b_2_IBUF
+   b<2>.I
+         1.224  Madd_tmp_cy<3>.C6
+
+b_30_IBUF
+   b<30>.I
+         1.237  Madd_tmp_cy<31>.C6
+
+b_31_IBUF
+   b<31>.I
+         0.822  Madd_tmp_cy<31>.D6
+         1.154  tmp<32>.A6
+
+b_3_IBUF
+   b<3>.I
+         1.455  Madd_tmp_cy<3>.D6
+
+b_4_IBUF
+   b<4>.I
+         0.809  Madd_tmp_cy<7>.A6
+
+b_5_IBUF
+   b<5>.I
+         1.131  Madd_tmp_cy<7>.B6
+
+b_6_IBUF
+   b<6>.I
+         0.769  Madd_tmp_cy<7>.C6
+
+b_7_IBUF
+   b<7>.I
+         0.809  Madd_tmp_cy<7>.D6
+
+b_8_IBUF
+   b<8>.I
+         0.971  Madd_tmp_cy<11>.A6
+
+b_9_IBUF
+   b<9>.I
+         0.973  Madd_tmp_cy<11>.B6
+
+r_10_OBUF
+   r_10_OBUF.A
+         1.811  r<2>.O
+         1.811  r<3>.O
+         1.806  r<4>.O
+         1.806  r<5>.O
+         1.953  r<6>.O
+         1.953  r<7>.O
+         1.934  r<8>.O
+         1.934  r<9>.O
+         1.938  r<10>.O
+         1.938  r<11>.O
+         1.333  r<20>.O
+         2.076  r<12>.O
+         1.333  r<21>.O
+         2.076  r<13>.O
+         1.031  r<30>.O
+         1.328  r<22>.O
+         2.194  r<14>.O
+         1.328  r<23>.O
+         2.194  r<15>.O
+         1.476  r<24>.O
+         2.197  r<16>.O
+         1.476  r<25>.O
+         2.197  r<17>.O
+         1.179  r<26>.O
+         1.459  r<18>.O
+         1.179  r<27>.O
+         1.459  r<19>.O
+         1.175  r<28>.O
+         1.175  r<29>.O
+         1.937  r<0>.O
+         1.937  r<1>.O
+
+r_31_OBUF
+   r_31_OBUF.D
+         1.152  r<31>.O
+
+tmp<31>
+   Madd_tmp_cy<31>.DMUX
+         1.100  r_10_OBUF.A6
+         1.288  r_31_OBUF.D6
+
+tmp<32>
+   tmp<32>.AMUX
+         1.021  r_10_OBUF.A5
+         0.829  r_31_OBUF.D5
+

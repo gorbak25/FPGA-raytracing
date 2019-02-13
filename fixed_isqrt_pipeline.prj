@@ -1,0 +1,4 @@
+verilog work "signal_pipe.v"
+verilog work "leading_one_detect.v"
+verilog work "fixed.v"
+verilog work "fixed_isqrt_pipeline.v"

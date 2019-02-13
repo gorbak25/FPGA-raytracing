@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/traced_spheres.xst" -ofn "/home/test/FPGA/raytracing/traced_spheres.syr" 
+vhdtdtfi -lang verilog -prj raytracing -o /home/test/FPGA/raytracing/traced_spheres.tfi -lib work /home/test/FPGA/raytracing//traced_spheres.v -module traced_spheres -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

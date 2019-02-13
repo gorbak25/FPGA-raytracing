@@ -1,0 +1,20 @@
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+vhdtdtfi -lang verilog -prj raytracing -o /home/test/FPGA/raytracing/vector_reflector_pipeline.tfi -lib work /home/test/FPGA/raytracing//vector_reflector.v -module vector_reflector_pipeline -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 vector_reflector_pipeline.ngc vector_reflector_pipeline.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim vector_reflector_pipeline.ngd vector_reflector_pipeline_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_reflector_pipeline.xst" -ofn "/home/test/FPGA/raytracing/vector_reflector_pipeline.syr" 

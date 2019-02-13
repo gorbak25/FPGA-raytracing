@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_mul.xst" -ofn "/home/test/FPGA/raytracing/vector_mul.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 vector_mul.ngc vector_mul.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim vector_mul.ngd vector_mul_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_mul.xst" -ofn "/home/test/FPGA/raytracing/vector_mul.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_mul.xst" -ofn "/home/test/FPGA/raytracing/vector_mul.syr" 

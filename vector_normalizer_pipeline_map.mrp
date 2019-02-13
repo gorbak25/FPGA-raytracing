@@ -1,0 +1,443 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Mapping Report File for Design 'vector_normalizer_pipeline'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol
+high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir
+off -pr off -lc off -power off -o vector_normalizer_pipeline_map.ncd
+vector_normalizer_pipeline.ngd vector_normalizer_pipeline.pcf 
+Target Device  : xc5vlx50t
+Target Package : ff1136
+Target Speed   : -2
+Mapper Version : virtex5 -- $Revision: 1.55 $
+Mapped Date    : Wed Jan  9 03:20:31 2019
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    0
+Slice Logic Utilization:
+  Number of Slice Registers:                   140 out of  28,800    1%
+    Number used as Flip Flops:                 140
+  Number of Slice LUTs:                        371 out of  28,800    1%
+    Number used as logic:                      240 out of  28,800    1%
+      Number using O6 output only:             240
+    Number used as Memory:                     130 out of   7,680    1%
+      Number used as Shift Register:           130
+        Number using O6 output only:           130
+    Number used as exclusive route-thru:         1
+  Number of route-thrus:                         1
+    Number using O5 and O6:                      1
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   173 out of   7,200    2%
+  Number of LUT Flip Flop pairs used:          371
+    Number with an unused Flip Flop:           231 out of     371   62%
+    Number with an unused LUT:                   0 out of     371    0%
+    Number of fully used LUT-FF pairs:         140 out of     371   37%
+    Number of unique control sets:               9
+    Number of slice register sites lost
+      to control set restrictions:              26 out of  28,800    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                       195 out of     480   40%
+
+Specific Feature Utilization:
+  Number of BlockRAM/FIFO:                       3 out of      60    5%
+    Number using BlockRAM only:                  3
+    Total primitives used:
+      Number of 36k BlockRAM used:               3
+    Total Memory used (KB):                    108 out of   2,160    5%
+  Number of BUFG/BUFGCTRLs:                      1 out of      32    3%
+    Number used as BUFGs:                        1
+  Number of DSP48Es:                            36 out of      48   75%
+
+Average Fanout of Non-Clock Nets:                1.72
+
+Peak Memory Usage:  866 MB
+Total REAL time to MAP completion:  21 secs 
+Total CPU time to MAP completion:   21 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+
+Section 3 - Informational
+-------------------------
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 0.950 Volts. (default - Range: 0.950 to
+   1.050 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+   4 block(s) optimized away
+   1 signal(s) removed
+   1 Block(s) redundant
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+The signal "isqrt_LUT_instance/N0" is sourceless and has been removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+GND 		isqrt_LUT_instance/XST_GND
+VCC 		isqrt_LUT_instance/XST_VCC
+
+Redundant Block(s):
+TYPE 		BLOCK
+INV
+		isqrt_LUT_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+d.cstr/out21_INV_0
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clk                                | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| new_data                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| output_valid                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<0>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<1>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<2>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<3>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<4>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<5>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<6>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<7>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<8>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<9>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<10>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<11>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<12>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<13>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<14>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<15>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<16>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<17>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<18>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<19>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<20>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<21>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<22>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<23>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<24>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<25>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<26>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<27>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<28>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<29>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<30>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<31>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<32>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<33>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<34>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<35>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<36>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<37>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<38>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<39>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<40>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<41>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<42>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<43>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<44>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<45>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<46>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<47>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<48>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<49>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<50>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<51>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<52>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<53>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<54>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<55>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<56>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<57>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<58>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<59>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<60>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<61>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<62>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<63>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<64>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<65>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<66>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<67>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<68>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<69>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<70>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<71>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<72>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<73>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<74>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<75>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<76>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<77>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<78>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<79>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<80>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<81>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<82>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<83>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<84>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<85>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<86>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<87>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<88>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<89>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<90>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<91>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<92>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<93>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<94>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| r<95>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| v<0>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<1>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<2>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<3>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<4>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<5>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<6>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<7>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<8>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<9>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<10>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<11>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<12>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<13>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<14>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<15>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<16>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<17>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<18>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<19>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<20>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<21>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<22>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<23>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<24>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<25>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<26>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<27>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<28>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<29>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<30>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<31>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<32>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<33>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<34>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<35>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<36>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<37>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<38>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<39>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<40>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<41>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<42>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<43>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<44>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<45>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<46>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<47>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<48>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<49>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<50>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<51>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<52>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<53>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<54>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<55>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<56>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<57>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<58>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<59>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<60>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<61>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<62>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<63>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<64>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<65>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<66>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<67>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<68>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<69>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<70>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<71>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<72>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<73>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<74>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<75>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<76>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<77>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<78>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<79>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<80>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<81>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<82>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<83>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<84>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<85>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<86>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<87>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<88>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<89>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<90>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<91>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<92>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<93>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<94>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| v<95>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+
+Section 12 - Control Set Information
+------------------------------------
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Clock Signal | Reset Signal                                         | Set Signal                                           | Enable Signal | Slice Load Count | Bel Load Count |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clk_BUFGP    |                                                      |                                                      |               | 65               | 133            |
+| clk_BUFGP    |                                                      |                                                      | GLOBAL_LOGIC1 | 63               | 130            |
+| clk_BUFGP    | vector_dot_len2/dot_add/tmp<33>                      |                                                      |               | 1                | 1              |
+| clk_BUFGP    | vector_normalizer_mul/gen_vec_mul[0].vec_mul/tmp<62> | vector_normalizer_mul/gen_vec_mul[0].vec_mul/tmp<63> |               | 1                | 1              |
+| clk_BUFGP    | vector_normalizer_mul/gen_vec_mul[0].vec_mul/tmp<63> |                                                      |               | 1                | 1              |
+| clk_BUFGP    | vector_normalizer_mul/gen_vec_mul[1].vec_mul/tmp<62> | vector_normalizer_mul/gen_vec_mul[1].vec_mul/tmp<63> |               | 1                | 1              |
+| clk_BUFGP    | vector_normalizer_mul/gen_vec_mul[1].vec_mul/tmp<63> |                                                      |               | 1                | 1              |
+| clk_BUFGP    | vector_normalizer_mul/gen_vec_mul[2].vec_mul/tmp<62> | vector_normalizer_mul/gen_vec_mul[2].vec_mul/tmp<63> |               | 1                | 1              |
+| clk_BUFGP    | vector_normalizer_mul/gen_vec_mul[2].vec_mul/tmp<63> |                                                      |               | 1                | 1              |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Module                            | Partition | Slices*       | Slice Reg     | LUTs          | LUTRAM        | BRAM/FIFO | DSP48E  | BUFG  | BUFIO | BUFR  | DCM_ADV   | PLL_ADV   | Full Hierarchical Name                                                                                                                        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| vector_normalizer_pipeline/       |           | 7/189         | 7/140         | 1/371         | 1/130         | 0/3       | 0/36    | 1/1   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline                                                                                                                    |
+| +isqrt                            |           | 60/75         | 35/35         | 112/154       | 33/33         | 0/0       | 0/12    | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt                                                                                                              |
+| ++fixed_mul_stage2                |           | 2/2           | 0/0           | 3/3           | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt/fixed_mul_stage2                                                                                             |
+| ++fixed_mul_stage3                |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt/fixed_mul_stage3                                                                                             |
+| ++fixed_mul_stage4                |           | 2/2           | 0/0           | 3/3           | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt/fixed_mul_stage4                                                                                             |
+| ++fixed_sub_stage3                |           | 9/11          | 0/0           | 33/36         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt/fixed_sub_stage3                                                                                             |
+| +++adder                          |           | 2/2           | 0/0           | 3/3           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt/fixed_sub_stage3/adder                                                                                       |
+| +isqrt_LUT_instance               |           | 0/32          | 0/2           | 0/33          | 0/0           | 0/3       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt_LUT_instance                                                                                                 |
+| ++U0                              |           | 0/32          | 0/2           | 0/33          | 0/0           | 0/3       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt_LUT_instance/U0                                                                                              |
+| +++xst_blk_mem_generator          |           | 0/32          | 0/2           | 0/33          | 0/0           | 0/3       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt_LUT_instance/U0/xst_blk_mem_generator                                                                        |
+| ++++gnativebmg.native_blk_mem_gen |           | 0/32          | 0/2           | 0/33          | 0/0           | 0/3       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt_LUT_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen                                          |
+| +++++valid.cstr                   |           | 0/32          | 0/2           | 0/33          | 0/0           | 0/3       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt_LUT_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr                               |
+| ++++++bindec_a.bindec_inst_a      |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt_LUT_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/bindec_a.bindec_inst_a        |
+| ++++++has_mux_a.A                 |           | 31/31         | 2/2           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt_LUT_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A                   |
+| ++++++ramloop[0].ram.r            |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt_LUT_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r              |
+| +++++++v5_init.ram                |           | 0/0           | 0/0           | 0/0           | 0/0           | 1/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt_LUT_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v5_init.ram  |
+| ++++++ramloop[1].ram.r            |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt_LUT_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r              |
+| +++++++v5_init.ram                |           | 0/0           | 0/0           | 0/0           | 0/0           | 1/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt_LUT_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v5_init.ram  |
+| ++++++ramloop[2].ram.r            |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt_LUT_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r              |
+| +++++++v5_init.ram                |           | 0/0           | 0/0           | 0/0           | 0/0           | 1/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/isqrt_LUT_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/v5_init.ram  |
+| +vector_dot_len2                  |           | 0/26          | 0/0           | 0/78          | 0/0           | 0/0       | 0/12    | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/vector_dot_len2                                                                                                    |
+| ++dot_add                         |           | 20/20         | 0/0           | 69/69         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/vector_dot_len2/dot_add                                                                                            |
+| ++gen_mul[0].dot_mul              |           | 2/2           | 0/0           | 3/3           | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/vector_dot_len2/gen_mul[0].dot_mul                                                                                 |
+| ++gen_mul[1].dot_mul              |           | 2/2           | 0/0           | 3/3           | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/vector_dot_len2/gen_mul[1].dot_mul                                                                                 |
+| ++gen_mul[2].dot_mul              |           | 2/2           | 0/0           | 3/3           | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/vector_dot_len2/gen_mul[2].dot_mul                                                                                 |
+| +vector_normalizer_mul            |           | 0/6           | 0/0           | 0/9           | 0/0           | 0/0       | 0/12    | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/vector_normalizer_mul                                                                                              |
+| ++gen_vec_mul[0].vec_mul          |           | 2/2           | 0/0           | 3/3           | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/vector_normalizer_mul/gen_vec_mul[0].vec_mul                                                                       |
+| ++gen_vec_mul[1].vec_mul          |           | 2/2           | 0/0           | 3/3           | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/vector_normalizer_mul/gen_vec_mul[1].vec_mul                                                                       |
+| ++gen_vec_mul[2].vec_mul          |           | 2/2           | 0/0           | 3/3           | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/vector_normalizer_mul/gen_vec_mul[2].vec_mul                                                                       |
+| +vector_pipe                      |           | 43/43         | 96/96         | 96/96         | 96/96         | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | vector_normalizer_pipeline/vector_pipe                                                                                                        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Slices can be packed with basic elements from multiple hierarchies.
+  Therefore, a slice will be counted in every hierarchical module
+  that each of its packed basic elements belong to.
+** For each column, there are two numbers reported <A>/<B>.
+   <A> is the number of elements that belong to that specific hierarchical module.
+   <B> is the total number of elements from that hierarchical module and any lower level
+   hierarchical modules below.
+*** The LUTRAM column counts all LUTs used as memory including RAM, ROM, and shift registers.

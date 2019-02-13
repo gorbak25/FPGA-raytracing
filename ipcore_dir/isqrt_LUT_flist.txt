@@ -1,0 +1,17 @@
+# Output products list for <isqrt_LUT>
+_xmsgs/pn_parser.xmsgs
+isqrt_LUT/blk_mem_gen_v7_3_readme.txt
+isqrt_LUT/doc/blk_mem_gen_v7_3_vinfo.html
+isqrt_LUT/doc/pg058-blk-mem-gen.pdf
+isqrt_LUT.asy
+isqrt_LUT.gise
+isqrt_LUT.mif
+isqrt_LUT.ngc
+isqrt_LUT.sym
+isqrt_LUT.v
+isqrt_LUT.veo
+isqrt_LUT.xco
+isqrt_LUT.xise
+isqrt_LUT_flist.txt
+isqrt_LUT_xmdf.tcl
+summary.log

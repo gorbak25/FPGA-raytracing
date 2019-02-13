@@ -1,0 +1,7 @@
+verilog isim_temp "fixed.v"
+verilog isim_temp "vector_mul.v"
+verilog isim_temp "vector_add.v"
+verilog isim_temp "signal_pipe.v"
+verilog isim_temp "ray_caster.v"
+verilog isim_temp "ray_caster_test.v"
+verilog isim_temp "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

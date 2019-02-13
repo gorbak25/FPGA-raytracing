@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/clz32.xst" -ofn "/home/test/FPGA/raytracing/clz32.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vlx50t-ff1136-2 clz32.ngc clz32.ngd  
+map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir off -pr off -lc off -power off -o clz32_map.ncd clz32.ngd clz32.pcf 
+par -w -intstyle ise -ol high -mt off clz32_map.ncd clz32.ncd clz32.pcf 
+trce -intstyle ise -v 3 -tsi clz32.tsi -s 2 -n 3 -fastpaths -xml clz32.twx clz32.ncd -o clz32.twr clz32.pcf 

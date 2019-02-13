@@ -1,0 +1,143 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Map Application Log File for Design 'ray_core'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc5vfx130t-ff1738-2 -w -logic_opt off -ol
+std -t 1 -register_duplication off -global_opt off -mt 2 -cm area -detail -ir
+off -pr off -lc off -power off -o ray_core_map.ncd ray_core.ngd ray_core.pcf 
+Target Device  : xc5vfx130t
+Target Package : ff1738
+Target Speed   : -2
+Mapper Version : virtex5 -- $Revision: 1.55 $
+Mapped Date    : Mon Jan 21 15:03:20 2019
+
+Mapping design into LUTs...
+Running directed packing...
+Running delay-based LUT packing...
+Updating timing models...
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 1 mins 20 secs 
+Total CPU  time at the beginning of Placer: 1 mins 20 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:346f58ea) REAL time: 1 mins 23 secs 
+
+Phase 2.7  Design Feasibility Check
+Phase 2.7  Design Feasibility Check (Checksum:346f58ea) REAL time: 1 mins 24 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:346f58ea) REAL time: 1 mins 24 secs 
+
+Phase 4.37  Local Placement Optimization
+Phase 4.37  Local Placement Optimization (Checksum:346f58ea) REAL time: 1 mins 24 secs 
+
+Phase 5.2  Initial Clock and IO Placement
+...
+Phase 5.2  Initial Clock and IO Placement (Checksum:e4bf948b) REAL time: 1 mins 44 secs 
+
+Phase 6.36  Local Placement Optimization
+Phase 6.36  Local Placement Optimization (Checksum:e4bf948b) REAL time: 1 mins 44 secs 
+
+Phase 7.30  Global Clock Region Assignment
+Phase 7.30  Global Clock Region Assignment (Checksum:e4bf948b) REAL time: 1 mins 44 secs 
+
+Phase 8.3  Local Placement Optimization
+....
+Phase 8.3  Local Placement Optimization (Checksum:3d1319b9) REAL time: 1 mins 47 secs 
+
+Phase 9.5  Local Placement Optimization
+Phase 9.5  Local Placement Optimization (Checksum:3d1319b9) REAL time: 1 mins 47 secs 
+
+Phase 10.8  Global Placement
+........................
+.................................................................
+.......
+Phase 10.8  Global Placement (Checksum:8ab751c6) REAL time: 2 mins 42 secs 
+
+Phase 11.29  Local Placement Optimization
+Phase 11.29  Local Placement Optimization (Checksum:8ab751c6) REAL time: 2 mins 42 secs 
+
+Phase 12.5  Local Placement Optimization
+Phase 12.5  Local Placement Optimization (Checksum:8ab751c6) REAL time: 2 mins 42 secs 
+
+Phase 13.18  Placement Optimization
+Phase 13.18  Placement Optimization (Checksum:d92f2c3e) REAL time: 2 mins 58 secs 
+
+Phase 14.5  Local Placement Optimization
+Phase 14.5  Local Placement Optimization (Checksum:d92f2c3e) REAL time: 2 mins 58 secs 
+
+Phase 15.34  Placement Validation
+Phase 15.34  Placement Validation (Checksum:d92f2c3e) REAL time: 2 mins 59 secs 
+
+Total REAL time to Placer completion: 3 mins 
+Total CPU  time to Placer completion: 3 mins 3 secs 
+Running post-placement packing...
+Writing output files...
+
+Design Summary
+--------------
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    0
+Slice Logic Utilization:
+  Number of Slice Registers:                11,665 out of  81,920   14%
+    Number used as Flip Flops:              10,038
+    Number used as Latches:                  1,627
+  Number of Slice LUTs:                     17,175 out of  81,920   20%
+    Number used as logic:                   12,199 out of  81,920   14%
+      Number using O6 output only:          10,959
+      Number using O5 output only:              27
+      Number using O5 and O6:                1,213
+    Number used as Memory:                   4,973 out of  25,280   19%
+      Number used as Shift Register:         4,973
+        Number using O6 output only:         3,945
+        Number using O5 output only:         1,028
+    Number used as exclusive route-thru:         3
+  Number of route-thrus:                       152
+    Number using O6 output only:                29
+    Number using O5 output only:               122
+    Number using O5 and O6:                      1
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 5,522 out of  20,480   26%
+  Number of LUT Flip Flop pairs used:       19,275
+    Number with an unused Flip Flop:         7,610 out of  19,275   39%
+    Number with an unused LUT:               2,100 out of  19,275   10%
+    Number of fully used LUT-FF pairs:       9,565 out of  19,275   49%
+    Number of unique control sets:              14
+    Number of slice register sites lost
+      to control set restrictions:              34 out of  81,920    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                       625 out of     840   74%
+
+Specific Feature Utilization:
+  Number of BlockRAM/FIFO:                      15 out of     298    5%
+    Number using BlockRAM only:                 15
+    Total primitives used:
+      Number of 36k BlockRAM used:              15
+    Total Memory used (KB):                    540 out of  10,728    5%
+  Number of BUFG/BUFGCTRLs:                      3 out of      32    9%
+    Number used as BUFGs:                        3
+  Number of DSP48Es:                           246 out of     320   76%
+
+Average Fanout of Non-Clock Nets:                2.34
+
+Peak Memory Usage:  1825 MB
+Total REAL time to MAP completion:  3 mins 8 secs 
+Total CPU time to MAP completion (all processors):   3 mins 12 secs 
+
+Mapping completed.
+See MAP report file "ray_core_map.mrp" for details.

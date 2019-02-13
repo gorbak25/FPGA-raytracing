@@ -1,0 +1,23 @@
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_dot.xst" -ofn "/home/test/FPGA/raytracing/vector_dot.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_dot.xst" -ofn "/home/test/FPGA/raytracing/vector_dot.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_dot.xst" -ofn "/home/test/FPGA/raytracing/vector_dot.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_dot.xst" -ofn "/home/test/FPGA/raytracing/vector_dot.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_dot.xst" -ofn "/home/test/FPGA/raytracing/vector_dot.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vlx50t-ff1136-2 vector_dot.ngc vector_dot.ngd  
+map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir off -pr off -lc off -power off -o vector_dot_map.ncd vector_dot.ngd vector_dot.pcf 
+par -w -intstyle ise -ol high -mt off vector_dot_map.ncd vector_dot.ncd vector_dot.pcf 
+trce -intstyle ise -v 3 -tsi vector_dot.tsi -s 2 -n 3 -fastpaths -xml vector_dot.twx vector_dot.ncd -o vector_dot.twr vector_dot.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_dot.xst" -ofn "/home/test/FPGA/raytracing/vector_dot.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 vector_dot.ngc vector_dot.ngd  
+map -intstyle ise -p xc5vfx130t-ff1738-2 -w -logic_opt off -ol std -t 1 -register_duplication off -global_opt off -mt 2 -cm area -ir off -pr off -lc off -power off -o vector_dot_map.ncd vector_dot.ngd vector_dot.pcf 
+par -w -intstyle ise -ol std -mt 2 vector_dot_map.ncd vector_dot.ncd vector_dot.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml vector_dot.twx vector_dot.ncd -o vector_dot.twr vector_dot.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_dot.xst" -ofn "/home/test/FPGA/raytracing/vector_dot.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 vector_dot.ngc vector_dot.ngd  
+map -intstyle ise -p xc5vfx130t-ff1738-2 -w -logic_opt on -ol high -xe n -t 1 -global_opt speed -equivalent_register_removal on -mt 2 -cm area -ir off -pr b -lc off -power off -o vector_dot_map.ncd vector_dot.ngd vector_dot.pcf 
+par -w -intstyle ise -ol high -xe n -mt 2 vector_dot_map.ncd vector_dot.ncd vector_dot.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml vector_dot.twx vector_dot.ncd -o vector_dot.twr vector_dot.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_dot.xst" -ofn "/home/test/FPGA/raytracing/vector_dot.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_dot.xst" -ofn "/home/test/FPGA/raytracing/vector_dot.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_dot.xst" -ofn "/home/test/FPGA/raytracing/vector_dot.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/vector_dot.xst" -ofn "/home/test/FPGA/raytracing/vector_dot.syr" 

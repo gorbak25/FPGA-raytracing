@@ -1,0 +1,85 @@
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_core.ngc ray_core.ngd  
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim ray_core.ngc ray_core_synthesis.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_core.ngc ray_core.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim ray_core.ngc ray_core_synthesis.v 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_core.ngd ray_core_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_core.ngc ray_core.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_core.ngd ray_core_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_core.ngc ray_core.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_core.ngd ray_core_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_core.ngc ray_core.ngd  
+map -intstyle ise -p xc5vfx130t-ff1738-2 -w -logic_opt off -ol std -t 1 -register_duplication off -global_opt off -mt 2 -cm area -detail -ir off -pr off -lc off -power off -o ray_core_map.ncd ray_core.ngd ray_core.pcf 
+par -w -intstyle ise -ol std -mt 2 ray_core_map.ncd ray_core.ncd ray_core.pcf 
+trce -intstyle ise -v 3 -tsi ray_core.tsi -s 2 -n 3 -fastpaths -xml ray_core.twx ray_core.ncd -o ray_core.twr ray_core.pcf 
+bitgen -intstyle ise -f ray_core.ut ray_core.ncd 
+vhdtdtfi -lang verilog -prj raytracing -o /home/test/FPGA/raytracing/ray_core.tfi -lib work /home/test/FPGA/raytracing//ray_core.v -module ray_core -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -filter "/home/test/FPGA/raytracing/iseconfig/filter.filter" -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_core.ngc ray_core.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_core.ngd ray_core_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim ray_core.ngc ray_core_synthesis.v 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_core.ngc ray_core.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_core.ngd ray_core_translate.v 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_core.ngd ray_core_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_core.ngc ray_core.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_core.ngd ray_core_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_core.ngc ray_core.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_core.ngd ray_core_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_core.ngc ray_core.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_core.ngd ray_core_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_core.xst" -ofn "/home/test/FPGA/raytracing/ray_core.syr" 

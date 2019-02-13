@@ -1,0 +1,21 @@
+
+
+
+// Instantiate the module
+ray_unified_intersection_pipeline instance_name (
+    .clk(clk), 
+    .input_obj_type(input_obj_type), 
+    .ray_origin(ray_origin), 
+    .ray_direction(ray_direction), 
+    .plane_origin(plane_origin), 
+    .plane_normal(plane_normal), 
+    .sphere_center(sphere_center), 
+    .sphere_r2(sphere_r2), 
+    .was_hit(was_hit), 
+    .hit_dist(hit_dist), 
+    .new_data(new_data), 
+    .output_valid(output_valid), 
+    .output_obj_type(output_obj_type)
+    );
+
+

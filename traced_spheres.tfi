@@ -1,0 +1,13 @@
+
+
+
+// Instantiate the module
+traced_spheres instance_name (
+    .clk(clk), 
+    .obj_id(obj_id), 
+    .sphere_center(sphere_center), 
+    .sphere_r2(sphere_r2), 
+    .mat_id(mat_id)
+    );
+
+

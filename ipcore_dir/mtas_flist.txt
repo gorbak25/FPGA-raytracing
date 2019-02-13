@@ -1,0 +1,16 @@
+# Output products list for <mtas>
+_xmsgs/pn_parser.xmsgs
+mtas/blk_mem_gen_v7_3_readme.txt
+mtas/doc/blk_mem_gen_v7_3_vinfo.html
+mtas/doc/pg058-blk-mem-gen.pdf
+mtas.asy
+mtas.gise
+mtas.ngc
+mtas.sym
+mtas.v
+mtas.veo
+mtas.xco
+mtas.xise
+mtas_flist.txt
+mtas_xmdf.tcl
+summary.log

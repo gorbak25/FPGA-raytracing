@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/test/FPGA/raytracing/impact.xsl
+OUTFILE=/home/test/FPGA/raytracing/impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=/home/test/FPGA/raytracing
+LICENSE=iMPACT
+USER_INFO=iMPACT

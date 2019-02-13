@@ -1,0 +1,5 @@
+set -tmpdir "/home/test/FPGA/raytracing/xst/projnav.tmp"
+set -xsthdpdir "/home/test/FPGA/raytracing/xst"
+elaborate
+-ifn vector_neg.prj
+-ifmt mixed

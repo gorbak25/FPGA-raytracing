@@ -1,0 +1,2 @@
+verilog isim_temp "netgen/translate/ray_core_translate.v"
+verilog isim_temp "ray_core_test.v"

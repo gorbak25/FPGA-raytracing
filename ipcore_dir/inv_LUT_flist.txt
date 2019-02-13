@@ -1,0 +1,17 @@
+# Output products list for <inv_LUT>
+_xmsgs/pn_parser.xmsgs
+inv_LUT/blk_mem_gen_v7_3_readme.txt
+inv_LUT/doc/blk_mem_gen_v7_3_vinfo.html
+inv_LUT/doc/pg058-blk-mem-gen.pdf
+inv_LUT.asy
+inv_LUT.gise
+inv_LUT.mif
+inv_LUT.ngc
+inv_LUT.sym
+inv_LUT.v
+inv_LUT.veo
+inv_LUT.xco
+inv_LUT.xise
+inv_LUT_flist.txt
+inv_LUT_xmdf.tcl
+summary.log

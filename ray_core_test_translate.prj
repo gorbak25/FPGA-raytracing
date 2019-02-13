@@ -1,0 +1,2 @@
+verilog work "netgen/translate/ray_core_translate.v"
+verilog work "ray_core_test.v"

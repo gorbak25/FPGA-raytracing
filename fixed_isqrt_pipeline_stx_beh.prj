@@ -1,0 +1,4 @@
+verilog isim_temp "leading_one_detect.v"
+verilog isim_temp "ipcore_dir/isqrt_LUT.v"
+verilog isim_temp "fixed.v"
+verilog isim_temp "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

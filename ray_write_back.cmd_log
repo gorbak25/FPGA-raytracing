@@ -1,0 +1,22 @@
+vhdtdtfi -lang verilog -prj raytracing -o /home/test/FPGA/raytracing/ray_write_back.tfi -lib work /home/test/FPGA/raytracing//ray_write_back.v -module ray_write_back -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_write_back.ngc ray_write_back.ngd  
+map -intstyle ise -p xc5vfx130t-ff1738-2 -w -logic_opt on -ol std -t 1 -global_opt speed -equivalent_register_removal on -mt 2 -cm area -ir off -pr b -lc off -power off -o ray_write_back_map.ncd ray_write_back.ngd ray_write_back.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_write_back.ngc ray_write_back.ngd  
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_write_back.xst" -ofn "/home/test/FPGA/raytracing/ray_write_back.syr" 

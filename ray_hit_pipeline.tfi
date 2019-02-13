@@ -1,0 +1,19 @@
+
+
+
+// Instantiate the module
+ray_hit_pipeline instance_name (
+    .clk(clk), 
+    .obj_id(obj_id), 
+    .ray_origin(ray_origin), 
+    .ray_direction(ray_direction), 
+    .was_hit(was_hit), 
+    .hit_dist(hit_dist), 
+    .hit_pos(hit_pos), 
+    .hit_normal(hit_normal), 
+    .hit_mat_id(hit_mat_id), 
+    .new_data(new_data), 
+    .output_valid(output_valid)
+    );
+
+

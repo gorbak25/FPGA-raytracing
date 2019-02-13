@@ -1,0 +1,602 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: fixed_mul.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "fixed_mul.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "fixed_mul"
+Output Format                      : NGC
+Target Device                      : xc5vfx130t-2-ff1738
+
+---- Source Options
+Top Module Name                    : fixed_mul
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : Yes
+
+---- Target Options
+LUT Combining                      : Off
+Reduce Control Sets                : Off
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Move First FlipFlop Stage          : YES
+Move Last FlipFlop Stage           : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : True
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 2
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : NO
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "fixed.v" in library work
+Module <fixed_mul_comb> compiled
+Module <fixed_mul> compiled
+Module <fixed_mul_integer> compiled
+Module <fixed_mul_integer_comb> compiled
+Module <fixed_add> compiled
+Module <fixed_add_ce> compiled
+Module <fixed_add3> compiled
+Module <fixed_sub> compiled
+Module <fixed_add_comb> compiled
+Module <fixed_sub_comb> compiled
+Module <fixed_Q8_24_to_Q16_16> compiled
+No errors in compilation
+Analysis of file <"fixed_mul.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <fixed_mul> in library <work> with parameters.
+	D = "00000000000000000000000000001000"
+	Q = "00000000000000000000000000011000"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <fixed_mul>.
+	D = 32'sb00000000000000000000000000001000
+	Q = 32'sb00000000000000000000000000011000
+Module <fixed_mul> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <fixed_mul>.
+    Related source file is "fixed.v".
+WARNING:Xst:646 - Signal <stage2_tmp<63:40>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <output_valid>.
+    Found 32-bit register for signal <r>.
+    Found 40-bit comparator greater for signal <r$cmp_gt0000> created at line 136.
+    Found 40-bit comparator less for signal <r$cmp_lt0000> created at line 136.
+    Found 32-bit register for signal <stage1_a>.
+    Found 32-bit register for signal <stage1_b>.
+    Found 32x32-bit multiplier for signal <stage1_tmp>.
+    Found 1-bit register for signal <stage1_valid>.
+    Found 64-bit register for signal <stage2_tmp>.
+    Found 1-bit register for signal <stage2_valid>.
+    Found 64-bit register for signal <stage2a_tmp>.
+    Found 1-bit register for signal <stage2a_valid>.
+    Found 64-bit register for signal <stage2b_tmp>.
+    Found 1-bit register for signal <stage2b_valid>.
+    Found 64-bit register for signal <stage2c_tmp>.
+    Found 1-bit register for signal <stage2c_valid>.
+    Found 64-bit register for signal <stage2d_tmp>.
+    Found 1-bit register for signal <stage2d_valid>.
+    Summary:
+	inferred 423 D-type flip-flop(s).
+	inferred   1 Multiplier(s).
+	inferred   2 Comparator(s).
+Unit <fixed_mul> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 1
+ 32x32-bit multiplier                                  : 1
+# Registers                                            : 15
+ 1-bit register                                        : 7
+ 32-bit register                                       : 3
+ 64-bit register                                       : 5
+# Comparators                                          : 2
+ 40-bit comparator greater                             : 1
+ 40-bit comparator less                                : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <stage2a_tmp_40> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_41> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_42> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_43> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_44> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_45> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_46> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_47> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_48> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_49> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_50> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_51> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_52> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_53> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_54> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_55> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_56> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_57> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_58> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_59> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_60> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_61> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_62> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_63> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_40> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_41> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_42> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_43> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_44> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_45> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_46> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_47> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_48> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_49> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_50> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_51> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_52> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_53> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_54> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_55> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_56> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_57> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_58> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_59> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_60> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_61> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_62> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_63> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_40> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_41> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_42> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_43> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_44> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_45> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_46> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_47> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_48> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_49> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_50> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_51> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_52> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_53> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_54> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_55> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_56> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_57> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_58> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_59> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_60> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_61> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_62> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_63> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_40> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_41> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_42> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_43> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_44> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_45> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_46> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_47> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_48> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_49> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_50> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_51> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_52> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_53> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_54> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_55> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_56> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_57> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_58> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_59> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_60> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_61> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_62> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_63> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_40> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_41> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_42> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_43> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_44> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_45> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_46> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_47> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_48> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_49> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_50> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_51> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_52> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_53> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_54> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_55> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_56> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_57> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_58> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_59> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_60> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_61> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_62> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_63> of sequential type is unconnected in block <fixed_mul>.
+
+Synthesizing (advanced) Unit <fixed_mul>.
+	Found pipelined multiplier on signal <stage1_tmp>:
+		- 5 pipeline level(s) found in a register connected to the multiplier macro output.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <stage1_a>.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <stage1_b>.
+		Pushing register(s) into the multiplier macro.
+Unit <fixed_mul> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 1
+ 32x32-bit registered multiplier                       : 1
+# Registers                                            : 39
+ Flip-Flops                                            : 39
+# Comparators                                          : 2
+ 40-bit comparator greater                             : 1
+ 40-bit comparator less                                : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <Mmult_stage1_tmp4_0> (without init value) has a constant value of 0 in block <fixed_mul>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <fixed_mul> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block fixed_mul, actual ratio is 0.
+
+Final Macro Processing ...
+
+Processing Unit <fixed_mul> :
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_14>.
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_13>.
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_12>.
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_11>.
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_10>.
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_9>.
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_8>.
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_7>.
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_6>.
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_5>.
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_4>.
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_3>.
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_2>.
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_1>.
+	Found 2-bit shift register for signal <Mmult_stage1_tmp6_0>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_16>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_15>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_14>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_13>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_12>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_11>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_10>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_9>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_8>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_7>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_6>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_5>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_4>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_3>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_2>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_1>.
+	Found 3-bit shift register for signal <Mmult_stage1_tmp10_0>.
+INFO:Xst:741 - HDL ADVISOR - A 4-bit shift register was found for signal <stage2_valid> and currently occupies 4 logic cells (2 slices). Removing the set/reset logic would take advantage of SRL32 (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.
+Unit <fixed_mul> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 88
+ Flip-Flops                                            : 88
+# Shift Registers                                      : 32
+ 2-bit shift register                                  : 15
+ 3-bit shift register                                  : 17
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : fixed_mul.ngr
+Top Level Output File Name         : fixed_mul
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 100
+
+Cell Usage :
+# BELS                             : 98
+#      GND                         : 1
+#      INV                         : 1
+#      LUT4                        : 64
+#      LUT6                        : 31
+#      VCC                         : 1
+# FlipFlops/Latches                : 120
+#      FDE                         : 113
+#      FDR                         : 7
+# Shift Registers                  : 32
+#      SRLC16E                     : 32
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 99
+#      IBUF                        : 66
+#      OBUF                        : 33
+# DSPs                             : 4
+#      DSP48E                      : 4
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vfx130tff1738-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              71  out of  81920     0%  
+ Number of Slice LUTs:                  128  out of  81920     0%  
+    Number used as Logic:                96  out of  81920     0%  
+    Number used as Memory:               32  out of  25280     0%  
+       Number used as SRL:               32
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    167
+   Number with an unused Flip Flop:      96  out of    167    57%  
+   Number with an unused LUT:            39  out of    167    23%  
+   Number of fully used LUT-FF pairs:    32  out of    167    19%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                         100
+ Number of bonded IOBs:                 100  out of    840    11%  
+    IOB Flip Flops/Latches:              49
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+ Number of DSP48Es:                       4  out of    320     1%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 156   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 2.003ns (Maximum Frequency: 499.128MHz)
+   Minimum input arrival time before clock: 2.265ns
+   Maximum output required time after clock: 2.826ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.003ns (frequency: 499.128MHz)
+  Total number of paths / destination ports: 895 / 368
+-------------------------------------------------------------------------
+Delay:               2.003ns (Levels of Logic = 2)
+  Source:            Mmult_stage1_tmp11_2 (FF)
+  Destination:       r_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: Mmult_stage1_tmp11_2 to r_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.396   0.666  Mmult_stage1_tmp11_2 (Mmult_stage1_tmp11_2)
+     LUT4:I0->O           31   0.086   0.770  r_mux0000<10>1_SW0 (N01)
+     LUT6:I2->O            1   0.086   0.000  r_mux0000<9>1 (r_mux0000<9>)
+     FDE:D                    -0.022          r_22
+    ----------------------------------------
+    Total                      2.003ns (0.568ns logic, 1.435ns route)
+                                       (28.4% logic, 71.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 272 / 272
+-------------------------------------------------------------------------
+Offset:              2.265ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       Mmult_stage1_tmp (DSP)
+  Destination Clock: clk rising
+
+  Data Path: rst to Mmult_stage1_tmp
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             8   0.694   0.318  rst_IBUF (rst_IBUF)
+     INV:I->O            165   0.212   0.415  rst_inv1_INV_0 (rst_inv)
+     DSP48E:CEP                0.626          Mmult_stage1_tmp1
+    ----------------------------------------
+    Total                      2.265ns (1.532ns logic, 0.733ns route)
+                                       (67.6% logic, 32.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 33 / 33
+-------------------------------------------------------------------------
+Offset:              2.826ns (Levels of Logic = 1)
+  Source:            output_valid (FF)
+  Destination:       output_valid (PAD)
+  Source Clock:      clk rising
+
+  Data Path: output_valid to output_valid
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.396   0.286  output_valid (output_valid_OBUF)
+     OBUF:I->O                 2.144          output_valid_OBUF (output_valid)
+    ----------------------------------------
+    Total                      2.826ns (2.540ns logic, 0.286ns route)
+                                       (89.9% logic, 10.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.90 secs
+ 
+--> 
+
+
+Total memory usage is 547124 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  122 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

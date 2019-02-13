@@ -1,0 +1,483 @@
+Release 14.7 - reportgen P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Mon Jan  7 03:20:25 2019
+
+File: clz32.dly
+
+ The 20 worst nets by delay are:
++-----------------+-----------+
+| Max Delay       | Netname   |
++-----------------+-----------+
+   1.469            z_5_OBUF
+   1.466            z_4_OBUF
+   1.464            z_0_OBUF
+   1.456            z_1_OBUF
+   1.428            a_6_IBUF
+   1.418            z_2_OBUF
+   1.397            a_2_IBUF
+   1.370            z_3_OBUF
+   1.329            a_31_IBUF
+   1.320            a_4_IBUF
+   1.309            a_28_IBUF
+   1.308            a_14_IBUF
+   1.300            a_22_IBUF
+   1.296            a_3_IBUF
+   1.295            a_30_IBUF
+   1.283            a_19_IBUF
+   1.266            a_12_IBUF
+   1.250            a_0_IBUF
+   1.243            a_7_IBUF
+   1.224            clz16_low/zh<1>
+---------------------------------
+
+-------------------------------------------------------------------------------
+                               Net Delays
+-------------------------------------------------------------------------------
+
+Madd_z_addsub0000_cy<4>
+   Madd_z_addsub0000_cy<4>.B
+         0.392  zh<0>.A5
+         0.216  Madd_z_addsub0000_cy<4>.A6
+
+N01
+   N01.D
+         0.734  N01.C2
+
+N11
+   N11.B
+         0.188  N11.A6
+
+N13
+   N17.C
+         0.253  N17.A5
+
+N15
+   N15.A
+         0.713  zh<0>.B4
+
+N17
+   N17.D
+         0.429  zh<2>.A5
+
+N19
+   N19.A
+         0.906  z_1_OBUF.D5
+
+N21
+   N21.B
+         0.188  N21.A5
+
+N7
+   N7.D
+         0.133  N7.C6
+
+a_0_IBUF
+   a<0>.I
+         0.797  clz16_low/Madd_z_addsub0000_cy<3>.C6
+         1.250  z<0>53.B2
+         0.780  z<0>53.D5
+
+a_10_IBUF
+   a<10>.I
+         0.663  clz16_low/zh<1>.C5
+         0.663  clz16_low/zh<1>.D5
+         1.051  N01.B5
+         0.843  N01.C6
+         1.020  N21.B6
+
+a_11_IBUF
+   a<11>.I
+         0.858  clz16_low/zh<1>.C4
+         0.863  clz16_low/zh<1>.D4
+         1.151  N01.B4
+         0.664  N01.C5
+         1.119  N21.A4
+
+a_12_IBUF
+   a<12>.I
+         1.256  clz16_low/zh<1>.C3
+         1.266  clz16_low/zh<1>.D3
+         0.828  N01.A5
+         1.053  N01.D6
+         1.145  N21.A2
+
+a_13_IBUF
+   a<13>.I
+         1.034  clz16_low/zh<1>.C6
+         1.045  clz16_low/zh<1>.D6
+         0.864  N01.A3
+         0.657  N01.D5
+         0.959  N21.A1
+
+a_14_IBUF
+   a<14>.I
+         0.877  clz16_low/zh<1>.C2
+         0.888  clz16_low/zh<1>.D2
+         1.006  N01.B3
+         1.308  N01.D4
+         0.801  N21.A6
+
+a_15_IBUF
+   a<15>.I
+         1.039  clz16_low/zh<1>.C1
+         1.048  clz16_low/zh<1>.D1
+         1.022  N01.B2
+         0.844  N01.C1
+         1.006  N21.A3
+
+a_16_IBUF
+   a<16>.I
+         1.040  N17.C2
+         0.876  N17.D5
+         0.867  N15.A5
+         1.020  zh<3>.A6
+
+a_17_IBUF
+   a<17>.I
+         0.883  N17.C5
+         1.069  N17.D4
+         1.044  N15.A4
+         1.045  zh<3>.A4
+
+a_18_IBUF
+   a<18>.I
+         0.844  N17.C3
+         0.849  N17.D3
+         1.157  N15.A3
+         1.021  zh<3>.B5
+
+a_19_IBUF
+   a<19>.I
+         1.283  N17.C1
+         0.661  N17.D2
+         0.816  N15.A2
+         1.114  zh<3>.B4
+
+a_1_IBUF
+   a<1>.I
+         0.837  clz16_low/Madd_z_addsub0000_cy<3>.C4
+         1.014  z<0>53.B6
+         0.820  z<0>53.D4
+
+a_20_IBUF
+   a<20>.I
+         1.049  N17.C6
+         1.058  N17.D6
+         1.027  N15.A6
+         0.815  zh<3>.A5
+
+a_21_IBUF
+   a<21>.I
+         0.680  N17.C4
+         1.135  zh<3>.A3
+         0.810  zh<2>.A4
+         0.974  zh<0>.B3
+
+a_22_IBUF
+   a<22>.I
+         1.005  N17.A4
+         0.988  zh<3>.B3
+         1.300  zh<2>.A3
+         1.134  zh<0>.B5
+
+a_23_IBUF
+   a<23>.I
+         1.024  N17.A2
+         1.002  zh<3>.B2
+         1.008  zh<2>.A1
+         0.894  zh<0>.B1
+
+a_24_IBUF
+   a<24>.I
+         1.052  N7.A6
+         0.842  N7.D6
+         1.014  N11.B5
+
+a_25_IBUF
+   a<25>.I
+         1.141  N7.A4
+         0.650  N7.D5
+         1.103  N11.B6
+
+a_26_IBUF
+   a<26>.I
+         1.040  clz16_high/zh<1>.C5
+         1.051  clz16_high/zh<1>.D5
+         0.831  N7.B5
+         1.053  N7.D4
+         0.811  N11.B4
+
+a_27_IBUF
+   a<27>.I
+         0.850  clz16_high/zh<1>.C4
+         0.855  clz16_high/zh<1>.D4
+         1.162  N7.B4
+         1.064  N7.C5
+         1.130  N11.A5
+
+a_28_IBUF
+   a<28>.I
+         0.665  clz16_high/zh<1>.C3
+         0.665  clz16_high/zh<1>.D3
+         1.014  N7.A5
+         1.309  N7.C4
+         0.812  N11.A4
+
+a_29_IBUF
+   a<29>.I
+         1.039  clz16_high/zh<1>.C6
+         1.048  clz16_high/zh<1>.D6
+         1.026  N7.A3
+         0.844  N7.C3
+         1.006  N11.A3
+
+a_2_IBUF
+   a<2>.I
+         0.779  clz16_low/Madd_z_addsub0000_cy<3>.D5
+         1.112  z<0>53.B5
+         1.397  z<0>53.D1
+         1.109  N19.A3
+
+a_30_IBUF
+   a<30>.I
+         0.835  clz16_high/zh<1>.C2
+         0.846  clz16_high/zh<1>.D2
+         1.017  N7.B3
+         1.115  N7.C2
+         1.295  N11.A2
+
+a_31_IBUF
+   a<31>.I
+         1.294  clz16_high/zh<1>.C1
+         1.304  clz16_high/zh<1>.D1
+         1.329  N7.B2
+         1.200  N7.C1
+         0.966  N11.A1
+
+a_3_IBUF
+   a<3>.I
+         0.970  clz16_low/Madd_z_addsub0000_cy<3>.D4
+         0.906  z<0>53.A1
+         0.946  z<0>53.C2
+         1.296  z<0>53.D6
+         1.016  N19.A4
+
+a_4_IBUF
+   a<4>.I
+         0.860  clz16_low/Madd_z_addsub0000_cy<3>.C5
+         1.117  z<0>53.A5
+         1.020  z<0>53.B3
+         1.320  z<0>53.C4
+         0.850  z<0>53.D3
+         0.846  N19.A2
+
+a_5_IBUF
+   a<5>.I
+         1.057  clz16_low/Madd_z_addsub0000_cy<3>.C3
+         1.021  z<0>53.A6
+         0.868  z<0>53.B4
+         1.041  z<0>53.C5
+         1.046  z<0>53.D2
+         0.774  N19.A1
+
+a_6_IBUF
+   a<6>.I
+         1.428  clz16_low/Madd_z_addsub0000_cy<3>.D3
+         1.032  z<0>53.A2
+         0.857  z<0>53.C6
+         1.004  N19.A6
+
+a_7_IBUF
+   a<7>.I
+         1.052  clz16_low/Madd_z_addsub0000_cy<3>.D2
+         1.107  z<0>53.A3
+         1.243  z<0>53.C1
+         1.077  z_1_OBUF.D4
+
+a_8_IBUF
+   a<8>.I
+         1.056  N01.A6
+         1.192  N01.C4
+         1.018  N21.B5
+
+a_9_IBUF
+   a<9>.I
+         1.155  N01.A4
+         1.053  N01.C3
+         1.117  N21.B4
+
+clz16_high/Madd_z_addsub0000_cy<3>
+   zh<3>.B
+         0.358  zh<3>.C6
+         0.239  zh<3>.D5
+
+clz16_high/clz8_high/z<1>_bdd4
+   N7.A
+         0.276  clz16_high/zh<1>.CX
+         0.147  N7.B6
+
+clz16_high/clz8_low/z<1>_bdd4
+   zh<3>.A
+         0.117  zh<3>.B6
+
+clz16_high/z_cmp_eq0000
+   N17.B
+         0.228  N17.A3
+         0.742  zh<2>.A2
+         0.517  zh<0>.B2
+
+clz16_high/zh<0>
+   N11.A
+         0.697  N17.B3
+         0.506  zh<3>.C2
+         0.509  zh<3>.D6
+         0.891  zh<0>.B6
+
+clz16_high/zh<1>
+   clz16_high/zh<1>.CMUX
+         0.943  N17.A6
+         0.936  N17.B4
+         0.709  zh<3>.C3
+         0.711  zh<3>.D4
+
+clz16_high/zh<2>
+   N7.C
+         0.477  N17.B5
+         1.006  zh<3>.C4
+         0.639  zh<3>.D2
+         0.741  zh<2>.A6
+
+clz16_high/zh<3>
+   N7.B
+         0.591  N17.B6
+         0.773  zh<3>.C5
+         0.776  zh<3>.D3
+
+clz16_low/Madd_z_addsub0000_cy<3>
+   clz16_low/Madd_z_addsub0000_cy<3>.D
+         0.806  Madd_z_addsub0000_cy<4>.B6
+         0.995  z_cmp_eq0000.A6
+
+clz16_low/clz8_high/z<1>_bdd4
+   N01.A
+         0.276  clz16_low/zh<1>.CX
+         0.147  N01.B6
+
+clz16_low/clz8_low/z<1>_bdd4
+   clz16_low/Madd_z_addsub0000_cy<3>.C
+         0.222  clz16_low/Madd_z_addsub0000_cy<3>.D6
+         0.440  N19.A5
+
+clz16_low/z_cmp_eq0000
+   clz16_low/z_cmp_eq0000.D
+         0.263  z_cmp_eq0000.A3
+         0.271  z_2_OBUF.A3
+         0.560  z_0_OBUF.A3
+         0.748  z_1_OBUF.D1
+
+clz16_low/zh<0>
+   N21.A
+         0.528  Madd_z_addsub0000_cy<4>.B2
+         0.668  clz16_low/z_cmp_eq0000.D3
+         1.143  z_0_OBUF.A4
+
+clz16_low/zh<1>
+   clz16_low/zh<1>.CMUX
+         0.603  Madd_z_addsub0000_cy<4>.B3
+         0.832  clz16_low/z_cmp_eq0000.D4
+         1.224  z_1_OBUF.D3
+
+clz16_low/zh<2>
+   N01.C
+         0.771  Madd_z_addsub0000_cy<4>.B4
+         0.604  clz16_low/z_cmp_eq0000.D5
+         0.878  z_2_OBUF.A4
+
+clz16_low/zh<3>
+   N01.B
+         0.498  Madd_z_addsub0000_cy<4>.B5
+         0.484  clz16_low/z_cmp_eq0000.D6
+         0.725  z_cmp_eq0000.A4
+
+z<0>53
+   z<0>53.D
+         0.119  z<0>53.C3
+
+z<0>96
+   z<0>53.C
+         0.596  z_0_OBUF.A6
+
+z<2>56
+   z<0>53.B
+         0.188  z<0>53.A4
+
+z<2>98
+   z<0>53.A
+         0.566  z_2_OBUF.A6
+
+z_0_OBUF
+   z_0_OBUF.A
+         1.464  z<0>.O
+
+z_1_OBUF
+   z_1_OBUF.D
+         1.456  z<1>.O
+
+z_2_OBUF
+   z_2_OBUF.A
+         1.418  z<2>.O
+
+z_3_OBUF
+   z_cmp_eq0000.A
+         1.370  z<3>.O
+
+z_4_OBUF
+   zh<0>.A
+         1.466  z<4>.O
+
+z_5_OBUF
+   Madd_z_addsub0000_cy<4>.A
+         1.469  z<5>.O
+
+z_cmp_eq0000
+   z_cmp_eq0000.B
+         0.196  z_cmp_eq0000.A2
+         0.324  z_2_OBUF.A2
+         0.743  z_0_OBUF.A2
+         0.551  z_1_OBUF.D2
+
+zh<0>
+   zh<0>.B
+         0.198  zh<0>.A6
+         0.666  Madd_z_addsub0000_cy<4>.A1
+         0.755  z_cmp_eq0000.B2
+         0.910  z_0_OBUF.A5
+
+zh<1>
+   N17.A
+         0.905  zh<0>.A3
+         1.176  Madd_z_addsub0000_cy<4>.A2
+         1.148  z_cmp_eq0000.B3
+         1.026  z_1_OBUF.D6
+
+zh<2>
+   zh<2>.A
+         0.433  zh<0>.A4
+         1.062  Madd_z_addsub0000_cy<4>.A3
+         0.894  z_cmp_eq0000.B4
+         0.893  z_2_OBUF.A5
+
+zh<3>
+   zh<3>.D
+         0.731  zh<0>.A1
+         0.689  Madd_z_addsub0000_cy<4>.A4
+         0.792  z_cmp_eq0000.A5
+         1.074  z_cmp_eq0000.B5
+
+zh<4>
+   zh<3>.C
+         0.497  zh<0>.A2
+         0.720  Madd_z_addsub0000_cy<4>.A5
+         0.706  z_cmp_eq0000.B6
+

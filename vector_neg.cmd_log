@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj raytracing -o /home/test/FPGA/raytracing/vector_neg.tfi -lib work /home/test/FPGA/raytracing//vector_neg.v -module vector_neg -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

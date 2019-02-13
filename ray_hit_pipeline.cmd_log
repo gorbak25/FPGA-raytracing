@@ -1,0 +1,48 @@
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_hit_pipeline.ngc ray_hit_pipeline.ngd  
+map -intstyle ise -p xc5vfx130t-ff1738-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir off -pr off -lc off -power off -o ray_hit_pipeline_map.ncd ray_hit_pipeline.ngd ray_hit_pipeline.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+vhdtdtfi -lang verilog -prj raytracing -o /home/test/FPGA/raytracing/ray_hit_pipeline.tfi -lib work /home/test/FPGA/raytracing//ray_hit_pipeline.v -module ray_hit_pipeline -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_hit_pipeline.ngc ray_hit_pipeline.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_hit_pipeline.ngd ray_hit_pipeline_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_hit_pipeline.ngc ray_hit_pipeline.ngd  
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_hit_pipeline.ngc ray_hit_pipeline.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_hit_pipeline.ngd ray_hit_pipeline_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim ray_hit_pipeline.ngc ray_hit_pipeline_synthesis.v 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_hit_pipeline.ngc ray_hit_pipeline.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_hit_pipeline.ngd ray_hit_pipeline_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim ray_hit_pipeline.ngc ray_hit_pipeline_synthesis.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim ray_hit_pipeline.ngc ray_hit_pipeline_synthesis.v 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_hit_pipeline.ngc ray_hit_pipeline.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_hit_pipeline.ngd ray_hit_pipeline_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_hit_pipeline.ngc ray_hit_pipeline.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim ray_hit_pipeline.ngd ray_hit_pipeline_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_hit_pipeline.xst" -ofn "/home/test/FPGA/raytracing/ray_hit_pipeline.syr" 

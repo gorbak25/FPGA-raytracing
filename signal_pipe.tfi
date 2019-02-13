@@ -1,0 +1,11 @@
+
+
+
+// Instantiate the module
+signal_pipe instance_name (
+    .clk(clk), 
+    .in(in), 
+    .out(out)
+    );
+
+

@@ -1,0 +1,484 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: ray_sphere_normal_pipeline.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "ray_sphere_normal_pipeline.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "ray_sphere_normal_pipeline"
+Output Format                      : NGC
+Target Device                      : xc5vfx130t-2-ff1738
+
+---- Source Options
+Top Module Name                    : ray_sphere_normal_pipeline
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : Yes
+
+---- Target Options
+LUT Combining                      : Off
+Reduce Control Sets                : Off
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Move First FlipFlop Stage          : YES
+Move Last FlipFlop Stage           : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : True
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 2
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : NO
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "fixed.v" in library work
+Module <fixed_mul> compiled
+Module <fixed_mul_integer> compiled
+Module <fixed_add> compiled
+Module <fixed_add3> compiled
+Module <fixed_sub> compiled
+Module <fixed_add_comb> compiled
+Module <fixed_sub_comb> compiled
+Compiling verilog file "vector_sub.v" in library work
+Module <fixed_Q8_24_to_Q16_16> compiled
+Module <vector_sub> compiled
+Compiling verilog file "ray_sphere_normal_pipeline.v" in library work
+Module <vector_sub_comb> compiled
+Module <ray_sphere_normal_pipeline> compiled
+No errors in compilation
+Analysis of file <"ray_sphere_normal_pipeline.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <ray_sphere_normal_pipeline> in library <work>.
+
+Analyzing hierarchy for module <vector_sub_comb> in library <work>.
+
+Analyzing hierarchy for module <fixed_sub_comb> in library <work> with parameters.
+	D = "00000000000000000000000000001000"
+	Q = "00000000000000000000000000011000"
+
+Analyzing hierarchy for module <fixed_add_comb> in library <work> with parameters.
+	D = "00000000000000000000000000001000"
+	Q = "00000000000000000000000000011000"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <ray_sphere_normal_pipeline>.
+Module <ray_sphere_normal_pipeline> is correct for synthesis.
+ 
+Analyzing module <vector_sub_comb> in library <work>.
+Module <vector_sub_comb> is correct for synthesis.
+ 
+Analyzing module <fixed_sub_comb> in library <work>.
+	D = 32'sb00000000000000000000000000001000
+	Q = 32'sb00000000000000000000000000011000
+Module <fixed_sub_comb> is correct for synthesis.
+ 
+Analyzing module <fixed_add_comb> in library <work>.
+	D = 32'sb00000000000000000000000000001000
+	Q = 32'sb00000000000000000000000000011000
+Module <fixed_add_comb> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <fixed_add_comb>.
+    Related source file is "fixed.v".
+WARNING:Xst:646 - Signal <underflow> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <tmp> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <overflow> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <fixed_add_comb> synthesized.
+
+
+Synthesizing Unit <fixed_sub_comb>.
+    Related source file is "fixed.v".
+    Found 32-bit adder for signal <sign_inv>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <fixed_sub_comb> synthesized.
+
+
+Synthesizing Unit <vector_sub_comb>.
+    Related source file is "vector_sub.v".
+Unit <vector_sub_comb> synthesized.
+
+
+Synthesizing Unit <ray_sphere_normal_pipeline>.
+    Related source file is "ray_sphere_normal_pipeline.v".
+    Found 96-bit register for signal <hit_normal_unnormalized>.
+    Found 1-bit register for signal <output_valid>.
+    Found 96-bit register for signal <stage1_in_hit_pos>.
+    Found 96-bit register for signal <stage1_in_sphere_center>.
+    Found 1-bit register for signal <stage1_valid>.
+    Summary:
+	inferred 290 D-type flip-flop(s).
+Unit <ray_sphere_normal_pipeline> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 6
+ 32-bit adder                                          : 3
+ 33-bit adder                                          : 3
+# Registers                                            : 5
+ 1-bit register                                        : 2
+ 96-bit register                                       : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 6
+ 32-bit adder                                          : 3
+ 33-bit adder                                          : 3
+# Registers                                            : 290
+ Flip-Flops                                            : 290
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <ray_sphere_normal_pipeline> ...
+
+Optimizing unit <fixed_add_comb> ...
+
+Optimizing unit <fixed_sub_comb> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block ray_sphere_normal_pipeline, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 290
+ Flip-Flops                                            : 290
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : ray_sphere_normal_pipeline.ngr
+Top Level Output File Name         : ray_sphere_normal_pipeline
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 292
+
+Cell Usage :
+# BELS                             : 674
+#      GND                         : 1
+#      INV                         : 93
+#      LUT1                        : 3
+#      LUT2                        : 99
+#      LUT3                        : 93
+#      MUXCY                       : 189
+#      VCC                         : 1
+#      XORCY                       : 195
+# FlipFlops/Latches                : 290
+#      FDR                         : 290
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 291
+#      IBUF                        : 194
+#      OBUF                        : 97
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vfx130tff1738-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice LUTs:                  288  out of  81920     0%  
+    Number used as Logic:               288  out of  81920     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    288
+   Number with an unused Flip Flop:     288  out of    288   100%  
+   Number with an unused LUT:             0  out of    288     0%  
+   Number of fully used LUT-FF pairs:     0  out of    288     0%  
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                         292
+ Number of bonded IOBs:                 292  out of    840    34%  
+    IOB Flip Flops/Latches:             290
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 290   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 3.942ns (Maximum Frequency: 253.705MHz)
+   Minimum input arrival time before clock: 1.596ns
+   Maximum output required time after clock: 2.826ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.942ns (frequency: 253.705MHz)
+  Total number of paths / destination ports: 134215 / 97
+-------------------------------------------------------------------------
+Delay:               3.942ns (Levels of Logic = 36)
+  Source:            stage1_in_sphere_center_0 (FF)
+  Destination:       hit_normal_unnormalized_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: stage1_in_sphere_center_0 to hit_normal_unnormalized_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.396   0.412  stage1_in_sphere_center_0 (stage1_in_sphere_center_0)
+     LUT1:I0->O            1   0.086   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<0>_rt (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<0>_rt)
+     MUXCY:S->O            1   0.305   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<0> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<1> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<2> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<3> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<4> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<5> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<6> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<7> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<8> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<9> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<10> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<11> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<12> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<13> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<14> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<15> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<16> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<17> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<18> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<19> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<20> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<21> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<22> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<23> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<24> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<25> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<26> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<27> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<28> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<29> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_cy<29>)
+     XORCY:CI->O           1   0.300   0.412  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/Madd_sign_inv_xor<30> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/sign_inv<30>)
+     LUT2:I1->O            1   0.086   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/adder/Madd__old_tmp_1_lut<30> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/adder/Madd__old_tmp_1_lut<30>)
+     MUXCY:S->O            1   0.305   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/adder/Madd__old_tmp_1_cy<30> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/adder/Madd__old_tmp_1_cy<30>)
+     XORCY:CI->O          31   0.300   0.595  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/adder/Madd__old_tmp_1_xor<31> (sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/adder/_old_tmp_1<31>)
+     LUT3:I1->O            1   0.086   0.000  sub_sphere_norm_calc/gen_vec_sub[0].vec_sub/adder/r<30>1 (stage1_from_center_to_hit<30>)
+     FDR:D                    -0.022          hit_normal_unnormalized_30
+    ----------------------------------------
+    Total                      3.942ns (2.524ns logic, 1.418ns route)
+                                       (64.0% logic, 36.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 483 / 483
+-------------------------------------------------------------------------
+Offset:              1.596ns (Levels of Logic = 1)
+  Source:            rst (PAD)
+  Destination:       stage1_in_hit_pos_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to stage1_in_hit_pos_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           290   0.694   0.434  rst_IBUF (rst_IBUF)
+     FDR:R                     0.468          stage1_in_hit_pos_0
+    ----------------------------------------
+    Total                      1.596ns (1.162ns logic, 0.434ns route)
+                                       (72.8% logic, 27.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 97 / 97
+-------------------------------------------------------------------------
+Offset:              2.826ns (Levels of Logic = 1)
+  Source:            output_valid (FF)
+  Destination:       output_valid (PAD)
+  Source Clock:      clk rising
+
+  Data Path: output_valid to output_valid
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.396   0.286  output_valid (output_valid_OBUF)
+     OBUF:I->O                 2.144          output_valid_OBUF (output_valid)
+    ----------------------------------------
+    Total                      2.826ns (2.540ns logic, 0.286ns route)
+                                       (89.9% logic, 10.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.38 secs
+ 
+--> 
+
+
+Total memory usage is 541088 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

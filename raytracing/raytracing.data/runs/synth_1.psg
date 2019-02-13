@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Strategy Version="1" Minor="2">
+	<StratHandle Name="PlanAhead Defaults" Flow="XST14">
+		<Desc>PlanAhead Defaults (XST defaults with hierarchy)</Desc>
+	</StratHandle>
+	<Step Id="xst">
+		<Option Id="RegBalEnum">0</Option>
+		<Option Id="NrGlobClkBufsInt">32</Option>
+		<Option Id="PackIOBEnum">1</Option>
+		<Option Id="NetHierEnum">0</Option>
+		<Option Id="EquivRegRemovEnum">1</Option>
+	</Step>
+</Strategy>
+

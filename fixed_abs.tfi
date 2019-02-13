@@ -1,0 +1,10 @@
+
+
+
+// Instantiate the module
+fixed_abs instance_name (
+    .a(a), 
+    .r(r)
+    );
+
+

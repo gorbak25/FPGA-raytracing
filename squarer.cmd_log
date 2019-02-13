@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/squarer.xst" -ofn "/home/test/FPGA/raytracing/squarer.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vlx50t-ff1136-2 squarer.ngc squarer.ngd  
+map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir off -pr off -lc off -power off -o squarer_map.ncd squarer.ngd squarer.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/squarer.xst" -ofn "/home/test/FPGA/raytracing/squarer.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vlx50t-ff1136-2 squarer.ngc squarer.ngd  

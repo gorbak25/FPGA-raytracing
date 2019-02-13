@@ -1,0 +1,15 @@
+
+
+
+// Instantiate the module
+traced_materials instance_name (
+    .clk(clk), 
+    .mat_id(mat_id), 
+    .ambient_color(ambient_color), 
+    .is_diffuse(is_diffuse), 
+    .diffuse_color(diffuse_color), 
+    .is_reflective(is_reflective), 
+    .reflection_color(reflection_color)
+    );
+
+

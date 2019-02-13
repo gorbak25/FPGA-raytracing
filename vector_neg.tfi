@@ -1,0 +1,10 @@
+
+
+
+// Instantiate the module
+vector_neg instance_name (
+    .v(v), 
+    .r(r)
+    );
+
+

@@ -1,0 +1,13 @@
+
+
+
+// Instantiate the module
+traced_planes instance_name (
+    .clk(clk), 
+    .obj_id(obj_id), 
+    .plane_origin(plane_origin), 
+    .plane_normal(plane_normal), 
+    .mat_id(mat_id)
+    );
+
+

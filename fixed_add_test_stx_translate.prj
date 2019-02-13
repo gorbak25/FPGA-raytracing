@@ -1,0 +1,2 @@
+verilog isim_temp "netgen/translate/fixed_add_translate.v"
+verilog isim_temp "fixed_add_test.v"

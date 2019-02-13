@@ -1,0 +1,40 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /home/test/FPGA/raytracing/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to /home/test/FPGA/raytracing/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "leading_one_detect.v" in library work
+WARNING:HDLCompilers:21 - "leading_one_detect.v" line 28 Zero width on based number ignored
+WARNING:HDLCompilers:21 - "leading_one_detect.v" line 32 Zero width on based number ignored
+WARNING:HDLCompilers:21 - "leading_one_detect.v" line 36 Zero width on based number ignored
+Module <clz2> compiled
+ERROR:HDLCompilers:26 - "leading_one_detect.v" line 54 expecting ';', found ')'
+ERROR:HDLCompilers:26 - "leading_one_detect.v" line 55 expecting ';', found ')'
+Module <clz4> compiled
+Analysis of file <"leading_one_detect.prj"> failed.
+--> 
+
+
+Total memory usage is 460388 kilobytes
+
+Number of errors   :    2 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

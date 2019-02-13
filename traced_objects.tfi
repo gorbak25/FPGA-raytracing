@@ -1,0 +1,12 @@
+
+
+
+// Instantiate the module
+traced_objects instance_name (
+    .clk(clk), 
+    .obj_id(obj_id), 
+    .sub_id(sub_id), 
+    .type_id(type_id)
+    );
+
+

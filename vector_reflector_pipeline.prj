@@ -1,0 +1,6 @@
+verilog work "fixed.v"
+verilog work "vector_mul.v"
+verilog work "vector_dot.v"
+verilog work "vector_add.v"
+verilog work "signal_pipe.v"
+verilog work "vector_reflector.v"

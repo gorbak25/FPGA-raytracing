@@ -1,0 +1,957 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: vector_dot.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "vector_dot.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "vector_dot"
+Output Format                      : NGC
+Target Device                      : xc5vfx130t-2-ff1738
+
+---- Source Options
+Top Module Name                    : vector_dot
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : Yes
+
+---- Target Options
+LUT Combining                      : Off
+Reduce Control Sets                : Off
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Move First FlipFlop Stage          : YES
+Move Last FlipFlop Stage           : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : True
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 2
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : NO
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "fixed.v" in library work
+Module <fixed_mul> compiled
+Module <fixed_mul_integer> compiled
+Module <fixed_add> compiled
+Module <fixed_add3> compiled
+Module <fixed_sub> compiled
+Compiling verilog file "vector_dot.v" in library work
+Module <fixed_Q8_24_to_Q16_16> compiled
+Module <vector_dot> compiled
+Module <vector_Q24_8_to_Q16_16> compiled
+No errors in compilation
+Analysis of file <"vector_dot.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <vector_dot> in library <work> with parameters.
+	D = "00000000000000000000000000001000"
+	Q = "00000000000000000000000000011000"
+
+Analyzing hierarchy for module <fixed_add3> in library <work> with parameters.
+	D = "00000000000000000000000000001000"
+	Q = "00000000000000000000000000011000"
+
+Analyzing hierarchy for module <fixed_mul> in library <work> with parameters.
+	D = "00000000000000000000000000001000"
+	Q = "00000000000000000000000000011000"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <vector_dot>.
+	D = 32'sb00000000000000000000000000001000
+	Q = 32'sb00000000000000000000000000011000
+Module <vector_dot> is correct for synthesis.
+ 
+Analyzing module <fixed_add3> in library <work>.
+	D = 32'sb00000000000000000000000000001000
+	Q = 32'sb00000000000000000000000000011000
+Module <fixed_add3> is correct for synthesis.
+ 
+Analyzing module <fixed_mul> in library <work>.
+	D = 32'sb00000000000000000000000000001000
+	Q = 32'sb00000000000000000000000000011000
+Module <fixed_mul> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <fixed_add3>.
+    Related source file is "fixed.v".
+    Found 35-bit comparator greater for signal <r$cmp_gt0000> created at line 214.
+    Found 34-bit comparator less for signal <r$cmp_lt0000> created at line 214.
+    Found 34-bit adder for signal <tmp>.
+    Found 34-bit adder for signal <tmp$addsub0000> created at line 213.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <fixed_add3> synthesized.
+
+
+Synthesizing Unit <fixed_mul>.
+    Related source file is "fixed.v".
+WARNING:Xst:646 - Signal <stage2_tmp<23:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 32-bit register for signal <r>.
+    Found 1-bit register for signal <output_valid>.
+    Found 40-bit comparator greater for signal <r$cmp_gt0000> created at line 110.
+    Found 40-bit comparator less for signal <r$cmp_lt0000> created at line 110.
+    Found 32-bit register for signal <stage1_a>.
+    Found 32-bit register for signal <stage1_b>.
+    Found 32x32-bit multiplier for signal <stage1_tmp>.
+    Found 1-bit register for signal <stage1_valid>.
+    Found 64-bit register for signal <stage2_tmp>.
+    Found 1-bit register for signal <stage2_valid>.
+    Found 64-bit register for signal <stage2a_tmp>.
+    Found 1-bit register for signal <stage2a_valid>.
+    Found 64-bit register for signal <stage2b_tmp>.
+    Found 1-bit register for signal <stage2b_valid>.
+    Found 64-bit register for signal <stage2c_tmp>.
+    Found 1-bit register for signal <stage2c_valid>.
+    Found 64-bit register for signal <stage2d_tmp>.
+    Found 1-bit register for signal <stage2d_valid>.
+    Summary:
+	inferred 423 D-type flip-flop(s).
+	inferred   1 Multiplier(s).
+	inferred   2 Comparator(s).
+Unit <fixed_mul> synthesized.
+
+
+Synthesizing Unit <vector_dot>.
+    Related source file is "vector_dot.v".
+    Found 1-bit register for signal <output_valid>.
+    Found 32-bit register for signal <r>.
+    Summary:
+	inferred  33 D-type flip-flop(s).
+Unit <vector_dot> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 3
+ 32x32-bit multiplier                                  : 3
+# Adders/Subtractors                                   : 2
+ 34-bit adder                                          : 2
+# Registers                                            : 47
+ 1-bit register                                        : 22
+ 32-bit register                                       : 10
+ 64-bit register                                       : 15
+# Comparators                                          : 8
+ 34-bit comparator less                                : 1
+ 35-bit comparator greater                             : 1
+ 40-bit comparator greater                             : 3
+ 40-bit comparator less                                : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <stage2a_tmp_0> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_1> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_2> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_3> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_4> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_5> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_6> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_7> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_8> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_9> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_10> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_11> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_12> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_13> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_14> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_15> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_16> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_17> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_18> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_19> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_20> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_21> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_22> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_23> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_0> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_1> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_2> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_3> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_4> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_5> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_6> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_7> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_8> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_9> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_10> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_11> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_12> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_13> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_14> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_15> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_16> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_17> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_18> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_19> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_20> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_21> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_22> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_23> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_0> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_1> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_2> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_3> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_4> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_5> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_6> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_7> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_8> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_9> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_10> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_11> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_12> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_13> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_14> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_15> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_16> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_17> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_18> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_19> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_20> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_21> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_22> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_23> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_0> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_1> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_2> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_3> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_4> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_5> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_6> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_7> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_8> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_9> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_10> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_11> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_12> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_13> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_14> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_15> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_16> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_17> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_18> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_19> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_20> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_21> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_22> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_23> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_0> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_1> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_2> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_3> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_4> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_5> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_6> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_7> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_8> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_9> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_10> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_11> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_12> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_13> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_14> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_15> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_16> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_17> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_18> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_19> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_20> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_21> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_22> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_23> of sequential type is unconnected in block <gen_mul[0].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_0> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_1> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_2> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_3> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_4> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_5> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_6> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_7> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_8> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_9> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_10> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_11> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_12> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_13> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_14> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_15> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_16> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_17> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_18> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_19> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_20> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_21> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_22> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_23> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_0> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_1> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_2> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_3> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_4> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_5> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_6> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_7> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_8> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_9> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_10> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_11> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_12> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_13> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_14> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_15> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_16> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_17> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_18> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_19> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_20> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_21> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_22> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_23> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_0> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_1> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_2> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_3> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_4> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_5> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_6> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_7> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_8> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_9> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_10> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_11> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_12> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_13> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_14> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_15> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_16> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_17> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_18> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_19> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_20> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_21> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_22> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_23> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_0> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_1> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_2> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_3> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_4> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_5> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_6> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_7> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_8> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_9> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_10> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_11> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_12> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_13> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_14> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_15> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_16> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_17> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_18> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_19> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_20> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_21> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_22> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_23> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_0> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_1> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_2> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_3> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_4> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_5> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_6> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_7> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_8> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_9> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_10> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_11> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_12> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_13> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_14> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_15> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_16> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_17> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_18> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_19> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_20> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_21> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_22> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_23> of sequential type is unconnected in block <gen_mul[1].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_0> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_1> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_2> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_3> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_4> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_5> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_6> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_7> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_8> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_9> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_10> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_11> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_12> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_13> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_14> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_15> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_16> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_17> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_18> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_19> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_20> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_21> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_22> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2a_tmp_23> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_0> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_1> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_2> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_3> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_4> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_5> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_6> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_7> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_8> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_9> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_10> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_11> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_12> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_13> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_14> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_15> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_16> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_17> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_18> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_19> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_20> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_21> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_22> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2b_tmp_23> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_0> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_1> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_2> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_3> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_4> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_5> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_6> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_7> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_8> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_9> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_10> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_11> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_12> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_13> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_14> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_15> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_16> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_17> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_18> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_19> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_20> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_21> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_22> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2c_tmp_23> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_0> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_1> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_2> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_3> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_4> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_5> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_6> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_7> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_8> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_9> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_10> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_11> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_12> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_13> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_14> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_15> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_16> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_17> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_18> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_19> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_20> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_21> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_22> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2d_tmp_23> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_0> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_1> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_2> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_3> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_4> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_5> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_6> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_7> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_8> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_9> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_10> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_11> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_12> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_13> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_14> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_15> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_16> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_17> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_18> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_19> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_20> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_21> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_22> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+WARNING:Xst:2677 - Node <stage2_tmp_23> of sequential type is unconnected in block <gen_mul[2].dot_mul>.
+
+Synthesizing (advanced) Unit <fixed_mul>.
+	Found pipelined multiplier on signal <stage1_tmp>:
+		- 5 pipeline level(s) found in a register connected to the multiplier macro output.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <stage1_a>.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <stage1_b>.
+		Pushing register(s) into the multiplier macro.
+Unit <fixed_mul> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 3
+ 32x32-bit registered multiplier                       : 3
+# Adders/Subtractors                                   : 2
+ 34-bit adder                                          : 2
+# Registers                                            : 150
+ Flip-Flops                                            : 150
+# Comparators                                          : 8
+ 34-bit comparator less                                : 1
+ 35-bit comparator greater                             : 1
+ 40-bit comparator greater                             : 3
+ 40-bit comparator less                                : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <Mmult_stage1_tmp4_0> (without init value) has a constant value of 0 in block <fixed_mul>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <Mmult_stage1_tmp11_16> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <Mmult_stage1_tmp11_15> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <Mmult_stage1_tmp11_14> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <Mmult_stage1_tmp11_13> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <Mmult_stage1_tmp11_12> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <Mmult_stage1_tmp11_11> of sequential type is unconnected in block <fixed_mul>.
+WARNING:Xst:2677 - Node <Mmult_stage1_tmp11_10> of sequential type is unconnected in block <fixed_mul>.
+
+Optimizing unit <vector_dot> ...
+
+Optimizing unit <fixed_add3> ...
+
+Optimizing unit <fixed_mul> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <gen_mul[2].dot_mul/stage1_valid> in Unit <vector_dot> is equivalent to the following 2 FFs/Latches, which will be removed : <gen_mul[1].dot_mul/stage1_valid> <gen_mul[0].dot_mul/stage1_valid> 
+INFO:Xst:2261 - The FF/Latch <gen_mul[2].dot_mul/stage2a_valid> in Unit <vector_dot> is equivalent to the following 2 FFs/Latches, which will be removed : <gen_mul[1].dot_mul/stage2a_valid> <gen_mul[0].dot_mul/stage2a_valid> 
+INFO:Xst:2261 - The FF/Latch <gen_mul[2].dot_mul/stage2b_valid> in Unit <vector_dot> is equivalent to the following 2 FFs/Latches, which will be removed : <gen_mul[1].dot_mul/stage2b_valid> <gen_mul[0].dot_mul/stage2b_valid> 
+INFO:Xst:2261 - The FF/Latch <gen_mul[2].dot_mul/stage2c_valid> in Unit <vector_dot> is equivalent to the following 2 FFs/Latches, which will be removed : <gen_mul[1].dot_mul/stage2c_valid> <gen_mul[0].dot_mul/stage2c_valid> 
+INFO:Xst:2261 - The FF/Latch <gen_mul[2].dot_mul/stage2d_valid> in Unit <vector_dot> is equivalent to the following 2 FFs/Latches, which will be removed : <gen_mul[1].dot_mul/stage2d_valid> <gen_mul[0].dot_mul/stage2d_valid> 
+INFO:Xst:2261 - The FF/Latch <gen_mul[2].dot_mul/stage2_valid> in Unit <vector_dot> is equivalent to the following 2 FFs/Latches, which will be removed : <gen_mul[1].dot_mul/stage2_valid> <gen_mul[0].dot_mul/stage2_valid> 
+INFO:Xst:2261 - The FF/Latch <gen_mul[2].dot_mul/output_valid> in Unit <vector_dot> is equivalent to the following 2 FFs/Latches, which will be removed : <gen_mul[1].dot_mul/output_valid> <gen_mul[0].dot_mul/output_valid> 
+Found area constraint ratio of 100 (+ 5) on block vector_dot, actual ratio is 0.
+
+Pipelining and Register Balancing Report ...
+
+Processing Unit <vector_dot> :
+	Register(s) gen_mul[1].dot_mul/r_31 gen_mul[2].dot_mul/r_31 gen_mul[0].dot_mul/r_31 has(ve) been forward balanced into : dot_add/Madd_tmpC301_FRB.
+Unit <vector_dot> processed.
+
+Final Macro Processing ...
+
+Processing Unit <vector_dot> :
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_0>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_1>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_2>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_3>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_4>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_5>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_6>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_7>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_8>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_9>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_10>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_11>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_12>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_13>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/Mmult_stage1_tmp6_14>.
+	Found 2-bit shift register for signal <gen_mul[2].dot_mul/stage2d_valid>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_0>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_1>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_2>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_3>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_4>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_5>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_6>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_7>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_8>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_9>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_10>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_11>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_12>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_13>.
+	Found 2-bit shift register for signal <gen_mul[1].dot_mul/Mmult_stage1_tmp6_14>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_0>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_1>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_2>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_3>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_4>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_5>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_6>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_7>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_8>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_9>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_10>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_11>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_12>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_13>.
+	Found 2-bit shift register for signal <gen_mul[0].dot_mul/Mmult_stage1_tmp6_14>.
+Unit <vector_dot> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 261
+ Flip-Flops                                            : 261
+# Shift Registers                                      : 46
+ 2-bit shift register                                  : 46
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : vector_dot.ngr
+Top Level Output File Name         : vector_dot
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 228
+
+Cell Usage :
+# BELS                             : 271
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 1
+#      LUT3                        : 126
+#      LUT4                        : 38
+#      LUT6                        : 36
+#      MUXCY                       : 33
+#      VCC                         : 1
+#      XORCY                       : 34
+# FlipFlops/Latches                : 307
+#      FDE                         : 301
+#      FDR                         : 6
+# Shift Registers                  : 46
+#      SRLC16E                     : 46
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 227
+#      IBUF                        : 194
+#      OBUF                        : 33
+# DSPs                             : 12
+#      DSP48E                      : 12
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vfx130tff1738-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             229  out of  81920     0%  
+ Number of Slice LUTs:                  248  out of  81920     0%  
+    Number used as Logic:               202  out of  81920     0%  
+    Number used as Memory:               46  out of  25280     0%  
+       Number used as SRL:               46
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    336
+   Number with an unused Flip Flop:     107  out of    336    31%  
+   Number with an unused LUT:            88  out of    336    26%  
+   Number of fully used LUT-FF pairs:   141  out of    336    41%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                         228
+ Number of bonded IOBs:                 228  out of    840    27%  
+    IOB Flip Flops/Latches:              78
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+ Number of DSP48Es:                      12  out of    320     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 365   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 3.428ns (Maximum Frequency: 291.750MHz)
+   Minimum input arrival time before clock: 2.299ns
+   Maximum output required time after clock: 2.826ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.428ns (frequency: 291.750MHz)
+  Total number of paths / destination ports: 32982 / 1003
+-------------------------------------------------------------------------
+Delay:               3.428ns (Levels of Logic = 32)
+  Source:            gen_mul[2].dot_mul/r_2 (FF)
+  Destination:       r_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: gen_mul[2].dot_mul/r_2 to r_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.396   0.910  gen_mul[2].dot_mul/r_2 (gen_mul[2].dot_mul/r_2)
+     LUT6:I0->O            1   0.086   0.000  dot_add/Madd_tmp_Madd_lut<2> (dot_add/Madd_tmp_Madd_lut<2>)
+     MUXCY:S->O            1   0.305   0.000  dot_add/Madd_tmp_Madd_cy<2> (dot_add/Madd_tmp_Madd_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<3> (dot_add/Madd_tmp_Madd_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<4> (dot_add/Madd_tmp_Madd_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<5> (dot_add/Madd_tmp_Madd_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<6> (dot_add/Madd_tmp_Madd_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<7> (dot_add/Madd_tmp_Madd_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<8> (dot_add/Madd_tmp_Madd_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<9> (dot_add/Madd_tmp_Madd_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<10> (dot_add/Madd_tmp_Madd_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<11> (dot_add/Madd_tmp_Madd_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<12> (dot_add/Madd_tmp_Madd_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<13> (dot_add/Madd_tmp_Madd_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<14> (dot_add/Madd_tmp_Madd_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<15> (dot_add/Madd_tmp_Madd_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<16> (dot_add/Madd_tmp_Madd_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<17> (dot_add/Madd_tmp_Madd_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<18> (dot_add/Madd_tmp_Madd_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<19> (dot_add/Madd_tmp_Madd_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<20> (dot_add/Madd_tmp_Madd_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<21> (dot_add/Madd_tmp_Madd_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<22> (dot_add/Madd_tmp_Madd_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<23> (dot_add/Madd_tmp_Madd_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<24> (dot_add/Madd_tmp_Madd_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<25> (dot_add/Madd_tmp_Madd_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<26> (dot_add/Madd_tmp_Madd_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<27> (dot_add/Madd_tmp_Madd_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<28> (dot_add/Madd_tmp_Madd_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<29> (dot_add/Madd_tmp_Madd_cy<29>)
+     MUXCY:CI->O           1   0.023   0.000  dot_add/Madd_tmp_Madd_cy<30> (dot_add/Madd_tmp_Madd_cy<30>)
+     XORCY:CI->O          31   0.300   0.708  dot_add/Madd_tmp_Madd_xor<31> (dot_add/tmp<31>)
+     LUT4:I1->O            1   0.086   0.000  dot_add/r<9>1 (tmp_r<9>)
+     FDE:D                    -0.022          r_9
+    ----------------------------------------
+    Total                      3.428ns (1.810ns logic, 1.618ns route)
+                                       (52.8% logic, 47.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 711 / 711
+-------------------------------------------------------------------------
+Offset:              2.299ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       gen_mul[2].dot_mul/Mmult_stage1_tmp3 (DSP)
+  Destination Clock: clk rising
+
+  Data Path: rst to gen_mul[2].dot_mul/Mmult_stage1_tmp3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             7   0.694   0.314  rst_IBUF (rst_IBUF)
+     INV:I->O            407   0.212   0.453  rst_inv1_INV_0 (gen_mul[0].dot_mul/rst_inv)
+     DSP48E:CEP                0.626          gen_mul[0].dot_mul/Mmult_stage1_tmp1
+    ----------------------------------------
+    Total                      2.299ns (1.532ns logic, 0.767ns route)
+                                       (66.7% logic, 33.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 33 / 33
+-------------------------------------------------------------------------
+Offset:              2.826ns (Levels of Logic = 1)
+  Source:            output_valid (FF)
+  Destination:       output_valid (PAD)
+  Source Clock:      clk rising
+
+  Data Path: output_valid to output_valid
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.396   0.286  output_valid (output_valid_OBUF)
+     OBUF:I->O                 2.144          output_valid_OBUF (output_valid)
+    ----------------------------------------
+    Total                      2.826ns (2.540ns logic, 0.286ns route)
+                                       (89.9% logic, 10.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.50 secs
+ 
+--> 
+
+
+Total memory usage is 553380 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  369 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+

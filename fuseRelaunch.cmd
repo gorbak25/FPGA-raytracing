@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/test/FPGA/raytracing/ray_core_test_isim_beh.exe" -prj "/home/test/FPGA/raytracing/ray_core_test_beh.prj" "work.ray_core_test" "work.glbl" 

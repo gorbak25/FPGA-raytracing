@@ -1,0 +1,5 @@
+/home/test/FPGA/raytracing/top.ngc 1550049413
+ipcore_dir/frame_buffer.ngc 1548432355
+ipcore_dir/isqrt_LUT.ngc 1547397638
+ipcore_dir/inv_LUT.ngc 1547397697
+OK

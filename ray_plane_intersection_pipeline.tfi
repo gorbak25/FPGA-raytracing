@@ -1,0 +1,17 @@
+
+
+
+// Instantiate the module
+ray_plane_intersection_pipeline instance_name (
+    .clk(clk), 
+    .plane_origin(plane_origin), 
+    .plane_normal(plane_normal), 
+    .ray_origin(ray_origin), 
+    .ray_direction(ray_direction), 
+    .was_hit(was_hit), 
+    .hit_dist(hit_dist), 
+    .new_data(new_data), 
+    .output_valid(output_valid)
+    );
+
+

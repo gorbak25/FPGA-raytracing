@@ -1,0 +1,941 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: uart_subsystem.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "uart_subsystem.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "uart_subsystem"
+Output Format                      : NGC
+Target Device                      : xc5vfx130t-2-ff1738
+
+---- Source Options
+Top Module Name                    : uart_subsystem
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : Yes
+
+---- Target Options
+LUT Combining                      : Off
+Reduce Control Sets                : Off
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Move First FlipFlop Stage          : YES
+Move Last FlipFlop Stage           : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : True
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 2
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : NO
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "uart_receiver.v" in library work
+Compiling verilog file "uart_processor.v" in library work
+Module <uart_receiver> compiled
+Compiling verilog file "uart.v" in library work
+Module <uart_processor> compiled
+Compiling verilog file "uart_subsystem.v" in library work
+Module <uart_transmitter> compiled
+Module <uart_subsystem> compiled
+No errors in compilation
+Analysis of file <"uart_subsystem.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <uart_subsystem> in library <work>.
+
+Analyzing hierarchy for module <uart_transmitter> in library <work>.
+
+Analyzing hierarchy for module <uart_receiver> in library <work>.
+
+Analyzing hierarchy for module <uart_processor> in library <work> with parameters.
+	STATE_COMMIT_CAMERA = "00010000"
+	STATE_COMMIT_SCENE = "01000000"
+	STATE_DISPATCH_RES = "00001000"
+	STATE_GOT_LEN = "00000100"
+	STATE_GOT_TAG = "00000010"
+	STATE_IDLE = "00000001"
+	STATE_SEND_OUT_FRAME_CTR = "00100000"
+	TAG_CAMERA_FRONT = "00000010"
+	TAG_CAMERA_LEFT = "00000000"
+	TAG_CAMERA_ORIGIN = "00000011"
+	TAG_CAMERA_UP = "00000001"
+	TAG_COMMIT_CAMERA = "00000100"
+	TAG_COMMIT_SCENE = "00000111"
+	TAG_GET_FRAME_NUM = "00000101"
+	TAG_SET_MATERIAL = "00000110"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <uart_subsystem>.
+Module <uart_subsystem> is correct for synthesis.
+ 
+Analyzing module <uart_transmitter> in library <work>.
+Module <uart_transmitter> is correct for synthesis.
+ 
+Analyzing module <uart_receiver> in library <work>.
+Module <uart_receiver> is correct for synthesis.
+ 
+Analyzing module <uart_processor> in library <work>.
+	STATE_COMMIT_CAMERA = 8'b00010000
+	STATE_COMMIT_SCENE = 8'b01000000
+	STATE_DISPATCH_RES = 8'b00001000
+	STATE_GOT_LEN = 8'b00000100
+	STATE_GOT_TAG = 8'b00000010
+	STATE_IDLE = 8'b00000001
+	STATE_SEND_OUT_FRAME_CTR = 8'b00100000
+	TAG_CAMERA_FRONT = 8'b00000010
+	TAG_CAMERA_LEFT = 8'b00000000
+	TAG_CAMERA_ORIGIN = 8'b00000011
+	TAG_CAMERA_UP = 8'b00000001
+	TAG_COMMIT_CAMERA = 8'b00000100
+	TAG_COMMIT_SCENE = 8'b00000111
+	TAG_GET_FRAME_NUM = 8'b00000101
+	TAG_SET_MATERIAL = 8'b00000110
+Module <uart_processor> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <i> in unit <uart_processor> has a constant value of 1000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <receive_buff<2048>> in unit <uart_processor> has a constant value of 0 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <uart_transmitter>.
+    Related source file is "uart.v".
+    Found 1-bit register for signal <uart_tx>.
+    Found 4-bit down counter for signal <bitcount>.
+    Found 29-bit up accumulator for signal <d>.
+    Found 9-bit register for signal <shifter>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 Accumulator(s).
+	inferred  10 D-type flip-flop(s).
+Unit <uart_transmitter> synthesized.
+
+
+Synthesizing Unit <uart_receiver>.
+    Related source file is "uart_receiver.v".
+WARNING:Xst:646 - Signal <ign> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 8-bit register for signal <uart_dat_rx>.
+    Found 1-bit register for signal <uart_data_ready>.
+    Found 29-bit up accumulator for signal <d>.
+    Found 8-bit register for signal <delay>.
+    Found 8-bit subtractor for signal <delay$addsub0000> created at line 103.
+    Found 1-bit register for signal <prev_rx>.
+    Found 10-bit register for signal <rx_buff>.
+    Found 1-bit register for signal <start_trigger>.
+    Found 8-bit comparator greater for signal <start_trigger$cmp_gt0000> created at line 93.
+    Found 8-bit comparator lessequal for signal <start_trigger$cmp_le0000> created at line 93.
+    Found 4-bit down counter for signal <to_receive>.
+    Found 1-bit register for signal <uart_syn>.
+    Found 1-bit register for signal <uart_tmp>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 Accumulator(s).
+	inferred  31 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <uart_receiver> synthesized.
+
+
+Synthesizing Unit <uart_processor>.
+    Related source file is "uart_processor.v".
+WARNING:Xst:646 - Signal <receive_buff<2048:297>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 19                                             |
+    | Inputs             | 9                                              |
+    | Outputs            | 13                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00000001                                       |
+    | Power Up State     | 00000001                                       |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 96-bit register for signal <camera_origin>.
+    Found 1-bit register for signal <l2_flush_to_l1>.
+    Found 1-bit register for signal <stop_caster>.
+    Found 1-bit register for signal <l2_write_enable>.
+    Found 8-bit register for signal <uart_tx_byte>.
+    Found 3-bit register for signal <l2_write_id>.
+    Found 289-bit register for signal <l2_write_material>.
+    Found 96-bit register for signal <camera_left>.
+    Found 96-bit register for signal <camera_up>.
+    Found 96-bit register for signal <camera_front>.
+    Found 1-bit register for signal <uart_tx_start>.
+    Found 4-bit register for signal <bytes_sent>.
+    Found 4-bit adder for signal <bytes_sent$addsub0000> created at line 258.
+    Found 96-bit register for signal <camera_front_latch>.
+    Found 96-bit register for signal <camera_left_latch>.
+    Found 96-bit register for signal <camera_origin_latch>.
+    Found 96-bit register for signal <camera_up_latch>.
+    Found 8-bit register for signal <checksum>.
+    Found 8-bit xor2 for signal <checksum$xor0000> created at line 148.
+    Found 24-bit up counter for signal <frame_ctr>.
+    Found 24-bit register for signal <frame_ctr_latch>.
+    Found 297-bit register for signal <receive_buff<296:0>>.
+    Found 8-bit register for signal <received_len>.
+    Found 8-bit adder for signal <received_len$addsub0000> created at line 169.
+    Found 8-bit register for signal <received_tag>.
+    Found 8-bit comparator equal for signal <state$cmp_eq0000> created at line 154.
+    Found 8-bit comparator equal for signal <state$cmp_eq0001> created at line 156.
+    Found 8-bit register for signal <to_receive_len>.
+INFO:Xst:738 - HDL ADVISOR - 297 flip-flops were inferred for signal <receive_buff>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Counter(s).
+	inferred 1429 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <uart_processor> synthesized.
+
+
+Synthesizing Unit <uart_subsystem>.
+    Related source file is "uart_subsystem.v".
+WARNING:Xst:1306 - Output <stop_caster> is never assigned.
+Unit <uart_subsystem> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 1
+ 8-bit subtractor                                      : 1
+# Counters                                             : 3
+ 24-bit up counter                                     : 1
+ 4-bit down counter                                    : 2
+# Accumulators                                         : 2
+ 29-bit up accumulator                                 : 2
+# Registers                                            : 328
+ 1-bit register                                        : 307
+ 10-bit register                                       : 1
+ 24-bit register                                       : 1
+ 289-bit register                                      : 1
+ 3-bit register                                        : 1
+ 4-bit register                                        : 1
+ 8-bit register                                        : 7
+ 9-bit register                                        : 1
+ 96-bit register                                       : 8
+# Comparators                                          : 4
+ 8-bit comparator equal                                : 2
+ 8-bit comparator greater                              : 1
+ 8-bit comparator lessequal                            : 1
+# Xors                                                 : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <uart_processor_instance/state/FSM> on signal <state[1:7]> with one-hot encoding.
+----------------------
+ State    | Encoding
+----------------------
+ 00000001 | 0000001
+ 00000010 | 0000010
+ 00000100 | 0000100
+ 00001000 | 0001000
+ 00010000 | 0010000
+ 00100000 | 0100000
+ 01000000 | 1000000
+----------------------
+WARNING:Xst:2677 - Node <rx_buff_0> of sequential type is unconnected in block <uart_receiver_instance>.
+WARNING:Xst:2677 - Node <rx_buff_0> of sequential type is unconnected in block <uart_receiver>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 3
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 1
+ 8-bit subtractor                                      : 1
+# Counters                                             : 3
+ 24-bit up counter                                     : 1
+ 4-bit down counter                                    : 2
+# Accumulators                                         : 2
+ 29-bit up accumulator                                 : 2
+# Registers                                            : 1469
+ Flip-Flops                                            : 1469
+# Comparators                                          : 4
+ 8-bit comparator equal                                : 2
+ 8-bit comparator greater                              : 1
+ 8-bit comparator lessequal                            : 1
+# Xors                                                 : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <uart_subsystem> ...
+
+Optimizing unit <uart_transmitter> ...
+
+Optimizing unit <uart_receiver> ...
+
+Optimizing unit <uart_processor> ...
+WARNING:Xst:2677 - Node <uart_processor_instance/stop_caster> of sequential type is unconnected in block <uart_subsystem>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart_subsystem, actual ratio is 1.
+INFO:Xst:2261 - The FF/Latch <uart_processor_instance/receive_buff_0> in Unit <uart_subsystem> is equivalent to the following FF/Latch, which will be removed : <uart_processor_instance/receive_buff_1_BRB1> 
+
+Pipelining and Register Balancing Report ...
+
+Processing Unit <uart_subsystem> :
+	Register(s) uart_processor_instance/frame_ctr_latch_0 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_0_BRB0 uart_processor_instance/frame_ctr_latch_0_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_1 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_1_BRB0 uart_processor_instance/frame_ctr_latch_1_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_10 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_10_BRB0 uart_processor_instance/frame_ctr_latch_10_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_11 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_11_BRB0 uart_processor_instance/frame_ctr_latch_11_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_12 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_12_BRB0 uart_processor_instance/frame_ctr_latch_12_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_13 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_13_BRB0 uart_processor_instance/frame_ctr_latch_13_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_14 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_14_BRB0 uart_processor_instance/frame_ctr_latch_14_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_15 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_15_BRB0 uart_processor_instance/frame_ctr_latch_15_BRB3 uart_processor_instance/frame_ctr_latch_15_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_16 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_16_BRB0 uart_processor_instance/frame_ctr_latch_16_BRB2 .
+	Register(s) uart_processor_instance/frame_ctr_latch_17 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_17_BRB0 uart_processor_instance/frame_ctr_latch_17_BRB2 .
+	Register(s) uart_processor_instance/frame_ctr_latch_18 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_18_BRB0 uart_processor_instance/frame_ctr_latch_18_BRB2 .
+	Register(s) uart_processor_instance/frame_ctr_latch_19 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_19_BRB0 uart_processor_instance/frame_ctr_latch_19_BRB2 .
+	Register(s) uart_processor_instance/frame_ctr_latch_2 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_2_BRB2 uart_processor_instance/frame_ctr_latch_2_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_20 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_20_BRB0 uart_processor_instance/frame_ctr_latch_20_BRB2 .
+	Register(s) uart_processor_instance/frame_ctr_latch_21 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_21_BRB0 uart_processor_instance/frame_ctr_latch_21_BRB2 .
+	Register(s) uart_processor_instance/frame_ctr_latch_22 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_22_BRB0 uart_processor_instance/frame_ctr_latch_22_BRB2 .
+	Register(s) uart_processor_instance/frame_ctr_latch_23 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_23_BRB0 uart_processor_instance/frame_ctr_latch_23_BRB1 uart_processor_instance/frame_ctr_latch_23_BRB2 uart_processor_instance/frame_ctr_latch_23_BRB3.
+	Register(s) uart_processor_instance/frame_ctr_latch_3 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_3_BRB2 uart_processor_instance/frame_ctr_latch_3_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_4 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_4_BRB2 uart_processor_instance/frame_ctr_latch_4_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_5 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_5_BRB2 uart_processor_instance/frame_ctr_latch_5_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_6 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_6_BRB2 uart_processor_instance/frame_ctr_latch_6_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_7 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_7_BRB2 uart_processor_instance/frame_ctr_latch_7_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_8 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_8_BRB2 uart_processor_instance/frame_ctr_latch_8_BRB4 .
+	Register(s) uart_processor_instance/frame_ctr_latch_9 has(ve) been backward balanced into : uart_processor_instance/frame_ctr_latch_9_BRB2 uart_processor_instance/frame_ctr_latch_9_BRB4 .
+	Register(s) uart_processor_instance/receive_buff_1 has(ve) been backward balanced into : uart_processor_instance/receive_buff_1_BRB0 uart_processor_instance/receive_buff_1_BRB2 uart_processor_instance/receive_buff_1_BRB3.
+	Register(s) uart_processor_instance/receive_buff_10 has(ve) been backward balanced into : uart_processor_instance/receive_buff_10_BRB0 uart_processor_instance/receive_buff_10_BRB3.
+	Register(s) uart_processor_instance/receive_buff_100 has(ve) been backward balanced into : uart_processor_instance/receive_buff_100_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_101 has(ve) been backward balanced into : uart_processor_instance/receive_buff_101_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_102 has(ve) been backward balanced into : uart_processor_instance/receive_buff_102_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_103 has(ve) been backward balanced into : uart_processor_instance/receive_buff_103_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_104 has(ve) been backward balanced into : uart_processor_instance/receive_buff_104_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_105 has(ve) been backward balanced into : uart_processor_instance/receive_buff_105_BRB0 uart_processor_instance/receive_buff_105_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_106 has(ve) been backward balanced into : uart_processor_instance/receive_buff_106_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_107 has(ve) been backward balanced into : uart_processor_instance/receive_buff_107_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_108 has(ve) been backward balanced into : uart_processor_instance/receive_buff_108_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_109 has(ve) been backward balanced into : uart_processor_instance/receive_buff_109_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_11 has(ve) been backward balanced into : uart_processor_instance/receive_buff_11_BRB0 uart_processor_instance/receive_buff_11_BRB3.
+	Register(s) uart_processor_instance/receive_buff_110 has(ve) been backward balanced into : uart_processor_instance/receive_buff_110_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_111 has(ve) been backward balanced into : uart_processor_instance/receive_buff_111_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_112 has(ve) been backward balanced into : uart_processor_instance/receive_buff_112_BRB0 uart_processor_instance/receive_buff_112_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_113 has(ve) been backward balanced into : uart_processor_instance/receive_buff_113_BRB0 uart_processor_instance/receive_buff_113_BRB1 uart_processor_instance/receive_buff_113_BRB3.
+	Register(s) uart_processor_instance/receive_buff_114 has(ve) been backward balanced into : uart_processor_instance/receive_buff_114_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_115 has(ve) been backward balanced into : uart_processor_instance/receive_buff_115_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_116 has(ve) been backward balanced into : uart_processor_instance/receive_buff_116_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_117 has(ve) been backward balanced into : uart_processor_instance/receive_buff_117_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_118 has(ve) been backward balanced into : uart_processor_instance/receive_buff_118_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_119 has(ve) been backward balanced into : uart_processor_instance/receive_buff_119_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_12 has(ve) been backward balanced into : uart_processor_instance/receive_buff_12_BRB0 uart_processor_instance/receive_buff_12_BRB3.
+	Register(s) uart_processor_instance/receive_buff_120 has(ve) been backward balanced into : uart_processor_instance/receive_buff_120_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_121 has(ve) been backward balanced into : uart_processor_instance/receive_buff_121_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_122 has(ve) been backward balanced into : uart_processor_instance/receive_buff_122_BRB0 uart_processor_instance/receive_buff_122_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_123 has(ve) been backward balanced into : uart_processor_instance/receive_buff_123_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_124 has(ve) been backward balanced into : uart_processor_instance/receive_buff_124_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_125 has(ve) been backward balanced into : uart_processor_instance/receive_buff_125_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_126 has(ve) been backward balanced into : uart_processor_instance/receive_buff_126_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_127 has(ve) been backward balanced into : uart_processor_instance/receive_buff_127_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_128 has(ve) been backward balanced into : uart_processor_instance/receive_buff_128_BRB1 uart_processor_instance/receive_buff_128_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_129 has(ve) been backward balanced into : uart_processor_instance/receive_buff_129_BRB0 uart_processor_instance/receive_buff_129_BRB1 uart_processor_instance/receive_buff_129_BRB2.
+	Register(s) uart_processor_instance/receive_buff_13 has(ve) been backward balanced into : uart_processor_instance/receive_buff_13_BRB0 uart_processor_instance/receive_buff_13_BRB3.
+	Register(s) uart_processor_instance/receive_buff_130 has(ve) been backward balanced into : uart_processor_instance/receive_buff_130_BRB1 uart_processor_instance/receive_buff_130_BRB2.
+	Register(s) uart_processor_instance/receive_buff_131 has(ve) been backward balanced into : uart_processor_instance/receive_buff_131_BRB1 uart_processor_instance/receive_buff_131_BRB2.
+	Register(s) uart_processor_instance/receive_buff_132 has(ve) been backward balanced into : uart_processor_instance/receive_buff_132_BRB1 uart_processor_instance/receive_buff_132_BRB2.
+	Register(s) uart_processor_instance/receive_buff_133 has(ve) been backward balanced into : uart_processor_instance/receive_buff_133_BRB1 uart_processor_instance/receive_buff_133_BRB2.
+	Register(s) uart_processor_instance/receive_buff_134 has(ve) been backward balanced into : uart_processor_instance/receive_buff_134_BRB1 uart_processor_instance/receive_buff_134_BRB2.
+	Register(s) uart_processor_instance/receive_buff_135 has(ve) been backward balanced into : uart_processor_instance/receive_buff_135_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_136 has(ve) been backward balanced into : uart_processor_instance/receive_buff_136_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_137 has(ve) been backward balanced into : uart_processor_instance/receive_buff_137_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_138 has(ve) been backward balanced into : uart_processor_instance/receive_buff_138_BRB0 uart_processor_instance/receive_buff_138_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_139 has(ve) been backward balanced into : uart_processor_instance/receive_buff_139_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_14 has(ve) been backward balanced into : uart_processor_instance/receive_buff_14_BRB0 uart_processor_instance/receive_buff_14_BRB3.
+	Register(s) uart_processor_instance/receive_buff_140 has(ve) been backward balanced into : uart_processor_instance/receive_buff_140_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_141 has(ve) been backward balanced into : uart_processor_instance/receive_buff_141_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_142 has(ve) been backward balanced into : uart_processor_instance/receive_buff_142_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_143 has(ve) been backward balanced into : uart_processor_instance/receive_buff_143_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_144 has(ve) been backward balanced into : uart_processor_instance/receive_buff_144_BRB0 uart_processor_instance/receive_buff_144_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_145 has(ve) been backward balanced into : uart_processor_instance/receive_buff_145_BRB2 uart_processor_instance/receive_buff_145_BRB3 uart_processor_instance/receive_buff_145_BRB5.
+	Register(s) uart_processor_instance/receive_buff_146 has(ve) been backward balanced into : uart_processor_instance/receive_buff_146_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_147 has(ve) been backward balanced into : uart_processor_instance/receive_buff_147_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_148 has(ve) been backward balanced into : uart_processor_instance/receive_buff_148_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_149 has(ve) been backward balanced into : uart_processor_instance/receive_buff_149_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_15 has(ve) been backward balanced into : uart_processor_instance/receive_buff_15_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_150 has(ve) been backward balanced into : uart_processor_instance/receive_buff_150_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_151 has(ve) been backward balanced into : uart_processor_instance/receive_buff_151_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_152 has(ve) been backward balanced into : uart_processor_instance/receive_buff_152_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_153 has(ve) been backward balanced into : uart_processor_instance/receive_buff_153_BRB1 uart_processor_instance/receive_buff_153_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_154 has(ve) been backward balanced into : uart_processor_instance/receive_buff_154_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_155 has(ve) been backward balanced into : uart_processor_instance/receive_buff_155_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_156 has(ve) been backward balanced into : uart_processor_instance/receive_buff_156_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_157 has(ve) been backward balanced into : uart_processor_instance/receive_buff_157_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_158 has(ve) been backward balanced into : uart_processor_instance/receive_buff_158_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_159 has(ve) been backward balanced into : uart_processor_instance/receive_buff_159_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_16 has(ve) been backward balanced into : uart_processor_instance/receive_buff_16_BRB0 uart_processor_instance/receive_buff_16_BRB1 uart_processor_instance/receive_buff_16_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_160 has(ve) been backward balanced into : uart_processor_instance/receive_buff_160_BRB1 uart_processor_instance/receive_buff_160_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_161 has(ve) been backward balanced into : uart_processor_instance/receive_buff_161_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_162 has(ve) been backward balanced into : uart_processor_instance/receive_buff_162_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_163 has(ve) been backward balanced into : uart_processor_instance/receive_buff_163_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_164 has(ve) been backward balanced into : uart_processor_instance/receive_buff_164_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_165 has(ve) been backward balanced into : uart_processor_instance/receive_buff_165_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_166 has(ve) been backward balanced into : uart_processor_instance/receive_buff_166_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_167 has(ve) been backward balanced into : uart_processor_instance/receive_buff_167_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_168 has(ve) been backward balanced into : uart_processor_instance/receive_buff_168_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_169 has(ve) been backward balanced into : uart_processor_instance/receive_buff_169_BRB0 uart_processor_instance/receive_buff_169_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_17 has(ve) been backward balanced into : uart_processor_instance/receive_buff_17_BRB2 uart_processor_instance/receive_buff_17_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_170 has(ve) been backward balanced into : uart_processor_instance/receive_buff_170_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_171 has(ve) been backward balanced into : uart_processor_instance/receive_buff_171_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_172 has(ve) been backward balanced into : uart_processor_instance/receive_buff_172_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_173 has(ve) been backward balanced into : uart_processor_instance/receive_buff_173_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_174 has(ve) been backward balanced into : uart_processor_instance/receive_buff_174_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_175 has(ve) been backward balanced into : uart_processor_instance/receive_buff_175_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_176 has(ve) been backward balanced into : uart_processor_instance/receive_buff_176_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_177 has(ve) been backward balanced into : uart_processor_instance/receive_buff_177_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_178 has(ve) been backward balanced into : uart_processor_instance/receive_buff_178_BRB2 uart_processor_instance/receive_buff_178_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_179 has(ve) been backward balanced into : uart_processor_instance/receive_buff_179_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_18 has(ve) been backward balanced into : uart_processor_instance/receive_buff_18_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_180 has(ve) been backward balanced into : uart_processor_instance/receive_buff_180_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_181 has(ve) been backward balanced into : uart_processor_instance/receive_buff_181_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_182 has(ve) been backward balanced into : uart_processor_instance/receive_buff_182_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_183 has(ve) been backward balanced into : uart_processor_instance/receive_buff_183_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_184 has(ve) been backward balanced into : uart_processor_instance/receive_buff_184_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_185 has(ve) been backward balanced into : uart_processor_instance/receive_buff_185_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_186 has(ve) been backward balanced into : uart_processor_instance/receive_buff_186_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_187 has(ve) been backward balanced into : uart_processor_instance/receive_buff_187_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_188 has(ve) been backward balanced into : uart_processor_instance/receive_buff_188_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_189 has(ve) been backward balanced into : uart_processor_instance/receive_buff_189_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_19 has(ve) been backward balanced into : uart_processor_instance/receive_buff_19_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_190 has(ve) been backward balanced into : uart_processor_instance/receive_buff_190_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_191 has(ve) been backward balanced into : uart_processor_instance/receive_buff_191_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_192 has(ve) been backward balanced into : uart_processor_instance/receive_buff_192_BRB0 uart_processor_instance/receive_buff_192_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_193 has(ve) been backward balanced into : uart_processor_instance/receive_buff_193_BRB0 uart_processor_instance/receive_buff_193_BRB1 uart_processor_instance/receive_buff_193_BRB3.
+	Register(s) uart_processor_instance/receive_buff_194 has(ve) been backward balanced into : uart_processor_instance/receive_buff_194_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_195 has(ve) been backward balanced into : uart_processor_instance/receive_buff_195_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_196 has(ve) been backward balanced into : uart_processor_instance/receive_buff_196_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_197 has(ve) been backward balanced into : uart_processor_instance/receive_buff_197_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_198 has(ve) been backward balanced into : uart_processor_instance/receive_buff_198_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_199 has(ve) been backward balanced into : uart_processor_instance/receive_buff_199_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_2 has(ve) been backward balanced into : uart_processor_instance/receive_buff_2_BRB0 uart_processor_instance/receive_buff_2_BRB1 uart_processor_instance/receive_buff_2_BRB2 uart_processor_instance/receive_buff_2_BRB3.
+	Register(s) uart_processor_instance/receive_buff_20 has(ve) been backward balanced into : uart_processor_instance/receive_buff_20_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_200 has(ve) been backward balanced into : uart_processor_instance/receive_buff_200_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_201 has(ve) been backward balanced into : uart_processor_instance/receive_buff_201_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_202 has(ve) been backward balanced into : uart_processor_instance/receive_buff_202_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_203 has(ve) been backward balanced into : uart_processor_instance/receive_buff_203_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_204 has(ve) been backward balanced into : uart_processor_instance/receive_buff_204_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_205 has(ve) been backward balanced into : uart_processor_instance/receive_buff_205_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_206 has(ve) been backward balanced into : uart_processor_instance/receive_buff_206_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_207 has(ve) been backward balanced into : uart_processor_instance/receive_buff_207_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_208 has(ve) been backward balanced into : uart_processor_instance/receive_buff_208_BRB0 uart_processor_instance/receive_buff_208_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_209 has(ve) been backward balanced into : uart_processor_instance/receive_buff_209_BRB2 uart_processor_instance/receive_buff_209_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_21 has(ve) been backward balanced into : uart_processor_instance/receive_buff_21_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_210 has(ve) been backward balanced into : uart_processor_instance/receive_buff_210_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_211 has(ve) been backward balanced into : uart_processor_instance/receive_buff_211_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_212 has(ve) been backward balanced into : uart_processor_instance/receive_buff_212_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_213 has(ve) been backward balanced into : uart_processor_instance/receive_buff_213_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_214 has(ve) been backward balanced into : uart_processor_instance/receive_buff_214_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_215 has(ve) been backward balanced into : uart_processor_instance/receive_buff_215_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_216 has(ve) been backward balanced into : uart_processor_instance/receive_buff_216_BRB1 uart_processor_instance/receive_buff_216_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_217 has(ve) been backward balanced into : uart_processor_instance/receive_buff_217_BRB0 uart_processor_instance/receive_buff_217_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_218 has(ve) been backward balanced into : uart_processor_instance/receive_buff_218_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_219 has(ve) been backward balanced into : uart_processor_instance/receive_buff_219_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_22 has(ve) been backward balanced into : uart_processor_instance/receive_buff_22_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_220 has(ve) been backward balanced into : uart_processor_instance/receive_buff_220_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_221 has(ve) been backward balanced into : uart_processor_instance/receive_buff_221_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_222 has(ve) been backward balanced into : uart_processor_instance/receive_buff_222_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_223 has(ve) been backward balanced into : uart_processor_instance/receive_buff_223_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_224 has(ve) been backward balanced into : uart_processor_instance/receive_buff_224_BRB1 uart_processor_instance/receive_buff_224_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_225 has(ve) been backward balanced into : uart_processor_instance/receive_buff_225_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_226 has(ve) been backward balanced into : uart_processor_instance/receive_buff_226_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_227 has(ve) been backward balanced into : uart_processor_instance/receive_buff_227_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_228 has(ve) been backward balanced into : uart_processor_instance/receive_buff_228_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_229 has(ve) been backward balanced into : uart_processor_instance/receive_buff_229_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_23 has(ve) been backward balanced into : uart_processor_instance/receive_buff_23_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_230 has(ve) been backward balanced into : uart_processor_instance/receive_buff_230_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_231 has(ve) been backward balanced into : uart_processor_instance/receive_buff_231_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_232 has(ve) been backward balanced into : uart_processor_instance/receive_buff_232_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_233 has(ve) been backward balanced into : uart_processor_instance/receive_buff_233_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_234 has(ve) been backward balanced into : uart_processor_instance/receive_buff_234_BRB0 uart_processor_instance/receive_buff_234_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_235 has(ve) been backward balanced into : uart_processor_instance/receive_buff_235_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_236 has(ve) been backward balanced into : uart_processor_instance/receive_buff_236_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_237 has(ve) been backward balanced into : uart_processor_instance/receive_buff_237_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_238 has(ve) been backward balanced into : uart_processor_instance/receive_buff_238_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_239 has(ve) been backward balanced into : uart_processor_instance/receive_buff_239_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_24 has(ve) been backward balanced into : uart_processor_instance/receive_buff_24_BRB1 uart_processor_instance/receive_buff_24_BRB2 uart_processor_instance/receive_buff_24_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_240 has(ve) been backward balanced into : uart_processor_instance/receive_buff_240_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_241 has(ve) been backward balanced into : uart_processor_instance/receive_buff_241_BRB2 uart_processor_instance/receive_buff_241_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_242 has(ve) been backward balanced into : uart_processor_instance/receive_buff_242_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_243 has(ve) been backward balanced into : uart_processor_instance/receive_buff_243_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_244 has(ve) been backward balanced into : uart_processor_instance/receive_buff_244_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_245 has(ve) been backward balanced into : uart_processor_instance/receive_buff_245_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_246 has(ve) been backward balanced into : uart_processor_instance/receive_buff_246_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_247 has(ve) been backward balanced into : uart_processor_instance/receive_buff_247_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_248 has(ve) been backward balanced into : uart_processor_instance/receive_buff_248_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_249 has(ve) been backward balanced into : uart_processor_instance/receive_buff_249_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_25 has(ve) been backward balanced into : uart_processor_instance/receive_buff_25_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_250 has(ve) been backward balanced into : uart_processor_instance/receive_buff_250_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_251 has(ve) been backward balanced into : uart_processor_instance/receive_buff_251_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_252 has(ve) been backward balanced into : uart_processor_instance/receive_buff_252_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_253 has(ve) been backward balanced into : uart_processor_instance/receive_buff_253_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_254 has(ve) been backward balanced into : uart_processor_instance/receive_buff_254_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_255 has(ve) been backward balanced into : uart_processor_instance/receive_buff_255_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_256 has(ve) been backward balanced into : uart_processor_instance/receive_buff_256_BRB1 uart_processor_instance/receive_buff_256_BRB4 .
+	Register(s) uart_processor_instance/receive_buff_257 has(ve) been backward balanced into : uart_processor_instance/receive_buff_257_BRB0 uart_processor_instance/receive_buff_257_BRB2.
+	Register(s) uart_processor_instance/receive_buff_258 has(ve) been backward balanced into : uart_processor_instance/receive_buff_258_BRB2.
+	Register(s) uart_processor_instance/receive_buff_259 has(ve) been backward balanced into : uart_processor_instance/receive_buff_259_BRB2.
+	Register(s) uart_processor_instance/receive_buff_26 has(ve) been backward balanced into : uart_processor_instance/receive_buff_26_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_260 has(ve) been backward balanced into : uart_processor_instance/receive_buff_260_BRB2.
+	Register(s) uart_processor_instance/receive_buff_261 has(ve) been backward balanced into : uart_processor_instance/receive_buff_261_BRB2.
+	Register(s) uart_processor_instance/receive_buff_262 has(ve) been backward balanced into : uart_processor_instance/receive_buff_262_BRB2.
+	Register(s) uart_processor_instance/receive_buff_263 has(ve) been backward balanced into : uart_processor_instance/receive_buff_263_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_264 has(ve) been backward balanced into : uart_processor_instance/receive_buff_264_BRB0 uart_processor_instance/receive_buff_264_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_265 has(ve) been backward balanced into : uart_processor_instance/receive_buff_265_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_266 has(ve) been backward balanced into : uart_processor_instance/receive_buff_266_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_267 has(ve) been backward balanced into : uart_processor_instance/receive_buff_267_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_268 has(ve) been backward balanced into : uart_processor_instance/receive_buff_268_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_269 has(ve) been backward balanced into : uart_processor_instance/receive_buff_269_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_27 has(ve) been backward balanced into : uart_processor_instance/receive_buff_27_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_270 has(ve) been backward balanced into : uart_processor_instance/receive_buff_270_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_271 has(ve) been backward balanced into : uart_processor_instance/receive_buff_271_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_272 has(ve) been backward balanced into : uart_processor_instance/receive_buff_272_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_273 has(ve) been backward balanced into : uart_processor_instance/receive_buff_273_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_274 has(ve) been backward balanced into : uart_processor_instance/receive_buff_274_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_275 has(ve) been backward balanced into : uart_processor_instance/receive_buff_275_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_276 has(ve) been backward balanced into : uart_processor_instance/receive_buff_276_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_277 has(ve) been backward balanced into : uart_processor_instance/receive_buff_277_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_278 has(ve) been backward balanced into : uart_processor_instance/receive_buff_278_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_279 has(ve) been backward balanced into : uart_processor_instance/receive_buff_279_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_28 has(ve) been backward balanced into : uart_processor_instance/receive_buff_28_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_280 has(ve) been backward balanced into : uart_processor_instance/receive_buff_280_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_281 has(ve) been backward balanced into : uart_processor_instance/receive_buff_281_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_282 has(ve) been backward balanced into : uart_processor_instance/receive_buff_282_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_283 has(ve) been backward balanced into : uart_processor_instance/receive_buff_283_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_284 has(ve) been backward balanced into : uart_processor_instance/receive_buff_284_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_285 has(ve) been backward balanced into : uart_processor_instance/receive_buff_285_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_286 has(ve) been backward balanced into : uart_processor_instance/receive_buff_286_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_287 has(ve) been backward balanced into : uart_processor_instance/receive_buff_287_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_288 has(ve) been backward balanced into : uart_processor_instance/receive_buff_288_BRB0 uart_processor_instance/receive_buff_288_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_289 has(ve) been backward balanced into : uart_processor_instance/receive_buff_289_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_29 has(ve) been backward balanced into : uart_processor_instance/receive_buff_29_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_290 has(ve) been backward balanced into : uart_processor_instance/receive_buff_290_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_291 has(ve) been backward balanced into : uart_processor_instance/receive_buff_291_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_292 has(ve) been backward balanced into : uart_processor_instance/receive_buff_292_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_293 has(ve) been backward balanced into : uart_processor_instance/receive_buff_293_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_294 has(ve) been backward balanced into : uart_processor_instance/receive_buff_294_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_295 has(ve) been backward balanced into : uart_processor_instance/receive_buff_295_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_296 has(ve) been backward balanced into : uart_processor_instance/receive_buff_296_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_3 has(ve) been backward balanced into : uart_processor_instance/receive_buff_3_BRB1 uart_processor_instance/receive_buff_3_BRB3.
+	Register(s) uart_processor_instance/receive_buff_30 has(ve) been backward balanced into : uart_processor_instance/receive_buff_30_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_31 has(ve) been backward balanced into : uart_processor_instance/receive_buff_31_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_32 has(ve) been backward balanced into : uart_processor_instance/receive_buff_32_BRB1 uart_processor_instance/receive_buff_32_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_33 has(ve) been backward balanced into : uart_processor_instance/receive_buff_33_BRB1 uart_processor_instance/receive_buff_33_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_34 has(ve) been backward balanced into : uart_processor_instance/receive_buff_34_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_35 has(ve) been backward balanced into : uart_processor_instance/receive_buff_35_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_36 has(ve) been backward balanced into : uart_processor_instance/receive_buff_36_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_37 has(ve) been backward balanced into : uart_processor_instance/receive_buff_37_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_38 has(ve) been backward balanced into : uart_processor_instance/receive_buff_38_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_39 has(ve) been backward balanced into : uart_processor_instance/receive_buff_39_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_4 has(ve) been backward balanced into : uart_processor_instance/receive_buff_4_BRB1 uart_processor_instance/receive_buff_4_BRB3.
+	Register(s) uart_processor_instance/receive_buff_40 has(ve) been backward balanced into : uart_processor_instance/receive_buff_40_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_41 has(ve) been backward balanced into : uart_processor_instance/receive_buff_41_BRB0 uart_processor_instance/receive_buff_41_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_42 has(ve) been backward balanced into : uart_processor_instance/receive_buff_42_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_43 has(ve) been backward balanced into : uart_processor_instance/receive_buff_43_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_44 has(ve) been backward balanced into : uart_processor_instance/receive_buff_44_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_45 has(ve) been backward balanced into : uart_processor_instance/receive_buff_45_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_46 has(ve) been backward balanced into : uart_processor_instance/receive_buff_46_BRB0 .
+	Register(s) uart_processor_instance/receive_buff_47 has(ve) been backward balanced into : uart_processor_instance/receive_buff_47_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_48 has(ve) been backward balanced into : uart_processor_instance/receive_buff_48_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_49 has(ve) been backward balanced into : uart_processor_instance/receive_buff_49_BRB2 uart_processor_instance/receive_buff_49_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_5 has(ve) been backward balanced into : uart_processor_instance/receive_buff_5_BRB1 uart_processor_instance/receive_buff_5_BRB3.
+	Register(s) uart_processor_instance/receive_buff_50 has(ve) been backward balanced into : uart_processor_instance/receive_buff_50_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_51 has(ve) been backward balanced into : uart_processor_instance/receive_buff_51_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_52 has(ve) been backward balanced into : uart_processor_instance/receive_buff_52_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_53 has(ve) been backward balanced into : uart_processor_instance/receive_buff_53_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_54 has(ve) been backward balanced into : uart_processor_instance/receive_buff_54_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_55 has(ve) been backward balanced into : uart_processor_instance/receive_buff_55_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_56 has(ve) been backward balanced into : uart_processor_instance/receive_buff_56_BRB0 uart_processor_instance/receive_buff_56_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_57 has(ve) been backward balanced into : uart_processor_instance/receive_buff_57_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_58 has(ve) been backward balanced into : uart_processor_instance/receive_buff_58_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_59 has(ve) been backward balanced into : uart_processor_instance/receive_buff_59_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_6 has(ve) been backward balanced into : uart_processor_instance/receive_buff_6_BRB1 uart_processor_instance/receive_buff_6_BRB3.
+	Register(s) uart_processor_instance/receive_buff_60 has(ve) been backward balanced into : uart_processor_instance/receive_buff_60_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_61 has(ve) been backward balanced into : uart_processor_instance/receive_buff_61_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_62 has(ve) been backward balanced into : uart_processor_instance/receive_buff_62_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_63 has(ve) been backward balanced into : uart_processor_instance/receive_buff_63_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_64 has(ve) been backward balanced into : uart_processor_instance/receive_buff_64_BRB0 uart_processor_instance/receive_buff_64_BRB1 uart_processor_instance/receive_buff_64_BRB2.
+	Register(s) uart_processor_instance/receive_buff_65 has(ve) been backward balanced into : uart_processor_instance/receive_buff_65_BRB0 uart_processor_instance/receive_buff_65_BRB1 uart_processor_instance/receive_buff_65_BRB3.
+	Register(s) uart_processor_instance/receive_buff_66 has(ve) been backward balanced into : uart_processor_instance/receive_buff_66_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_67 has(ve) been backward balanced into : uart_processor_instance/receive_buff_67_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_68 has(ve) been backward balanced into : uart_processor_instance/receive_buff_68_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_69 has(ve) been backward balanced into : uart_processor_instance/receive_buff_69_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_7 has(ve) been backward balanced into : uart_processor_instance/receive_buff_7_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_70 has(ve) been backward balanced into : uart_processor_instance/receive_buff_70_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_71 has(ve) been backward balanced into : uart_processor_instance/receive_buff_71_BRB1 uart_processor_instance/receive_buff_71_BRB2.
+	Register(s) uart_processor_instance/receive_buff_72 has(ve) been backward balanced into : uart_processor_instance/receive_buff_72_BRB0 uart_processor_instance/receive_buff_72_BRB1 uart_processor_instance/receive_buff_72_BRB2 uart_processor_instance/receive_buff_72_BRB3 .
+	Register(s) uart_processor_instance/receive_buff_73 has(ve) been backward balanced into : uart_processor_instance/receive_buff_73_BRB0 uart_processor_instance/receive_buff_73_BRB1 uart_processor_instance/receive_buff_73_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_74 has(ve) been backward balanced into : uart_processor_instance/receive_buff_74_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_75 has(ve) been backward balanced into : uart_processor_instance/receive_buff_75_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_76 has(ve) been backward balanced into : uart_processor_instance/receive_buff_76_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_77 has(ve) been backward balanced into : uart_processor_instance/receive_buff_77_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_78 has(ve) been backward balanced into : uart_processor_instance/receive_buff_78_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_79 has(ve) been backward balanced into : uart_processor_instance/receive_buff_79_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_8 has(ve) been backward balanced into : uart_processor_instance/receive_buff_8_BRB0 uart_processor_instance/receive_buff_8_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_80 has(ve) been backward balanced into : uart_processor_instance/receive_buff_80_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_81 has(ve) been backward balanced into : uart_processor_instance/receive_buff_81_BRB2 uart_processor_instance/receive_buff_81_BRB4 .
+	Register(s) uart_processor_instance/receive_buff_82 has(ve) been backward balanced into : uart_processor_instance/receive_buff_82_BRB0 uart_processor_instance/receive_buff_82_BRB1 uart_processor_instance/receive_buff_82_BRB3 uart_processor_instance/receive_buff_82_BRB4 uart_processor_instance/receive_buff_82_BRB5.
+	Register(s) uart_processor_instance/receive_buff_83 has(ve) been backward balanced into : uart_processor_instance/receive_buff_83_BRB4 .
+	Register(s) uart_processor_instance/receive_buff_84 has(ve) been backward balanced into : uart_processor_instance/receive_buff_84_BRB0 uart_processor_instance/receive_buff_84_BRB1 uart_processor_instance/receive_buff_84_BRB4 .
+	Register(s) uart_processor_instance/receive_buff_85 has(ve) been backward balanced into : uart_processor_instance/receive_buff_85_BRB4 .
+	Register(s) uart_processor_instance/receive_buff_86 has(ve) been backward balanced into : uart_processor_instance/receive_buff_86_BRB4 .
+	Register(s) uart_processor_instance/receive_buff_87 has(ve) been backward balanced into : uart_processor_instance/receive_buff_87_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_88 has(ve) been backward balanced into : uart_processor_instance/receive_buff_88_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_89 has(ve) been backward balanced into : uart_processor_instance/receive_buff_89_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_9 has(ve) been backward balanced into : uart_processor_instance/receive_buff_9_BRB0 uart_processor_instance/receive_buff_9_BRB1 uart_processor_instance/receive_buff_9_BRB2 uart_processor_instance/receive_buff_9_BRB3.
+	Register(s) uart_processor_instance/receive_buff_90 has(ve) been backward balanced into : uart_processor_instance/receive_buff_90_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_91 has(ve) been backward balanced into : uart_processor_instance/receive_buff_91_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_92 has(ve) been backward balanced into : uart_processor_instance/receive_buff_92_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_93 has(ve) been backward balanced into : uart_processor_instance/receive_buff_93_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_94 has(ve) been backward balanced into : uart_processor_instance/receive_buff_94_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_95 has(ve) been backward balanced into : uart_processor_instance/receive_buff_95_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_96 has(ve) been backward balanced into : uart_processor_instance/receive_buff_96_BRB1 uart_processor_instance/receive_buff_96_BRB2 .
+	Register(s) uart_processor_instance/receive_buff_97 has(ve) been backward balanced into : uart_processor_instance/receive_buff_97_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_98 has(ve) been backward balanced into : uart_processor_instance/receive_buff_98_BRB1 .
+	Register(s) uart_processor_instance/receive_buff_99 has(ve) been backward balanced into : uart_processor_instance/receive_buff_99_BRB1 .
+	Register(s) uart_processor_instance/state_FSM_FFd4 has(ve) been backward balanced into : uart_processor_instance/state_FSM_FFd4_BRB0 uart_processor_instance/state_FSM_FFd4_BRB1 uart_processor_instance/state_FSM_FFd4_BRB2 uart_processor_instance/state_FSM_FFd4_BRB3 uart_processor_instance/state_FSM_FFd4_BRB4 uart_processor_instance/state_FSM_FFd4_BRB5.
+	Register(s) uart_processor_instance/uart_tx_byte_0 has(ve) been backward balanced into : uart_processor_instance/uart_tx_byte_0_BRB0 uart_processor_instance/uart_tx_byte_0_BRB1 uart_processor_instance/uart_tx_byte_0_BRB2 uart_processor_instance/uart_tx_byte_0_BRB3 uart_processor_instance/uart_tx_byte_0_BRB5 uart_processor_instance/uart_tx_byte_0_BRB6 .
+	Register(s) uart_processor_instance/uart_tx_byte_1 has(ve) been backward balanced into : uart_processor_instance/uart_tx_byte_1_BRB1 uart_processor_instance/uart_tx_byte_1_BRB5 .
+	Register(s) uart_processor_instance/uart_tx_byte_2 has(ve) been backward balanced into : uart_processor_instance/uart_tx_byte_2_BRB1 uart_processor_instance/uart_tx_byte_2_BRB5 .
+	Register(s) uart_processor_instance/uart_tx_byte_3 has(ve) been backward balanced into : uart_processor_instance/uart_tx_byte_3_BRB1 uart_processor_instance/uart_tx_byte_3_BRB5 .
+	Register(s) uart_processor_instance/uart_tx_byte_4 has(ve) been backward balanced into : uart_processor_instance/uart_tx_byte_4_BRB1 uart_processor_instance/uart_tx_byte_4_BRB5 .
+	Register(s) uart_processor_instance/uart_tx_byte_5 has(ve) been backward balanced into : uart_processor_instance/uart_tx_byte_5_BRB1 uart_processor_instance/uart_tx_byte_5_BRB5 .
+	Register(s) uart_processor_instance/uart_tx_byte_6 has(ve) been backward balanced into : uart_processor_instance/uart_tx_byte_6_BRB1 uart_processor_instance/uart_tx_byte_6_BRB5 .
+	Register(s) uart_processor_instance/uart_tx_byte_7 has(ve) been backward balanced into : uart_processor_instance/uart_tx_byte_7_BRB0 uart_processor_instance/uart_tx_byte_7_BRB1 uart_processor_instance/uart_tx_byte_7_BRB2 uart_processor_instance/uart_tx_byte_7_BRB4 uart_processor_instance/uart_tx_byte_7_BRB5 uart_processor_instance/uart_tx_byte_7_BRB6 uart_processor_instance/uart_tx_byte_7_BRB7 uart_processor_instance/uart_tx_byte_7_BRB8 .
+	Register(s) uart_processor_instance/uart_tx_start has(ve) been backward balanced into : uart_processor_instance/uart_tx_start_BRB0 uart_processor_instance/uart_tx_start_BRB1 uart_processor_instance/uart_tx_start_BRB2 uart_processor_instance/uart_tx_start_BRB3 uart_processor_instance/uart_tx_start_BRB4 uart_processor_instance/uart_tx_start_BRB5.
+	Register(s) uart_transmitter_instance/shifter_0 has(ve) been backward balanced into : uart_transmitter_instance/shifter_0_BRB0 uart_transmitter_instance/shifter_0_BRB1.
+	Register(s) uart_transmitter_instance/shifter_1 has(ve) been backward balanced into : uart_transmitter_instance/shifter_1_BRB1 uart_transmitter_instance/shifter_1_BRB2.
+	Register(s) uart_transmitter_instance/shifter_2 has(ve) been backward balanced into : uart_transmitter_instance/shifter_2_BRB1 uart_transmitter_instance/shifter_2_BRB2.
+	Register(s) uart_transmitter_instance/shifter_3 has(ve) been backward balanced into : uart_transmitter_instance/shifter_3_BRB1 uart_transmitter_instance/shifter_3_BRB2.
+	Register(s) uart_transmitter_instance/shifter_4 has(ve) been backward balanced into : uart_transmitter_instance/shifter_4_BRB1 uart_transmitter_instance/shifter_4_BRB2.
+	Register(s) uart_transmitter_instance/shifter_5 has(ve) been backward balanced into : uart_transmitter_instance/shifter_5_BRB1 uart_transmitter_instance/shifter_5_BRB2.
+	Register(s) uart_transmitter_instance/shifter_6 has(ve) been backward balanced into : uart_transmitter_instance/shifter_6_BRB1 uart_transmitter_instance/shifter_6_BRB2.
+	Register(s) uart_transmitter_instance/shifter_7 has(ve) been backward balanced into : uart_transmitter_instance/shifter_7_BRB1 uart_transmitter_instance/shifter_7_BRB2.
+	Register(s) uart_transmitter_instance/shifter_8 has(ve) been backward balanced into : uart_transmitter_instance/shifter_8_BRB1.
+Unit <uart_subsystem> processed.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1709
+ Flip-Flops                                            : 1709
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : uart_subsystem.ngr
+Top Level Output File Name         : uart_subsystem
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 685
+
+Cell Usage :
+# BELS                             : 1096
+#      GND                         : 1
+#      INV                         : 4
+#      LUT1                        : 35
+#      LUT2                        : 76
+#      LUT3                        : 42
+#      LUT4                        : 133
+#      LUT5                        : 347
+#      LUT6                        : 294
+#      MUXCY                       : 79
+#      MUXF7                       : 2
+#      VCC                         : 1
+#      XORCY                       : 82
+# FlipFlops/Latches                : 1709
+#      FD                          : 45
+#      FDE                         : 965
+#      FDR                         : 344
+#      FDRE                        : 331
+#      FDRSE                       : 5
+#      FDS                         : 7
+#      FDSE                        : 12
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 683
+#      IBUF                        : 4
+#      OBUF                        : 679
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vfx130tff1738-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1029  out of  81920     1%  
+ Number of Slice LUTs:                  931  out of  81920     1%  
+    Number used as Logic:               931  out of  81920     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1427
+   Number with an unused Flip Flop:     398  out of   1427    27%  
+   Number with an unused LUT:           496  out of   1427    34%  
+   Number of fully used LUT-FF pairs:   533  out of   1427    37%  
+   Number of unique control sets:        24
+
+IO Utilization: 
+ Number of IOs:                         685
+ Number of bonded IOBs:                 684  out of    840    81%  
+    IOB Flip Flops/Latches:             680
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1709  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 2.865ns (Maximum Frequency: 349.075MHz)
+   Minimum input arrival time before clock: 2.876ns
+   Maximum output required time after clock: 2.826ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.865ns (frequency: 349.075MHz)
+  Total number of paths / destination ports: 27245 / 2957
+-------------------------------------------------------------------------
+Delay:               2.865ns (Levels of Logic = 2)
+  Source:            uart_processor_instance/state_FSM_FFd4_BRB0 (FF)
+  Destination:       uart_processor_instance/state_FSM_FFd2 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: uart_processor_instance/state_FSM_FFd4_BRB0 to uart_processor_instance/state_FSM_FFd2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q              1   0.396   0.901  uart_processor_instance/state_FSM_FFd4_BRB0 (uart_processor_instance/state_FSM_FFd4_BRB0)
+     LUT6:I0->O          308   0.086   0.638  uart_processor_instance/state_FSM_FFd4-In (uart_processor_instance/state_FSM_FFd4)
+     LUT5:I3->O            2   0.086   0.290  uart_processor_instance/frame_ctr_latch_mux0000<0>21 (uart_processor_instance/N80)
+     FDRSE:S                   0.468          uart_processor_instance/state_FSM_FFd2
+    ----------------------------------------
+    Total                      2.865ns (1.036ns logic, 1.829ns route)
+                                       (36.2% logic, 63.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 1978 / 1593
+-------------------------------------------------------------------------
+Offset:              2.876ns (Levels of Logic = 4)
+  Source:            caster_ready (PAD)
+  Destination:       uart_processor_instance/state_FSM_FFd7 (FF)
+  Destination Clock: clk rising
+
+  Data Path: caster_ready to uart_processor_instance/state_FSM_FFd7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             8   0.694   0.851  caster_ready_IBUF (caster_ready_IBUF)
+     LUT5:I0->O            1   0.086   0.412  uart_processor_instance/state_FSM_FFd7-In21_SW0 (N35)
+     LUT6:I5->O            1   0.086   0.662  uart_processor_instance/uart_tx_byte_mux0000<0>21_SW1 (N182)
+     LUT6:I2->O            1   0.086   0.000  uart_processor_instance/state_FSM_FFd7-In (uart_processor_instance/state_FSM_FFd7-In)
+     FDS:D                    -0.022          uart_processor_instance/state_FSM_FFd7
+    ----------------------------------------
+    Total                      2.876ns (0.952ns logic, 1.924ns route)
+                                       (33.1% logic, 66.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 679 / 679
+-------------------------------------------------------------------------
+Offset:              2.826ns (Levels of Logic = 1)
+  Source:            uart_processor_instance/l2_flush_to_l1 (FF)
+  Destination:       l2_flush_to_l1 (PAD)
+  Source Clock:      clk rising
+
+  Data Path: uart_processor_instance/l2_flush_to_l1 to l2_flush_to_l1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.396   0.286  uart_processor_instance/l2_flush_to_l1 (uart_processor_instance/l2_flush_to_l1)
+     OBUF:I->O                 2.144          l2_flush_to_l1_OBUF (l2_flush_to_l1)
+    ----------------------------------------
+    Total                      2.826ns (2.540ns logic, 0.286ns route)
+                                       (89.9% logic, 10.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 22.00 secs
+Total CPU time to Xst completion: 21.47 secs
+ 
+--> 
+
+
+Total memory usage is 610748 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

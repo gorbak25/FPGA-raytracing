@@ -1,0 +1,129 @@
+Release 14.7 par P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+waznastrona::  Mon Jan 07 19:52:41 2019
+
+par -w -intstyle ise -ol high -mt off fixed_isqrt_pipeline_map.ncd
+fixed_isqrt_pipeline.ncd fixed_isqrt_pipeline.pcf 
+
+
+Constraints file: fixed_isqrt_pipeline.pcf.
+Loading device for application Rf_Device from file '5vlx50t.nph' in environment /opt/Xilinx/14.7/ISE_DS/ISE/.
+   "fixed_isqrt_pipeline" is an NCD, version 3.2, device xc5vlx50t, package ff1136, speed -2
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 0.950 Volts. (default - Range: 0.950 to 1.050 Volts)
+
+INFO:Par:282 - No user timing constraints were detected or you have set the option to ignore timing constraints ("par
+   -x"). Place and Route will run in "Performance Evaluation Mode" to automatically improve the performance of all
+   internal clocks in this design. Because there are not defined timing requirements, a timing score will not be
+   reported in the PAR report in this mode. The PAR timing summary will list the performance achieved for each clock.
+   Note: For the fastest runtime, set the effort level to "std".  For best performance, set the effort level to "high".
+
+Device speed data version:  "PRODUCTION 1.73 2013-10-13".
+
+
+
+Device Utilization Summary:
+
+   Number of BUFGs                           1 out of 32      3%
+   Number of DSP48Es                        12 out of 48     25%
+   Number of External IOBs                  65 out of 480    13%
+      Number of LOCed IOBs                   0 out of 65      0%
+
+   Number of RAMB36_EXPs                     3 out of 60      5%
+   Number of Slices                        152 out of 7200    2%
+   Number of Slice Registers               101 out of 28800   1%
+      Number used as Flip Flops            101
+      Number used as Latches                 0
+      Number used as LatchThrus              0
+
+   Number of Slice LUTS                    297 out of 28800   1%
+   Number of Slice LUT-Flip Flop pairs     329 out of 28800   1%
+
+
+Overall effort level (-ol):   High 
+Router effort level (-rl):    High 
+
+Starting initial Timing Analysis.  REAL time: 11 secs 
+Finished initial Timing Analysis.  REAL time: 11 secs 
+
+Starting Router
+
+
+Phase  1  : 3756 unrouted;      REAL time: 12 secs 
+
+Phase  2  : 1882 unrouted;      REAL time: 12 secs 
+
+Phase  3  : 537 unrouted;      REAL time: 14 secs 
+
+Phase  4  : 637 unrouted; (Par is working to improve performance)     REAL time: 18 secs 
+
+Updating file: fixed_isqrt_pipeline.ncd with current fully routed design.
+
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 20 secs 
+
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 20 secs 
+
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 22 secs 
+
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 22 secs 
+
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
+
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 24 secs 
+Total REAL time to Router completion: 24 secs 
+Total CPU time to Router completion: 24 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+INFO:Par:459 - The Clock Report is not displayed in the non timing-driven mode.
+Timing Score: 0 (Setup: 0, Hold: 0)
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|    13.341ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.494ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+
+
+All constraints were met.
+INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the 
+   constraint is not analyzed due to the following: No paths covered by this 
+   constraint; Other constraints intersect with this constraint; or This 
+   constraint was disabled by a Path Tracing Control. Please run the Timespec 
+   Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 30 secs 
+Total CPU time to PAR completion: 30 secs 
+
+Peak Memory Usage:  821 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 0
+Number of info messages: 2
+
+Writing design to file fixed_isqrt_pipeline.ncd
+
+
+
+PAR done!

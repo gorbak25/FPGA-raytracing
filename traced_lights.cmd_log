@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj raytracing -o /home/test/FPGA/raytracing/traced_lights.tfi -lib work /home/test/FPGA/raytracing//traced_lights.v -module traced_lights -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

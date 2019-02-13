@@ -1,0 +1,21 @@
+
+
+
+// Instantiate the module
+ray_core instance_name (
+    .clk(clk), 
+    .rst(rst), 
+    .image_x(image_x), 
+    .image_y(image_y), 
+    .casted_ray_origin(casted_ray_origin), 
+    .casted_ray_direction(casted_ray_direction), 
+    .store_image_x(store_image_x), 
+    .store_image_y(store_image_y), 
+    .store_diffuse_light_acc(store_diffuse_light_acc), 
+    .store_reflection_coeffs(store_reflection_coeffs), 
+    .new_data(new_data), 
+    .output_valid(output_valid), 
+    .stall_source(stall_source)
+    );
+
+

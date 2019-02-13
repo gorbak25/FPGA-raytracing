@@ -1,0 +1,656 @@
+*******************************************************************************
+*
+*                      IMPORT XISE SUMMARY REPORT
+*
+*                       (import_ise_summary.txt)
+*
+*  PLEASE READ THIS REPORT TO GET THE DETAILED INFORMATION ON THE DATA THAT
+*  WAS PARSED FROM THE ISE PROJECT AND IMPORTED INTO THE CURRENT PROJECT.
+*
+*
+* The report is divided into following three sections:-
+*
+* Section (1) - ISE PROJECT INFORMATION
+*
+*  This section provides the details of the ISE project that was imported
+*
+* Section (2) - EXCEPTIONS
+*
+*  This section summarizes the ISE project data that was either not imported or
+*  not mapped into the current project
+*
+* Section (3) - MAPPED DATA
+*
+*  This section summarizes the PlanAhead project information that was imported
+*  from the ISE project data
+*
+*******************************************************************************
+
+Section (1) - ISE PROJECT INFORMATION
+-------------------------------------
+
+The following items describes the information about the ISE project that was imported:-
+
+Project Name    = raytracing
+Project File    = /home/test/FPGA/raytracing/raytracing.xise
+Project Version = 14.7
+Device Family   = Virtex5
+Part Name       = xc5vfx130t-2-ff1738
+
+
+Section (2) - EXCEPTIONS
+------------------------
+
+The following sub-sections describes the list of items that were NOT mapped from the
+XISE file contents into the current project:-
+
+Section (2.1) - Missing Sources
+-------------------------------
+None
+
+
+Section (2.2) - Unknown Sources
+-------------------------------
+None
+
+
+Section (2.3) - IP Import Issues
+--------------------------------
+None
+
+
+Section (2.4) - Unknown Properties
+----------------------------------
+
+The following ISE properties were not mapped into the current project:-
+
+
+<ISE Property Name>                                   <ISE Property Value>
+"AES Initial Vector virtex5"                          ''
+"AES Key (Hex String)"                                ''
+"Allow SelectMAP Pins to Persist"                     'false'
+"Analysis Effort Level"                               'Standard'
+"Asynchronous To Synchronous"                         'false'
+"Automatically Insert glbl Module in the Netlist"     'true'
+"Automatically Run Generate Target PROM/ACE File"     'false'
+"BPI Reads Per Page"                                  '1'
+"BRAM Utilization Ratio"                              '100'
+"Bring Out Global Set/Reset Net as a Port"            'false'
+"Bring Out Global Tristate Net as a Port"             'false'
+"Bus Delimiter"                                       '<>'
+"CLB Pack Factor Percentage"                          '100'
+"Case"                                                'Maintain'
+"Case Implementation Style"                           'None'
+"Change Device Speed To"                              '-2'
+"Change Device Speed To Post Trace"                   '-2'
+"Configuration Clk (Configuration Pins)"              'Pull Up'
+"Configuration Pin Busy"                              'Pull Up'
+"Configuration Pin CS"                                'Pull Up'
+"Configuration Pin DIn"                               'Pull Up'
+"Configuration Pin Done"                              'Pull Up'
+"Configuration Pin HSWAPEN"                           'Pull Up'
+"Configuration Pin Init"                              'Pull Up'
+"Configuration Pin M0"                                'Pull Up'
+"Configuration Pin M1"                                'Pull Up'
+"Configuration Pin M2"                                'Pull Up'
+"Configuration Pin Program"                           'Pull Up'
+"Configuration Pin RdWr"                              'Pull Up'
+"Configuration Rate"                                  '4'
+"Configuration Rate virtex5"                          '2'
+"Correlate Output to Input Design"                    'false'
+"Create Binary Configuration File"                    'false'
+"Create IEEE 1532 Configuration File"                 'false'
+"Create ReadBack Data Files"                          'false'
+"Cross Clock Analysis"                                'false'
+"Cycles for First BPI Page Read"                      '1'
+"DCI Update Mode"                                     'As Required'
+"DSP Utilization Ratio"                               '100'
+"Decoder Extraction"                                  'true'
+"Device Speed Grade/Select ABS Minimum"               '-2'
+"Disable Detailed Package Model Insertion"            'false'
+"Do Not Escape Signal and Instance Names in Netlist"  'false'
+"Done (Output Events)"                                'Default (4)'
+"Drive Done Pin High"                                 'false'
+"Enable BitStream Compression"                        'false'
+"Enable Cyclic Redundancy Checking (CRC)"             'true'
+"Enable Debugging of Serial Mode BitStream"           'false'
+"Enable Internal Done Pipe"                           'false'
+"Enable Message Filtering"                            'false'
+"Enable Outputs (Output Events)"                      'Default (5)'
+"Encrypt Bitstream"                                   'false'
+"Equivalent Register Removal"                         'true'
+"Essential Bits"                                      'false'
+"Evaluation Development Board"                        'Virtex 5 ML510 Evaluation Platform'
+"FPGA Start-Up Clock"                                 'CCLK'
+"FSM Style"                                           'LUT'
+"Fallback Reconfiguration"                            'Enable'
+"Flatten Output Netlist"                              'false'
+"Functional Model Target Language ArchWiz"            'Verilog'
+"Functional Model Target Language Coregen"            'Verilog'
+"Functional Model Target Language Schematic"          'Verilog'
+"Generate Asynchronous Delay Report"                  'true'
+"Generate Clock Region Report"                        'false'
+"Generate Constraints Interaction Report"             'true'
+"Generate Constraints Interaction Report Post Trace"  'true'
+"Generate Datasheet Section"                          'true'
+"Generate Detailed MAP Report"                        'true'
+"Generate Multiple Hierarchical Netlist Files"        'false'
+"Generate Post-Place & Route Power Report"            'false'
+"Generate Post-Place & Route Simulation Model"        'false'
+"Generate RTL Schematic"                              'Yes'
+"Generate Testbench File"                             'false'
+"Generate Timegroups Section"                         'false'
+"Generate Timegroups Section Post Trace"              'false'
+"Global Optimization Goal"                            'AllClockNets'
+"Global Optimization map virtex5"                     'Off'
+"Global Set/Reset Port Name"                          'GSR_PORT'
+"Global Tristate Port Name"                           'GTS_PORT'
+"HDL Instantiation Template Target Language"          'Verilog'
+"Hierarchy Separator"                                 '/'
+"Ignore User Timing Constraints Map"                  'false'
+"Include 'uselib Directive in Verilog File"           'false'
+"Include SIMPRIM Models in Verilog File"              'false'
+"Include UNISIM Models in Verilog File"               'false'
+"Include sdf_annotate task in Verilog File"           'true'
+"Insert Buffers to Prevent Pulse Swallowing"          'true'
+"JTAG Pin TCK"                                        'Pull Up'
+"JTAG Pin TDI"                                        'Pull Up'
+"JTAG Pin TDO"                                        'Pull Up'
+"JTAG Pin TMS"                                        'Pull Up'
+"JTAG to System Monitor Connection"                   'Enable'
+"Keep Hierarchy"                                      'Yes'
+"Last Unlock Status"                                  'false'
+"Library for Verilog Sources"                         ''
+"Logical Shifter Extraction"                          'true'
+"Max Fanout"                                          '100000'
+"Maximum Compression"                                 'false'
+"Maximum Number of Lines in Report"                   '1000'
+"Maximum Signal Name Length"                          '20'
+"Move First Flip-Flop Stage"                          'true'
+"Move Last Flip-Flop Stage"                           'true'
+"Multiplier Style"                                    'LUT'
+"Mux Extraction"                                      'Yes'
+"Mux Style"                                           'Auto'
+"Netlist Translation Type"                            'Timestamp'
+"Number of Paths in Error/Verbose Report"             '3'
+"Optimize Instantiated Primitives"                    'true'
+"Other XPWR Command Line Options"                     ''
+"Output Extended Identifiers"                         'false'
+"Output File Name"                                    'top'
+"Perform Advanced Analysis"                           'false'
+"Perform Advanced Analysis Post Trace"                'false'
+"Place And Route Mode"                                'Route Only'
+"Port to be used"                                     'Auto - default'
+"Post Map Simulation Model Name"                      'top_map.v'
+"Post Place & Route Simulation Model Name"            'top_timesim.v'
+"Post Synthesis Simulation Model Name"                'top_synthesis.v'
+"Post Translate Simulation Model Name"                'top_translate.v'
+"Power Down Device if Over Safe Temperature"          'false'
+"Priority Encoder Extraction"                         'Yes'
+"Produce Verbose Report"                              'false'
+"RAM Extraction"                                      'true'
+"ROM Extraction"                                      'true'
+"ROM Style"                                           'Auto'
+"Read Cores"                                          'false'
+"Reduce Control Sets"                                 'No'
+"Regenerate Core"                                     'Under Current Project Setting'
+"Register Duplication Xst"                            'true'
+"Release Write Enable (Output Events)"                'Default (6)'
+"Rename Design Instance in Testbench File to"         'UUT'
+"Rename Top Level Architecture To"                    'Structure'
+"Rename Top Level Entity to"                          ''
+"Report Paths by Endpoint"                            '3'
+"Report Paths by Endpoint Post Trace"                 '3'
+"Report Type"                                         'Verbose Report'
+"Report Type Post Trace"                              'Verbose Report'
+"Reset On Configuration Pulse Width"                  '100'
+"Revision Select"                                     '00'
+"Revision Select Tristate"                            'Disable'
+"Safe Implementation"                                 'No'
+"Security"                                            'Enable Readback and Reconfiguration'
+"SelectMAP Abort Sequence"                            'Enable'
+"Shift Register Extraction"                           'true'
+"Show All Models"                                     'false'
+"Slice Packing"                                       'true'
+"Slice Utilization Ratio"                             '100'
+"Top-Level Module Name in Output Netlist"             ''
+"Tristate On Configuration Pulse Width"               '0'
+"Unused IOB Pins"                                     'Pull Down'
+"Use Clock Enable"                                    'Yes'
+"Use Smart Guide"                                     'false'
+"Use Synchronous Reset"                               'Yes'
+"Use Synchronous Set"                                 'Yes'
+"Use Synthesis Constraints File"                      'true'
+"User Access Register Value"                          'None'
+"UserID Code (8 Digit Hexadecimal)"                   '0xFFFFFFFF'
+"VHDL Source Analysis Standard"                       'VHDL-93'
+"Verilog 2001 Xst"                                    'true'
+"Wait for DCI Match (Output Events) virtex5"          'Auto'
+"Wait for DLL Lock (Output Events)"                   'Default (NoWait)'
+"Wait for DLL Lock (Output Events) virtex5"           'Default (NoWait)'
+"Watchdog Timer Mode virtex5"                         'Off'
+"Watchdog Timer Value virtex5"                        '0x000000'
+"Write Timing Constraints"                            'true'
+"XOR Collapsing"                                      'true'
+"iMPACT Project File"                                 'raytracing.ipf'
+
+
+Section (3) - MAPPED DATA
+-------------------------
+
+The following sub-sections describes the list of items that were imported from the
+ISE properties and sources and mapped into the current project:-
+
+Section (3.1) - Target Device
+-----------------------------
+
+Default Part = xc5vfx130tff1738-2
+Family       = virtex5fx
+Package      = ff1738
+Speed Grade  = -2
+
+
+Section (3.2) - Filesets
+------------------------
+
+<sources_1>
+FILESET_TYPE   = DesignSrcs
+TOP            = top
+DESIGN_MODE    = RTL
+VERILOG_DIR    = 
+VERILOG_DEFINE = 
+VHDL_GENERICS  = 
+
+File(s):-
+NAME      = inv_LUT.xco
+FILE PATH = /home/test/FPGA/raytracing/ipcore_dir/inv_LUT.xco
+FILE_TYPE = IP
+LIBRARY   = work
+
+NAME      = isqrt_LUT.xco
+FILE PATH = /home/test/FPGA/raytracing/ipcore_dir/isqrt_LUT.xco
+FILE_TYPE = IP
+LIBRARY   = work
+
+NAME      = frame_buffer.xco
+FILE PATH = /home/test/FPGA/raytracing/ipcore_dir/frame_buffer.xco
+FILE_TYPE = IP
+LIBRARY   = work
+
+NAME      = squarer.v
+FILE PATH = /home/test/FPGA/raytracing/squarer.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = signal_pipe.v
+FILE PATH = /home/test/FPGA/raytracing/signal_pipe.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = leading_one_detect.v
+FILE PATH = /home/test/FPGA/raytracing/leading_one_detect.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = fixed.v
+FILE PATH = /home/test/FPGA/raytracing/fixed.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = fixed_isqrt_pipeline.v
+FILE PATH = /home/test/FPGA/raytracing/fixed_isqrt_pipeline.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = fixed_inv_pipeline.v
+FILE PATH = /home/test/FPGA/raytracing/fixed_inv_pipeline.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = vector_sub.v
+FILE PATH = /home/test/FPGA/raytracing/vector_sub.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = vector_dot.v
+FILE PATH = /home/test/FPGA/raytracing/vector_dot.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = fixed_sqrt_pipeline.v
+FILE PATH = /home/test/FPGA/raytracing/fixed_sqrt_pipeline.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = vector_mul.v
+FILE PATH = /home/test/FPGA/raytracing/vector_mul.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_sphere_normal_pipeline.v
+FILE PATH = /home/test/FPGA/raytracing/ray_sphere_normal_pipeline.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_sphere_intersection_pipeline.v
+FILE PATH = /home/test/FPGA/raytracing/ray_sphere_intersection_pipeline.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_plane_normal_pipeline.v
+FILE PATH = /home/test/FPGA/raytracing/ray_plane_normal_pipeline.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_plane_intersection_pipeline.v
+FILE PATH = /home/test/FPGA/raytracing/ray_plane_intersection_pipeline.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = fixed_abs.v
+FILE PATH = /home/test/FPGA/raytracing/fixed_abs.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = vector_normalizer_pipeline.v
+FILE PATH = /home/test/FPGA/raytracing/vector_normalizer_pipeline.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = vector_neg.v
+FILE PATH = /home/test/FPGA/raytracing/vector_neg.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = vector_mul_piecewise.v
+FILE PATH = /home/test/FPGA/raytracing/vector_mul_piecewise.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = vector_add.v
+FILE PATH = /home/test/FPGA/raytracing/vector_add.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = traced_spheres.v
+FILE PATH = /home/test/FPGA/raytracing/traced_spheres.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = traced_planes.v
+FILE PATH = /home/test/FPGA/raytracing/traced_planes.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = traced_objects.v
+FILE PATH = /home/test/FPGA/raytracing/traced_objects.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_unified_normal_pipeline.v
+FILE PATH = /home/test/FPGA/raytracing/ray_unified_normal_pipeline.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_unified_intersection_pipeline.v
+FILE PATH = /home/test/FPGA/raytracing/ray_unified_intersection_pipeline.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = vector_reflector.v
+FILE PATH = /home/test/FPGA/raytracing/vector_reflector.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = traced_materials.v
+FILE PATH = /home/test/FPGA/raytracing/traced_materials.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = traced_lights.v
+FILE PATH = /home/test/FPGA/raytracing/traced_lights.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_hit_pipeline.v
+FILE PATH = /home/test/FPGA/raytracing/ray_hit_pipeline.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = lightning_diffuse.v
+FILE PATH = /home/test/FPGA/raytracing/lightning_diffuse.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = vga.v
+FILE PATH = /home/test/FPGA/raytracing/vga.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_write_back.v
+FILE PATH = /home/test/FPGA/raytracing/ray_write_back.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_core.v
+FILE PATH = /home/test/FPGA/raytracing/ray_core.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_caster.v
+FILE PATH = /home/test/FPGA/raytracing/ray_caster.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = i2c_master.v
+FILE PATH = /home/test/FPGA/raytracing/i2c_master.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = i2c_init.v
+FILE PATH = /home/test/FPGA/raytracing/i2c_init.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = top.v
+FILE PATH = /home/test/FPGA/raytracing/top.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+
+<constrs_1>
+FILESET_TYPE   = Constrs
+
+Note: During the import operation, any constraint file(s) that are found in the ISE project will be added to the current PlanAhead project.
+      However, please note that none of these files will be automatically marked as a "Target Constraint File". To set a constraint file
+      as target, select the file in the GUI "Sources" window, right-click on this file and then select "Set Target UCF". Alternatively,
+      the target constraint file can be set using the "set_property target_constrs_file <filename> <fileset>" Tcl command.
+
+File(s):-
+NAME      = board.ucf
+FILE PATH = /home/test/FPGA/raytracing/board.ucf
+FILE_TYPE = UCF
+
+
+<sim_1>
+FILESET_TYPE   = SimulationSrcs
+
+File(s):-
+NAME      = vector_reflector_pipeline_test.v
+FILE PATH = /home/test/FPGA/raytracing/vector_reflector_pipeline_test.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_hit_pipeline_test.v
+FILE PATH = /home/test/FPGA/raytracing/ray_hit_pipeline_test.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_unified_intersection_pipeline_test.v
+FILE PATH = /home/test/FPGA/raytracing/ray_unified_intersection_pipeline_test.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_plane_intersection_pipeline_test.v
+FILE PATH = /home/test/FPGA/raytracing/ray_plane_intersection_pipeline_test.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_sphere_intersection_pipeline_test.v
+FILE PATH = /home/test/FPGA/raytracing/ray_sphere_intersection_pipeline_test.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_core_test.v
+FILE PATH = /home/test/FPGA/raytracing/ray_core_test.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = vector_normalizer_pipeline_test.v
+FILE PATH = /home/test/FPGA/raytracing/vector_normalizer_pipeline_test.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = fixed_sqrt_pipeline_test.v
+FILE PATH = /home/test/FPGA/raytracing/fixed_sqrt_pipeline_test.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = fixed_inv_pipeline_test.v
+FILE PATH = /home/test/FPGA/raytracing/fixed_inv_pipeline_test.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = ray_caster_test.v
+FILE PATH = /home/test/FPGA/raytracing/ray_caster_test.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = fixed_mul.v
+FILE PATH = /home/test/FPGA/raytracing/fixed_mul.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = fixed_add_test.v
+FILE PATH = /home/test/FPGA/raytracing/fixed_add_test.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = clz32_test.v
+FILE PATH = /home/test/FPGA/raytracing/clz32_test.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+NAME      = fixed_isqrt_pipeline_test.v
+FILE PATH = /home/test/FPGA/raytracing/fixed_isqrt_pipeline_test.v
+FILE_TYPE = Verilog
+LIBRARY   = work
+
+
+Section (3.3) - Design Runs(s)
+------------------------------
+
+<synth_1>
+FLOW      = XST 14
+PART      = xc5vfx130tff1738-2
+SRCSET    = sources_1
+CONSTRSET = constrs_1
+STRATEGY  = PlanAhead Defaults
+
+Options:-
+                                                                                               
+<ISE Property Name>                <Step>  <Option>                      <ISE Property Value>  <PlanAhead Mapped Value>
+"Automatic BRAM Packing"           xst     -auto_bram_packing            'false'               'no'
+"Equivalent Register Removal XST"  xst     -equivalent_register_removal  'false'               'no'
+"FSM Encoding Algorithm"           xst     -fsm_encoding                 'Auto'                'auto'
+"LUT Combining Xst"                xst     -lc                           'No'                  'off'
+"Netlist Hierarchy"                xst     -netlist_hierarchy            'As Optimized'        'as_optimized'
+"Number of Clock Buffers"          xst     -bufg                         '32'                  '32'
+"Optimization Effort"              xst     -opt_level                    'Normal'              '1'
+"Optimization Goal"                xst     -opt_mode                     'Speed'               'speed'
+"Pack I/O Registers into IOBs"     xst     -iob                          'No'                  'false'
+"Power Reduction Xst"              xst     -power                        'false'               'no'
+"RAM Style"                        xst     -ram_style                    'Auto'                'auto'
+"Register Balancing"               xst     -register_balancing           'Yes'                 'yes'
+"Resource Sharing"                 xst     -resource_sharing             'true'                'yes'
+"Use DSP Block"                    xst     -use_dsp48                    'Auto'                'auto'
+
+
+<impl_1>
+FLOW      = ISE 14
+PART      = xc5vfx130tff1738-2
+SRCSET    = sources_1
+CONSTRSET = constrs_1
+STRATEGY  = ISE Defaults
+
+Options:-
+                                                                                                                
+<ISE Property Name>                                     <Step>    <Option>                <ISE Property Value>  <PlanAhead Mapped Value>
+"Allow Unexpanded Blocks"                               ngdbuild  -u                      'false'               'false'
+"Allow Unmatched LOC Constraints"                       ngdbuild  -aul                    'false'               'false'
+"Allow Unmatched Timing Group Constraints"              ngdbuild  -aut                    'false'               'false'
+"Create I/O Pads from Ports"                            ngdbuild  -a                      'false'               'false'
+"Use LOC Constraints"                                   ngdbuild  -r                      'true'                'false'
+                                                                                                                
+<ISE Property Name>                                     <Step>    <Option>                <ISE Property Value>  <PlanAhead Mapped Value>
+"Allow Logic Optimization Across Hierarchy"             map       -ignore_keep_hierarchy  'false'               'false'
+"Combinatorial Logic Optimization"                      map       -logic_opt              'false'               'off'
+"Enable Multi-Threading"                                map       -mt                     '2'                   'on'
+"LUT Combining Map"                                     map       -lc                     'Off'                 'off'
+"Optimization Strategy (Cover Mode)"                    map       -cm                     'Area'                'area'
+"Pack I/O Registers/Latches into IOBs"                  map       -pr                     'Off'                 '<none>'
+"Perform Timing-Driven Packing and Placement"           map       -timing                 'false'               'false'
+"Placer Effort Level Map"                               map       -ol                     'Standard'            'std'
+"Placer Extra Effort Map"                               map       -xe                     'Normal'              'n'
+"Power Reduction Map"                                   map       -power                  'false'               'off'
+"Register Duplication Map"                              map       -register_duplication   'Off'                 'false'
+"Starting Placer Cost Table (1-100)"                    map       -t                      '1'                   '1'
+"Starting Placer Cost Table (1-100) Map"                map       -t                      '1'                   '1'
+"Timing Mode Map"                                       map       -ntd                    'Non Timing Driven'   '-ntd'
+"Trim Unconnected Signals"                              map       -u                      'true'                'false'
+"Use RLOC Constraints"                                  map       -ir                     'Yes'                 'off'
+                                                                                                                
+<ISE Property Name>                                     <Step>    <Option>                <ISE Property Value>  <PlanAhead Mapped Value>
+"Enable Multi-Threading par virtex5"                    par       -mt                     '2'                   '2'
+"Ignore User Timing Constraints Par"                    par       -x                      'false'               'false'
+"Place & Route Effort Level (Overall)"                  par       -ol                     'Standard'            'std'
+"Placer Effort Level (Overrides Overall Level)"         par       -pl                     'None'                '<none>'
+"Power Reduction Par"                                   par       -power                  'false'               'off'
+"Router Effort Level (Overrides Overall Level)"         par       -rl                     'None'                '<none>'
+"Starting Placer Cost Table (1-100) Par"                par       -t                      '1'                   '1'
+                                                                                                                
+<ISE Property Name>                                     <Step>    <Option>                <ISE Property Value>  <PlanAhead Mapped Value>
+"Generate Datasheet Section Post Trace"                 trce      -nodatasheet            'true'                'true'
+"Number of Paths in Error/Verbose Report Post Trace"    trce      -v                      '3'                   '3'
+"Report Fastest Path(s) in Each Constraint"             trce      -fastpaths              'true'                'true'
+"Report Fastest Path(s) in Each Constraint Post Trace"  trce      -fastpaths              'true'                'true'
+                                                                                                                
+<ISE Property Name>                                     <Step>    <Option>                <ISE Property Value>  <PlanAhead Mapped Value>
+"Create ASCII Configuration File"                       bitgen    -b                      'false'               'false'
+"Create Bit File"                                       bitgen    -j                      'true'                'false'
+"Create Logic Allocation File"                          bitgen    -l                      'false'               'false'
+"Create Mask File"                                      bitgen    -m                      'false'               'false'
+"Run Design Rules Checker (DRC)"                        bitgen    -d                      'true'                'false'
+
+
+<sim_1>
+TOP  = ray_core_test
+SOURCE_SET  = sources_1
+
+Options:-
+                                                                                                            
+<ISE Property Name>                                   <Step>  <Option>                <ISE Property Value>  <PlanAhead Mapped Value>
+"Generate Architecture Only (No Entity Declaration)"  netgen  ng.gen_arch_only        'false'               'false'
+"Other NETGEN Command Line Options"                   netgen  ng.more_netgen_options  ''                    ''
+"Rename Top Level Module To"                          netgen  ng.rename_top           ''                    ''
+"Retain Hierarchy"                                    netgen  ng.retain_hierarchy     'true'                'true'
+"Simulation Model Target"                             netgen  ng.output_hdl_format    'Verilog'             'Verilog'
+                                                                                                            
+<ISE Property Name>                                   <Step>  <Option>                <ISE Property Value>  <PlanAhead Mapped Value>
+"Compile for HDL Debugging"                           isim    fuse.nodebug            'true'                'true'
+"Delay Values To Be Read from SDF"                    isim    isim.sdf_delay          'Setup Time'          'sdfmax'
+"ISim UUT Instance Name"                              isim    unit_under_test         'UUT'                 'UUT'
+"Incremental Compilation"                             isim    fuse.incremental        'true'                'true'
+"Load glbl"                                           isim    fuse.load_glbl          'true'                'true'
+"Simulation Run Time ISim"                            isim    runtime                 '500000 ns'           '500000 ns'
+"Value Range Check"                                   isim    fuse.range_check        'false'               'false'

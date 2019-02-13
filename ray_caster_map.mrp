@@ -1,0 +1,803 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Mapping Report File for Design 'ray_caster'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc5vfx130t-ff1738-2 -w -logic_opt off -ol
+high -xe n -t 1 -register_duplication off -global_opt off -mt 2 -cm area -detail
+-ir off -pr off -lc off -power off -o ray_caster_map.ncd ray_caster.ngd
+ray_caster.pcf 
+Target Device  : xc5vfx130t
+Target Package : ff1738
+Target Speed   : -2
+Mapper Version : virtex5 -- $Revision: 1.55 $
+Mapped Date    : Sat Jan 26 23:30:41 2019
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    0
+Slice Logic Utilization:
+  Number of Slice Registers:                   142 out of  81,920    1%
+    Number used as Flip Flops:                 142
+  Number of Slice LUTs:                        631 out of  81,920    1%
+    Number used as logic:                      631 out of  81,920    1%
+      Number using O6 output only:             538
+      Number using O5 and O6:                   93
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   249 out of  20,480    1%
+  Number of LUT Flip Flop pairs used:          654
+    Number with an unused Flip Flop:           512 out of     654   78%
+    Number with an unused LUT:                  23 out of     654    3%
+    Number of fully used LUT-FF pairs:         119 out of     654   18%
+    Number of unique control sets:               3
+    Number of slice register sites lost
+      to control set restrictions:               6 out of  81,920    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                       603 out of     840   71%
+
+Specific Feature Utilization:
+  Number of BUFG/BUFGCTRLs:                      1 out of      32    3%
+    Number used as BUFGs:                        1
+  Number of DSP48Es:                            24 out of     320    7%
+
+Average Fanout of Non-Clock Nets:                1.99
+
+Peak Memory Usage:  1107 MB
+Total REAL time to MAP completion:  37 secs 
+Total CPU time to MAP completion (all processors):   38 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+
+Section 3 - Informational
+-------------------------
+INFO:Map:284 - Map is running with the multi-threading option on. Map currently
+   supports the use of up to 2 processors. Based on the the user options and
+   machine load, Map will use 2 processors during this run.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 0.950 Volts. (default - Range: 0.950 to
+   1.050 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+   2 block(s) optimized away
+
+Section 5 - Removed Logic
+-------------------------
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| camera_front<0>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<1>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<2>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<3>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<4>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<5>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<6>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<7>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<8>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<9>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<10>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<11>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<12>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<13>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<14>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<15>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<16>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<17>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<18>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<19>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<20>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<21>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<22>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<23>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<24>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<25>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<26>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<27>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<28>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<29>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<30>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<31>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<32>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<33>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<34>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<35>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<36>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<37>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<38>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<39>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<40>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<41>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<42>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<43>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<44>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<45>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<46>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<47>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<48>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<49>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<50>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<51>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<52>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<53>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<54>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<55>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<56>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<57>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<58>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<59>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<60>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<61>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<62>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<63>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<64>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<65>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<66>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<67>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<68>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<69>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<70>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<71>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<72>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<73>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<74>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<75>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<76>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<77>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<78>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<79>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<80>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<81>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<82>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<83>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<84>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<85>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<86>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<87>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<88>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<89>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<90>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<91>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<92>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<93>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<94>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_front<95>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<0>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<1>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<2>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<3>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<4>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<5>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<6>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<7>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<8>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<9>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<10>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<11>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<12>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<13>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<14>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<15>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<16>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<17>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<18>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<19>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<20>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<21>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<22>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<23>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<24>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<25>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<26>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<27>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<28>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<29>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<30>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<31>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<32>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<33>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<34>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<35>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<36>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<37>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<38>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<39>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<40>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<41>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<42>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<43>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<44>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<45>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<46>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<47>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<48>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<49>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<50>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<51>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<52>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<53>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<54>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<55>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<56>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<57>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<58>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<59>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<60>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<61>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<62>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<63>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<64>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<65>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<66>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<67>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<68>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<69>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<70>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<71>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<72>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<73>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<74>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<75>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<76>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<77>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<78>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<79>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<80>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<81>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<82>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<83>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<84>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<85>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<86>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<87>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<88>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<89>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<90>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<91>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<92>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<93>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<94>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_left<95>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<0>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<1>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<2>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<3>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<4>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<5>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<6>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<7>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<8>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<9>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<10>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<11>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<12>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<13>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<14>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<15>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<16>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<17>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<18>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<19>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<20>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<21>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<22>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<23>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<24>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<25>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<26>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<27>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<28>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<29>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<30>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<31>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<32>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<33>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<34>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<35>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<36>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<37>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<38>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<39>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<40>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<41>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<42>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<43>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<44>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<45>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<46>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<47>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<48>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<49>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<50>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<51>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<52>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<53>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<54>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<55>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<56>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<57>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<58>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<59>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<60>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<61>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<62>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<63>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<64>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<65>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<66>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<67>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<68>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<69>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<70>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<71>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<72>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<73>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<74>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<75>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<76>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<77>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<78>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<79>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<80>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<81>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<82>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<83>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<84>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<85>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<86>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<87>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<88>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<89>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<90>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<91>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<92>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<93>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<94>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_origin<95>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<0>                       | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<1>                       | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<2>                       | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<3>                       | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<4>                       | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<5>                       | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<6>                       | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<7>                       | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<8>                       | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<9>                       | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<10>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<11>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<12>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<13>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<14>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<15>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<16>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<17>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<18>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<19>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<20>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<21>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<22>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<23>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<24>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<25>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<26>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<27>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<28>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<29>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<30>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<31>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<32>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<33>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<34>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<35>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<36>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<37>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<38>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<39>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<40>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<41>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<42>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<43>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<44>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<45>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<46>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<47>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<48>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<49>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<50>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<51>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<52>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<53>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<54>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<55>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<56>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<57>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<58>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<59>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<60>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<61>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<62>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<63>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<64>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<65>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<66>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<67>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<68>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<69>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<70>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<71>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<72>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<73>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<74>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<75>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<76>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<77>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<78>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<79>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<80>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<81>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<82>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<83>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<84>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<85>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<86>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<87>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<88>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<89>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<90>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<91>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<92>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<93>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<94>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| camera_up<95>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| ce                                 | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| clk                                | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| core_image_x<0>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_x<1>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_x<2>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_x<3>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_x<4>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_x<5>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_x<6>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_x<7>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_x<8>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_x<9>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_x<10>                   | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_y<0>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_y<1>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_y<2>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_y<3>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_y<4>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_y<5>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_y<6>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_y<7>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_y<8>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_y<9>                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_image_y<10>                   | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<0>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<1>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<2>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<3>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<4>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<5>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<6>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<7>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<8>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<9>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<10>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<11>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<12>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<13>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<14>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<15>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<16>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<17>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<18>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<19>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<20>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<21>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<22>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<23>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<24>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<25>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<26>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<27>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<28>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<29>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<30>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<31>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<32>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<33>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<34>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<35>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<36>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<37>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<38>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<39>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<40>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<41>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<42>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<43>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<44>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<45>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<46>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<47>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<48>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<49>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<50>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<51>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<52>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<53>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<54>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<55>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<56>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<57>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<58>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<59>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<60>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<61>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<62>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<63>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<64>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<65>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<66>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<67>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<68>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<69>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<70>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<71>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<72>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<73>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<74>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<75>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<76>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<77>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<78>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<79>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<80>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<81>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<82>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<83>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<84>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<85>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<86>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<87>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<88>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<89>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<90>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<91>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<92>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<93>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<94>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_direction<95>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<0>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<1>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<2>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<3>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<4>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<5>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<6>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<7>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<8>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<9>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<10>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<11>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<12>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<13>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<14>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<15>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<16>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<17>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<18>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<19>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<20>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<21>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<22>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<23>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<24>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<25>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<26>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<27>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<28>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<29>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<30>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<31>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<32>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<33>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<34>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<35>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<36>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<37>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<38>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<39>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<40>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<41>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<42>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<43>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<44>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<45>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<46>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<47>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<48>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<49>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<50>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<51>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<52>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<53>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<54>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<55>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<56>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<57>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<58>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<59>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<60>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<61>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<62>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<63>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<64>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<65>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<66>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<67>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<68>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<69>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<70>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<71>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<72>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<73>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<74>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<75>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<76>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<77>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<78>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<79>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<80>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<81>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<82>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<83>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<84>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<85>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<86>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<87>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<88>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<89>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<90>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<91>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<92>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<93>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<94>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| core_ray_origin<95>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| output_valid                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| render_start                       | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| rst                                | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+
+Section 12 - Control Set Information
+------------------------------------
++------------------------------------------------------------------------------------------------------------+
+| Clock Signal | Reset Signal        | Set Signal | Enable Signal        | Slice Load Count | Bel Load Count |
++------------------------------------------------------------------------------------------------------------+
+| clk_BUFGP    |                     |            | core_image_x_not0001 | 32               | 118            |
+| clk_BUFGP    | output_valid_or0000 |            |                      | 1                | 1              |
+| clk_BUFGP    | rst_IBUF            |            | ce_IBUF              | 14               | 23             |
++------------------------------------------------------------------------------------------------------------+
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Module                   | Partition | Slices*       | Slice Reg     | LUTs          | LUTRAM        | BRAM/FIFO | DSP48E  | BUFG  | BUFIO | BUFR  | DCM_ADV   | PLL_ADV   | Full Hierarchical Name                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ray_caster/              |           | 69/304        | 142/142       | 67/631        | 0/0           | 0/0       | 0/24    | 1/1   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster                                          |
+| +camera_add_1            |           | 0/51          | 0/0           | 0/99          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_add_1                             |
+| ++gen_vec_add[0].vec_add |           | 17/17         | 0/0           | 33/33         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_add_1/gen_vec_add[0].vec_add      |
+| ++gen_vec_add[1].vec_add |           | 17/17         | 0/0           | 33/33         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_add_1/gen_vec_add[1].vec_add      |
+| ++gen_vec_add[2].vec_add |           | 17/17         | 0/0           | 33/33         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_add_1/gen_vec_add[2].vec_add      |
+| +camera_add_2            |           | 0/52          | 0/0           | 0/192         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_add_2                             |
+| ++gen_vec_add[0].vec_add |           | 17/17         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_add_2/gen_vec_add[0].vec_add      |
+| ++gen_vec_add[1].vec_add |           | 18/18         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_add_2/gen_vec_add[1].vec_add      |
+| ++gen_vec_add[2].vec_add |           | 17/17         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_add_2/gen_vec_add[2].vec_add      |
+| +camera_mul_down         |           | 0/6           | 0/0           | 0/12          | 0/0           | 0/0       | 0/12    | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_mul_down                          |
+| ++gen_vec_mul[0].vec_mul |           | 2/2           | 0/0           | 4/4           | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_mul_down/gen_vec_mul[0].vec_mul   |
+| ++gen_vec_mul[1].vec_mul |           | 2/2           | 0/0           | 4/4           | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_mul_down/gen_vec_mul[1].vec_mul   |
+| ++gen_vec_mul[2].vec_mul |           | 2/2           | 0/0           | 4/4           | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_mul_down/gen_vec_mul[2].vec_mul   |
+| +camera_mul_right        |           | 0/126         | 0/0           | 0/261         | 0/0           | 0/0       | 0/12    | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_mul_right                         |
+| ++gen_vec_mul[0].vec_mul |           | 43/43         | 0/0           | 87/87         | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_mul_right/gen_vec_mul[0].vec_mul  |
+| ++gen_vec_mul[1].vec_mul |           | 42/42         | 0/0           | 87/87         | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_mul_right/gen_vec_mul[1].vec_mul  |
+| ++gen_vec_mul[2].vec_mul |           | 41/41         | 0/0           | 87/87         | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ray_caster/camera_mul_right/gen_vec_mul[2].vec_mul  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Slices can be packed with basic elements from multiple hierarchies.
+  Therefore, a slice will be counted in every hierarchical module
+  that each of its packed basic elements belong to.
+** For each column, there are two numbers reported <A>/<B>.
+   <A> is the number of elements that belong to that specific hierarchical module.
+   <B> is the total number of elements from that hierarchical module and any lower level
+   hierarchical modules below.
+*** The LUTRAM column counts all LUTs used as memory including RAM, ROM, and shift registers.

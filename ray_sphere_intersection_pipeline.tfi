@@ -1,0 +1,17 @@
+
+
+
+// Instantiate the module
+ray_sphere_intersection_pipeline instance_name (
+    .clk(clk), 
+    .sphere_center(sphere_center), 
+    .sphere_r2(sphere_r2), 
+    .ray_origin(ray_origin), 
+    .ray_direction(ray_direction), 
+    .was_hit(was_hit), 
+    .hit_dist(hit_dist), 
+    .new_data(new_data), 
+    .output_valid(output_valid)
+    );
+
+

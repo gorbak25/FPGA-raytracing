@@ -1,0 +1,14 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Mapping Report File for Design 'fixed_isqrt_pipeline'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol
+high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir
+off -pr off -lc off -power off -o fixed_isqrt_pipeline_map.ncd
+fixed_isqrt_pipeline.ngd fixed_isqrt_pipeline.pcf 
+Target Device  : xc5vlx50t
+Target Package : ff1136
+Target Speed   : -2
+Mapper Version : virtex5 -- $Revision: 1.55 $
+Mapped Date    : Wed Jan  9 01:39:01 2019

@@ -1,0 +1,12 @@
+
+
+
+// Instantiate the module
+traced_lights instance_name (
+    .clk(clk), 
+    .light_id(light_id), 
+    .position(position), 
+    .color(color)
+    );
+
+

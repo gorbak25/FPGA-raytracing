@@ -1,0 +1,8 @@
+Release 14.7 Drc P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Wed Jan  9 00:31:41 2019
+
+drc -z fixed_inv_pipeline.ncd fixed_inv_pipeline.pcf
+
+DRC detected 0 errors and 0 warnings.

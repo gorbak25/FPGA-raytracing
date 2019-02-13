@@ -1,0 +1,5 @@
+verilog work "fixed.v"
+verilog work "vector_mul_piecewise.v"
+verilog work "vector_mul.v"
+verilog work "vector_dot.v"
+verilog work "lightning_diffuse.v"

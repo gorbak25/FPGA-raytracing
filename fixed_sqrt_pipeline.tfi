@@ -1,0 +1,13 @@
+
+
+
+// Instantiate the module
+fixed_sqrt_pipeline instance_name (
+    .clk(clk), 
+    .a(a), 
+    .r(r), 
+    .new_data(new_data), 
+    .output_valid(output_valid)
+    );
+
+

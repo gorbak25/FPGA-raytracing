@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/clz8.xst" -ofn "/home/test/FPGA/raytracing/clz8.syr" 

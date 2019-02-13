@@ -1,0 +1,599 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: vector_reflector.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "vector_reflector.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "vector_reflector"
+Output Format                      : NGC
+Target Device                      : xc5vfx130t-2-ff1738
+
+---- Source Options
+Top Module Name                    : vector_reflector
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : Yes
+
+---- Target Options
+LUT Combining                      : Off
+Reduce Control Sets                : Off
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Move First FlipFlop Stage          : YES
+Move Last FlipFlop Stage           : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : YES
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 2
+Power Reduction                    : NO
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : NO
+Write Timing Constraints           : YES
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "fixed.v" in library work
+Module <fixed_mul> compiled
+Module <fixed_add> compiled
+Module <fixed_add3> compiled
+Compiling verilog file "vector_neg.v" in library work
+Module <fixed_sub> compiled
+Compiling verilog file "vector_mul.v" in library work
+Module <vector_neg> compiled
+Compiling verilog file "vector_dot.v" in library work
+Module <vector_mul> compiled
+Compiling verilog file "vector_add.v" in library work
+Module <vector_dot> compiled
+Compiling verilog file "vector_reflector.v" in library work
+Module <vector_add> compiled
+Module <vector_reflector> compiled
+No errors in compilation
+Analysis of file <"vector_reflector.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <vector_reflector> in library <work>.
+
+Analyzing hierarchy for module <vector_neg> in library <work>.
+
+Analyzing hierarchy for module <vector_dot> in library <work>.
+
+Analyzing hierarchy for module <vector_mul> in library <work>.
+
+Analyzing hierarchy for module <vector_add> in library <work>.
+
+Analyzing hierarchy for module <fixed_add3> in library <work> with parameters.
+	D = "00000000000000000000000000001000"
+	Q = "00000000000000000000000000011000"
+
+Analyzing hierarchy for module <fixed_mul> in library <work> with parameters.
+	D = "00000000000000000000000000001000"
+	Q = "00000000000000000000000000011000"
+
+Analyzing hierarchy for module <fixed_add> in library <work> with parameters.
+	D = "00000000000000000000000000001000"
+	Q = "00000000000000000000000000011000"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <vector_reflector>.
+Module <vector_reflector> is correct for synthesis.
+ 
+Analyzing module <vector_neg> in library <work>.
+Module <vector_neg> is correct for synthesis.
+ 
+Analyzing module <vector_dot> in library <work>.
+Module <vector_dot> is correct for synthesis.
+ 
+Analyzing module <fixed_add3> in library <work>.
+	D = 32'sb00000000000000000000000000001000
+	Q = 32'sb00000000000000000000000000011000
+Module <fixed_add3> is correct for synthesis.
+ 
+Analyzing module <fixed_mul> in library <work>.
+	D = 32'sb00000000000000000000000000001000
+	Q = 32'sb00000000000000000000000000011000
+Module <fixed_mul> is correct for synthesis.
+ 
+Analyzing module <vector_mul> in library <work>.
+Module <vector_mul> is correct for synthesis.
+ 
+Analyzing module <vector_add> in library <work>.
+Module <vector_add> is correct for synthesis.
+ 
+Analyzing module <fixed_add> in library <work>.
+	D = 32'sb00000000000000000000000000001000
+	Q = 32'sb00000000000000000000000000011000
+Module <fixed_add> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <vector_neg>.
+    Related source file is "vector_neg.v".
+    Found 32-bit adder for signal <$sub0000>.
+    Found 32-bit adder for signal <$sub0001>.
+    Found 32-bit adder for signal <$sub0002>.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+Unit <vector_neg> synthesized.
+
+
+Synthesizing Unit <fixed_add3>.
+    Related source file is "fixed.v".
+    Found 35-bit comparator greater for signal <r$cmp_gt0000> created at line 77.
+    Found 35-bit comparator less for signal <r$cmp_lt0000> created at line 77.
+    Found 34-bit adder for signal <tmp>.
+    Found 33-bit adder for signal <tmp$add0000> created at line 76.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <fixed_add3> synthesized.
+
+
+Synthesizing Unit <fixed_mul>.
+    Related source file is "fixed.v".
+WARNING:Xst:646 - Signal <tmp<23:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 41-bit comparator greater for signal <r$cmp_gt0000> created at line 37.
+    Found 41-bit comparator less for signal <r$cmp_lt0000> created at line 37.
+    Found 32x32-bit multiplier for signal <tmp>.
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   2 Comparator(s).
+Unit <fixed_mul> synthesized.
+
+
+Synthesizing Unit <fixed_add>.
+    Related source file is "fixed.v".
+    Found 34-bit comparator greater for signal <r$cmp_gt0000> created at line 56.
+    Found 34-bit comparator less for signal <r$cmp_lt0000> created at line 56.
+    Found 33-bit adder for signal <tmp>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <fixed_add> synthesized.
+
+
+Synthesizing Unit <vector_dot>.
+    Related source file is "vector_dot.v".
+Unit <vector_dot> synthesized.
+
+
+Synthesizing Unit <vector_mul>.
+    Related source file is "vector_mul.v".
+Unit <vector_mul> synthesized.
+
+
+Synthesizing Unit <vector_add>.
+    Related source file is "vector_add.v".
+Unit <vector_add> synthesized.
+
+
+Synthesizing Unit <vector_reflector>.
+    Related source file is "vector_reflector.v".
+WARNING:Xst:646 - Signal <dot<31>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <vector_reflector> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 6
+ 32x32-bit multiplier                                  : 6
+# Adders/Subtractors                                   : 8
+ 32-bit adder                                          : 3
+ 33-bit adder                                          : 4
+ 34-bit adder                                          : 1
+# Comparators                                          : 20
+ 34-bit comparator greater                             : 3
+ 34-bit comparator less                                : 3
+ 35-bit comparator greater                             : 1
+ 35-bit comparator less                                : 1
+ 41-bit comparator greater                             : 6
+ 41-bit comparator less                                : 6
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 6
+ 32x32-bit multiplier                                  : 6
+# Adders/Subtractors                                   : 8
+ 32-bit adder                                          : 3
+ 33-bit adder                                          : 4
+ 34-bit adder                                          : 1
+# Comparators                                          : 20
+ 34-bit comparator greater                             : 3
+ 34-bit comparator less                                : 3
+ 35-bit comparator greater                             : 1
+ 35-bit comparator less                                : 1
+ 41-bit comparator greater                             : 6
+ 41-bit comparator less                                : 6
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <vector_reflector> ...
+
+Optimizing unit <vector_neg> ...
+
+Optimizing unit <fixed_add3> ...
+
+Optimizing unit <fixed_mul> ...
+
+Optimizing unit <fixed_add> ...
+
+Optimizing unit <vector_dot> ...
+
+Optimizing unit <vector_mul> ...
+
+Optimizing unit <vector_add> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block vector_reflector, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : vector_reflector.ngr
+Top Level Output File Name         : vector_reflector
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : Yes
+
+Design Statistics
+# IOs                              : 288
+
+Cell Usage :
+# BELS                             : 704
+#      GND                         : 12
+#      INV                         : 93
+#      LUT1                        : 3
+#      LUT2                        : 172
+#      LUT3                        : 1
+#      LUT4                        : 12
+#      LUT6                        : 12
+#      MUXCY                       : 254
+#      VCC                         : 7
+#      XORCY                       : 138
+# IO Buffers                       : 288
+#      IBUF                        : 192
+#      OBUF                        : 96
+# DSPs                             : 24
+#      DSP48E                      : 24
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vfx130tff1738-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice LUTs:                  293  out of  81920     0%  
+    Number used as Logic:               293  out of  81920     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    293
+   Number with an unused Flip Flop:     293  out of    293   100%  
+   Number with an unused LUT:             0  out of    293     0%  
+   Number of fully used LUT-FF pairs:     0  out of    293     0%  
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                         288
+ Number of bonded IOBs:                 288  out of    840    34%  
+
+Specific Feature Utilization:
+ Number of DSP48Es:                      24  out of    320     7%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 30.025ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 348164191985461293481984 / 96
+-------------------------------------------------------------------------
+Delay:               30.025ns (Levels of Logic = 113)
+  Source:            v<0> (PAD)
+  Destination:       r<94> (PAD)
+
+  Data Path: v<0> to r<94>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.694   0.416  v_0_IBUF (v_0_IBUF)
+     begin scope: 'neg_dir'
+     LUT1:I0->O            1   0.086   0.000  Madd__sub0000_cy<0>_rt (Madd__sub0000_cy<0>_rt)
+     MUXCY:S->O            1   0.305   0.000  Madd__sub0000_cy<0> (Madd__sub0000_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<1> (Madd__sub0000_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<2> (Madd__sub0000_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<3> (Madd__sub0000_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<4> (Madd__sub0000_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<5> (Madd__sub0000_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<6> (Madd__sub0000_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<7> (Madd__sub0000_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<8> (Madd__sub0000_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<9> (Madd__sub0000_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<10> (Madd__sub0000_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<11> (Madd__sub0000_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<12> (Madd__sub0000_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<13> (Madd__sub0000_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<14> (Madd__sub0000_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  Madd__sub0000_cy<15> (Madd__sub0000_cy<15>)
+     XORCY:CI->O           2   0.300   0.290  Madd__sub0000_xor<16> (r<16>)
+     end scope: 'neg_dir'
+     begin scope: 'reflect_dot'
+     begin scope: 'gen_mul[0].dot_mul'
+     DSP48E:B16->PCOUT47    1   3.220   0.000  Mmult_tmp (Mmult_tmp_PCOUT_to_Mmult_tmp1_PCIN_47)
+     DSP48E:PCIN47->PCOUT47    1   1.598   0.000  Mmult_tmp1 (Mmult_tmp1_PCOUT_to_Mmult_tmp2_PCIN_47)
+     DSP48E:PCIN47->PCOUT47    1   1.598   0.000  Mmult_tmp2 (Mmult_tmp2_PCOUT_to_Mmult_tmp3_PCIN_47)
+     DSP48E:PCIN47->P24    2   1.445   0.666  Mmult_tmp3 (tmp<58>)
+     LUT4:I0->O            1   0.086   0.412  r<0>2_SW0 (N2)
+     LUT6:I5->O           31   0.086   0.595  r<0>2 (r<0>)
+     end scope: 'gen_mul[0].dot_mul'
+     begin scope: 'dot_add'
+     LUT2:I0->O            1   0.086   0.000  Madd_tmp_add0000_lut<0> (Madd_tmp_add0000_lut<0>)
+     MUXCY:S->O            1   0.305   0.000  Madd_tmp_add0000_cy<0> (Madd_tmp_add0000_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<1> (Madd_tmp_add0000_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<2> (Madd_tmp_add0000_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<3> (Madd_tmp_add0000_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<4> (Madd_tmp_add0000_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<5> (Madd_tmp_add0000_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<6> (Madd_tmp_add0000_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<7> (Madd_tmp_add0000_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<8> (Madd_tmp_add0000_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<9> (Madd_tmp_add0000_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<10> (Madd_tmp_add0000_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<11> (Madd_tmp_add0000_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<12> (Madd_tmp_add0000_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<13> (Madd_tmp_add0000_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<14> (Madd_tmp_add0000_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<15> (Madd_tmp_add0000_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<16> (Madd_tmp_add0000_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<17> (Madd_tmp_add0000_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<18> (Madd_tmp_add0000_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<19> (Madd_tmp_add0000_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<20> (Madd_tmp_add0000_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<21> (Madd_tmp_add0000_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<22> (Madd_tmp_add0000_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<23> (Madd_tmp_add0000_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<24> (Madd_tmp_add0000_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<25> (Madd_tmp_add0000_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<26> (Madd_tmp_add0000_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<27> (Madd_tmp_add0000_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<28> (Madd_tmp_add0000_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<29> (Madd_tmp_add0000_cy<29>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_add0000_cy<30> (Madd_tmp_add0000_cy<30>)
+     MUXCY:CI->O           0   0.023   0.000  Madd_tmp_add0000_cy<31> (Madd_tmp_add0000_cy<31>)
+     XORCY:CI->O           2   0.300   0.491  Madd_tmp_add0000_xor<32> (tmp_add0000<32>)
+     LUT2:I0->O            1   0.086   0.000  Madd_tmp_lut<32> (Madd_tmp_lut<32>)
+     MUXCY:S->O            0   0.305   0.000  Madd_tmp_cy<32> (Madd_tmp_cy<32>)
+     XORCY:CI->O           1   0.300   0.600  Madd_tmp_xor<33> (tmp<33>)
+     LUT3:I0->O          123   0.086   0.408  r<10>1 (r<0>)
+     end scope: 'dot_add'
+     end scope: 'reflect_dot'
+     begin scope: 'reflect_mul'
+     begin scope: 'gen_vec_mul[2].vec_mul'
+     DSP48E:A11->PCOUT12    1   3.220   0.000  Mmult_tmp (Mmult_tmp_PCOUT_to_Mmult_tmp1_PCIN_12)
+     DSP48E:PCIN12->PCOUT18    1   1.598   0.000  Mmult_tmp1 (Mmult_tmp1_PCOUT_to_Mmult_tmp2_PCIN_18)
+     DSP48E:PCIN18->PCOUT16    1   1.598   0.000  Mmult_tmp2 (Mmult_tmp2_PCOUT_to_Mmult_tmp3_PCIN_16)
+     DSP48E:PCIN16->P24    2   1.445   0.666  Mmult_tmp3 (tmp<58>)
+     LUT4:I0->O            1   0.086   0.412  r<0>2_SW0 (N2)
+     LUT6:I5->O           31   0.086   0.595  r<0>2 (r<0>)
+     end scope: 'gen_vec_mul[2].vec_mul'
+     end scope: 'reflect_mul'
+     begin scope: 'reflect_add'
+     begin scope: 'gen_vec_add[2].vec_add'
+     LUT2:I0->O            1   0.086   0.000  Madd_tmp_lut<0> (Madd_tmp_lut<0>)
+     MUXCY:S->O            1   0.305   0.000  Madd_tmp_cy<0> (Madd_tmp_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<1> (Madd_tmp_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<2> (Madd_tmp_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<3> (Madd_tmp_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<4> (Madd_tmp_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<5> (Madd_tmp_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<6> (Madd_tmp_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<7> (Madd_tmp_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<8> (Madd_tmp_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<9> (Madd_tmp_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<10> (Madd_tmp_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<11> (Madd_tmp_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<12> (Madd_tmp_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<13> (Madd_tmp_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<14> (Madd_tmp_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<15> (Madd_tmp_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<16> (Madd_tmp_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<17> (Madd_tmp_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<18> (Madd_tmp_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<19> (Madd_tmp_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<20> (Madd_tmp_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<21> (Madd_tmp_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<22> (Madd_tmp_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<23> (Madd_tmp_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<24> (Madd_tmp_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<25> (Madd_tmp_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<26> (Madd_tmp_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<27> (Madd_tmp_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<28> (Madd_tmp_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<29> (Madd_tmp_cy<29>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_tmp_cy<30> (Madd_tmp_cy<30>)
+     MUXCY:CI->O           0   0.023   0.000  Madd_tmp_cy<31> (Madd_tmp_cy<31>)
+     XORCY:CI->O           2   0.300   0.491  Madd_tmp_xor<32> (tmp<32>)
+     LUT2:I0->O           31   0.086   0.394  r<10>1 (r<0>)
+     end scope: 'gen_vec_add[2].vec_add'
+     end scope: 'reflect_add'
+     OBUF:I->O                 2.144          r_74_OBUF (r<74>)
+    ----------------------------------------
+    Total                     30.025ns (23.592ns logic, 6.433ns route)
+                                       (78.6% logic, 21.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.57 secs
+ 
+--> 
+
+
+Total memory usage is 608880 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

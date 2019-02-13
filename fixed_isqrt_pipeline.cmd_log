@@ -1,0 +1,69 @@
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vlx50t-ff1136-2 fixed_isqrt_pipeline.ngc fixed_isqrt_pipeline.ngd  
+map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir off -pr off -lc off -power off -o fixed_isqrt_pipeline_map.ncd fixed_isqrt_pipeline.ngd fixed_isqrt_pipeline.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vlx50t-ff1136-2 fixed_isqrt_pipeline.ngc fixed_isqrt_pipeline.ngd  
+map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir off -pr off -lc off -power off -o fixed_isqrt_pipeline_map.ncd fixed_isqrt_pipeline.ngd fixed_isqrt_pipeline.pcf 
+par -w -intstyle ise -ol high -mt off fixed_isqrt_pipeline_map.ncd fixed_isqrt_pipeline.ncd fixed_isqrt_pipeline.pcf 
+trce -intstyle ise -v 3 -tsi fixed_isqrt_pipeline.tsi -s 2 -n 3 -fastpaths -xml fixed_isqrt_pipeline.twx fixed_isqrt_pipeline.ncd -o fixed_isqrt_pipeline.twr fixed_isqrt_pipeline.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vlx50t-ff1136-2 fixed_isqrt_pipeline.ngc fixed_isqrt_pipeline.ngd  
+map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir off -pr off -lc off -power off -o fixed_isqrt_pipeline_map.ncd fixed_isqrt_pipeline.ngd fixed_isqrt_pipeline.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vlx50t-ff1136-2 fixed_isqrt_pipeline.ngc fixed_isqrt_pipeline.ngd  
+map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir off -pr off -lc off -power off -o fixed_isqrt_pipeline_map.ncd fixed_isqrt_pipeline.ngd fixed_isqrt_pipeline.pcf 
+par -w -intstyle ise -ol high -mt off fixed_isqrt_pipeline_map.ncd fixed_isqrt_pipeline.ncd fixed_isqrt_pipeline.pcf 
+trce -intstyle ise -v 3 -tsi fixed_isqrt_pipeline.tsi -s 2 -n 3 -fastpaths -xml fixed_isqrt_pipeline.twx fixed_isqrt_pipeline.ncd -o fixed_isqrt_pipeline.twr fixed_isqrt_pipeline.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vlx50t-ff1136-2 fixed_isqrt_pipeline.ngc fixed_isqrt_pipeline.ngd  
+map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir off -pr off -lc off -power off -o fixed_isqrt_pipeline_map.ncd fixed_isqrt_pipeline.ngd fixed_isqrt_pipeline.pcf 
+par -w -intstyle ise -ol high -mt off fixed_isqrt_pipeline_map.ncd fixed_isqrt_pipeline.ncd fixed_isqrt_pipeline.pcf 
+trce -intstyle ise -v 3 -tsi fixed_isqrt_pipeline.tsi -s 2 -n 3 -fastpaths -xml fixed_isqrt_pipeline.twx fixed_isqrt_pipeline.ncd -o fixed_isqrt_pipeline.twr fixed_isqrt_pipeline.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vlx50t-ff1136-2 fixed_isqrt_pipeline.ngc fixed_isqrt_pipeline.ngd  
+map -intstyle ise -p xc5vlx50t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -detail -ir off -pr off -lc off -power off -o fixed_isqrt_pipeline_map.ncd fixed_isqrt_pipeline.ngd fixed_isqrt_pipeline.pcf 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_isqrt_pipeline.ngc fixed_isqrt_pipeline.ngd  
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim fixed_isqrt_pipeline.ngd fixed_isqrt_pipeline_translate.v 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.xst" -ofn "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 fixed_isqrt_pipeline.ngc fixed_isqrt_pipeline.ngd  

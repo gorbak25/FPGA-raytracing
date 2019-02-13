@@ -1,0 +1,21 @@
+
+
+
+// Instantiate the module
+ray_caster instance_name (
+    .clk(clk), 
+    .ce(ce), 
+    .rst(rst), 
+    .render_start(render_start), 
+    .camera_origin(camera_origin), 
+    .camera_front(camera_front), 
+    .camera_left(camera_left), 
+    .camera_up(camera_up), 
+    .core_image_x(core_image_x), 
+    .core_image_y(core_image_y), 
+    .core_ray_origin(core_ray_origin), 
+    .core_ray_direction(core_ray_direction), 
+    .output_valid(output_valid)
+    );
+
+

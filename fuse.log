@@ -1,0 +1,173 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/test/FPGA/raytracing/ray_core_test_isim_beh.exe" -prj "/home/test/FPGA/raytracing/ray_core_test_beh.prj" "work.ray_core_test" "work.glbl" 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 12
+Turning on mult-threading, number of parallel sub-compilation jobs: 24 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/test/FPGA/raytracing/signal_pipe.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/leading_one_detect.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/ipcore_dir/inv_LUT.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/fixed.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/ipcore_dir/isqrt_LUT.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/fixed_isqrt_pipeline.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/fixed_inv_pipeline.v" into library work
+WARNING:HDLCompiler:327 - "/home/test/FPGA/raytracing/fixed_inv_pipeline.v" Line 59: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "/home/test/FPGA/raytracing/fixed_inv_pipeline.v" Line 60: Concatenation with unsized literal; will interpret as 32 bits
+Analyzing Verilog file "/home/test/FPGA/raytracing/vector_sub.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/vector_dot.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/fixed_sqrt_pipeline.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/vector_mul.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/ray_sphere_normal_pipeline.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/ray_sphere_intersection_pipeline.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/ray_plane_normal_pipeline.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/ray_plane_intersection_pipeline.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/fixed_abs.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/vector_normalizer_pipeline.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/vector_neg.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/vector_mul_piecewise.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/vector_add.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/traced_spheres.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/traced_planes.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/traced_objects.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/ray_unified_normal_pipeline.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/ray_unified_intersection_pipeline.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/vector_reflector.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/traced_materials.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/traced_lights.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/ray_hit_pipeline.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/lightning_diffuse.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/ray_core.v" into library work
+Analyzing Verilog file "/home/test/FPGA/raytracing/ray_core_test.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "/home/test/FPGA/raytracing/ray_core.v" Line 524: Port rst is not connected to this instance
+WARNING:HDLCompiler:327 - "/home/test/FPGA/raytracing/fixed_inv_pipeline.v" Line 59: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "/home/test/FPGA/raytracing/fixed_inv_pipeline.v" Line 60: Concatenation with unsized literal; will interpret as 32 bits
+Completed static elaboration
+Fuse Memory Usage: 87796 KB
+Fuse CPU Usage: 910 ms
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module isqrt_LUT
+Compiling module fixed_abs
+Compiling module clz2
+Compiling module clz4
+Compiling module clz8
+Compiling module clz16
+Compiling module clz32
+Compiling module fixed_mul(D=8,Q=24)
+Compiling module fixed_add3(D=8,Q=24)
+Compiling module vector_dot
+Compiling module signal_pipe(W=96,L=7)
+Compiling module fixed_mul
+Compiling module signal_pipe(L=6)
+Compiling module signal_pipe(W=32,L=6)
+Compiling module fixed_add
+Compiling module fixed_sub
+Compiling module signal_pipe(L=8)
+Compiling module signal_pipe(W=32,L=8)
+Compiling module fixed_isqrt_pipeline
+Compiling module signal_pipe(W=96,L=29)
+Compiling module vector_mul
+Compiling module vector_normalizer_pipeline
+Compiling module signal_pipe(W=11,L=49)
+Compiling module signal_pipe(W=3,L=49)
+Compiling module signal_pipe(L=49)
+Compiling module signal_pipe(W=96,L=49)
+Compiling module signal_pipe(W=32,L=49)
+Compiling module signal_pipe_copy1
+Compiling module traced_objects
+Compiling module traced_spheres
+Compiling module traced_planes
+Compiling module vector_sub
+Compiling module signal_pipe(W=96)
+Compiling module signal_pipe(W=32)
+Compiling module signal_pipe(W=32,L=7)
+Compiling module signal_pipe(W=32,L=3)
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module inv_LUT
+Compiling module fixed_inv_pipeline
+Compiling module fixed_sqrt_pipeline
+Compiling module signal_pipe(W=32,L=53)
+Compiling module signal_pipe(L=53)
+Compiling module signal_pipe_default
+Compiling module ray_sphere_intersection_pipeline
+Compiling module signal_pipe(W=32,L=23)
+Compiling module signal_pipe(L=23)
+Compiling module ray_plane_intersection_pipeline
+Compiling module signal_pipe(W=32,L=39)
+Compiling module signal_pipe(L=39)
+Compiling module ray_unified_intersection_pipelin...
+Compiling module signal_pipe(W=96,L=90)
+Compiling module signal_pipe(W=96,L=83)
+Compiling module signal_pipe(W=3,L=92)
+Compiling module signal_pipe(W=96,L=8)
+Compiling module signal_pipe(W=96,L=92)
+Compiling module vector_add
+Compiling module fixed_add_comb
+Compiling module fixed_sub_comb
+Compiling module vector_sub_comb
+Compiling module ray_sphere_normal_pipeline
+Compiling module ray_plane_normal_pipeline
+WARNING:HDLCompiler:1007 - "/home/test/FPGA/raytracing/signal_pipe.v" Line 53: Element index -1 into pipe is out of bounds
+Compiling module signal_pipe(W=96,L=0)
+Compiling module signal_pipe(L=0)
+Compiling module ray_unified_normal_pipeline
+Compiling module signal_pipe(W=3,L=2)
+Compiling module signal_pipe(W=96,L=2)
+Compiling module signal_pipe(L=2)
+Compiling module signal_pipe(W=32,L=2)
+Compiling module signal_pipe(W=3,L=57)
+Compiling module signal_pipe(L=57)
+Compiling module signal_pipe(W=32,L=57)
+Compiling module signal_pipe(W=96,L=57)
+Compiling module vector_neg
+Compiling module ray_hit_pipeline
+Compiling module signal_pipe(W=96,L=6)
+Compiling module signal_pipe(W=3,L=6)
+Compiling module fixed_Q8_24_to_Q16_16
+Compiling module fixed_mul(D=16,Q=16)
+Compiling module signal_pipe(W=11,L=164)
+Compiling module signal_pipe(W=3,L=164)
+Compiling module signal_pipe(L=164)
+Compiling module signal_pipe(W=96,L=164)
+Compiling module signal_pipe(W=32,L=164)
+Compiling module signal_pipe_copy2
+Compiling module vector_reflector_pipeline
+Compiling module vector_mul_piecewise_seq
+Compiling module lightning_diffuse
+Compiling module signal_pipe(W=3,L=17)
+Compiling module signal_pipe_copy3
+Compiling module traced_lights
+Compiling module vector_Q24_8_to_Q16_16
+Compiling module fixed_mul_copy1
+Compiling module fixed_add3(D=16,Q=16)
+Compiling module vector_dot(D=16,Q=16)
+Compiling module traced_materials
+Compiling module signal_pipe(W=11,L=20)
+Compiling module signal_pipe(W=3,L=20)
+Compiling module signal_pipe(L=20)
+Compiling module signal_pipe(W=96,L=20)
+Compiling module signal_pipe(W=32,L=20)
+Compiling module signal_pipe_copy4
+Compiling module signal_pipe(L=9)
+Compiling module signal_pipe(W=32,L=9)
+Compiling module signal_pipe(W=96,L=17)
+Compiling module signal_pipe(W=96,L=19)
+Compiling module signal_pipe(L=12)
+Compiling module signal_pipe(W=96,L=12)
+Compiling module signal_pipe(L=19)
+Compiling module signal_pipe(L=18)
+Compiling module signal_pipe(W=96,L=18)
+Compiling module ray_core_default
+Compiling module ray_core_test
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 118 Verilog Units
+Built simulation executable /home/test/FPGA/raytracing/ray_core_test_isim_beh.exe
+Fuse Memory Usage: 1700220 KB
+Fuse CPU Usage: 1120 ms
+GCC CPU Usage: 360 ms

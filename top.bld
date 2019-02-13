@@ -1,0 +1,53 @@
+Release 14.7 ngdbuild P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -sd ipcore_dir -nt timestamp -uc board.ucf -p xc5vfx130t-ff1738-2
+top.ngc top.ngd
+
+Reading NGO file "/home/test/FPGA/raytracing/top.ngc" ...
+Loading design module "ipcore_dir/frame_buffer.ngc"...
+Loading design module "ipcore_dir/isqrt_LUT.ngc"...
+Loading design module "ipcore_dir/inv_LUT.ngc"...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "board.ucf" ...
+WARNING:NgdBuild - The value of SIM_DEVICE on instance 'dcm_vclk' of type
+   DCM_ADV has been changed from 'VIRTEX4' to 'VIRTEX5' to correct post-ngdbuild
+   and timing simulation for this primitive.  In order for functional simulation
+   to be correct, the value of SIM_DEVICE should be changed in this same manner
+   in the source netlist or constraint file.
+WARNING:NgdBuild - The value of SIM_DEVICE on instance 'dcm_rclk' of type
+   DCM_ADV has been changed from 'VIRTEX4' to 'VIRTEX5' to correct post-ngdbuild
+   and timing simulation for this primitive.  In order for functional simulation
+   to be correct, the value of SIM_DEVICE should be changed in this same manner
+   in the source netlist or constraint file.
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem - The Period constraint <NET "clk" period = 10.000;>
+   [board.ucf(3)], is specified using the Net Period method which is not
+   recommended. Please use the Timespec PERIOD method.
+
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   2
+
+Total memory usage is 783472 kilobytes
+
+Writing NGD file "top.ngd" ...
+Total REAL time to NGDBUILD completion:  43 sec
+Total CPU time to NGDBUILD completion:   42 sec
+
+Writing NGDBUILD log file "top.bld"...

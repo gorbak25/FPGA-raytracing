@@ -1,0 +1,18 @@
+
+
+
+// Instantiate the module
+uart_subsystem instance_name (
+    .clk(clk), 
+    .rst(rst), 
+    .TX(TX), 
+    .RX(RX), 
+    .caster_ready(caster_ready), 
+    .stop_caster(stop_caster), 
+    .camera_left(camera_left), 
+    .camera_up(camera_up), 
+    .camera_front(camera_front), 
+    .camera_origin(camera_origin)
+    );
+
+

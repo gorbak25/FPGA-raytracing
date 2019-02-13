@@ -1,0 +1,930 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.02 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.02 secs
+ 
+--> 
+Reading design: ray_caster.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "ray_caster.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "ray_caster"
+Output Format                      : NGC
+Target Device                      : xc5vfx130t-2-ff1738
+
+---- Source Options
+Top Module Name                    : ray_caster
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Block
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Off
+Reduce Control Sets                : Off
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : NO
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "fixed.v" in library work
+Module <fixed_mul_comb> compiled
+Module <fixed_mul> compiled
+Module <fixed_mul_integer> compiled
+Module <fixed_mul_integer_comb> compiled
+Module <fixed_add> compiled
+Module <fixed_add_ce> compiled
+Module <fixed_add3> compiled
+Module <fixed_sub> compiled
+Module <fixed_add_comb> compiled
+Module <fixed_sub_comb> compiled
+Compiling verilog file "vector_mul.v" in library work
+Module <fixed_Q8_24_to_Q16_16> compiled
+Module <vector_mul_comb> compiled
+Module <vector_mul> compiled
+Module <vector_mul_integer> compiled
+Compiling verilog file "vector_add.v" in library work
+Module <vector_mul_integer_comb> compiled
+Module <vector_add> compiled
+Module <vector_add_ce> compiled
+Compiling verilog file "signal_pipe.v" in library work
+Module <vector_add_comb> compiled
+Module <signal_pipe> compiled
+Compiling verilog file "ray_caster.v" in library work
+Module <signal_pipe_ce> compiled
+Module <ray_caster> compiled
+No errors in compilation
+Analysis of file <"ray_caster.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <ray_caster> in library <work> with parameters.
+	RES_X = "00000000000000000000001010000000"
+	RES_Y = "00000000000000000000000111100000"
+	STATE_CAST = "10"
+	STATE_IDLE = "01"
+
+Analyzing hierarchy for module <vector_mul_integer> in library <work>.
+
+Analyzing hierarchy for module <signal_pipe_ce> in library <work> with parameters.
+	L = "00000000000000000000000000000110"
+	LL = "00000000000000000000000000000110"
+	W = "00000000000000000000000000001011"
+
+Analyzing hierarchy for module <vector_add_ce> in library <work>.
+
+Analyzing hierarchy for module <signal_pipe_ce> in library <work> with parameters.
+	L = "00000000000000000000000000000001"
+	LL = "00000000000000000000000000000001"
+	W = "00000000000000000000000000001011"
+
+Analyzing hierarchy for module <fixed_mul_integer> in library <work> with parameters.
+	D = "00000000000000000000000000001000"
+	Q = "00000000000000000000000000011000"
+
+Analyzing hierarchy for module <fixed_add_ce> in library <work> with parameters.
+	D = "00000000000000000000000000001000"
+	Q = "00000000000000000000000000011000"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <ray_caster>.
+	RES_X = 32'sb00000000000000000000001010000000
+	RES_Y = 32'sb00000000000000000000000111100000
+	STATE_CAST = 2'b10
+	STATE_IDLE = 2'b01
+Module <ray_caster> is correct for synthesis.
+ 
+Analyzing module <vector_mul_integer> in library <work>.
+Module <vector_mul_integer> is correct for synthesis.
+ 
+Analyzing module <fixed_mul_integer> in library <work>.
+	D = 32'sb00000000000000000000000000001000
+	Q = 32'sb00000000000000000000000000011000
+Module <fixed_mul_integer> is correct for synthesis.
+ 
+Analyzing module <signal_pipe_ce.1> in library <work>.
+	L = 32'sb00000000000000000000000000000110
+	LL = 32'sb00000000000000000000000000000110
+	W = 32'sb00000000000000000000000000001011
+Module <signal_pipe_ce.1> is correct for synthesis.
+ 
+Analyzing module <vector_add_ce> in library <work>.
+Module <vector_add_ce> is correct for synthesis.
+ 
+Analyzing module <fixed_add_ce> in library <work>.
+	D = 32'sb00000000000000000000000000001000
+	Q = 32'sb00000000000000000000000000011000
+Module <fixed_add_ce> is correct for synthesis.
+ 
+Analyzing module <signal_pipe_ce.2> in library <work>.
+	L = 32'sb00000000000000000000000000000001
+	LL = 32'sb00000000000000000000000000000001
+	W = 32'sb00000000000000000000000000001011
+Module <signal_pipe_ce.2> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <i> in unit <signal_pipe_ce_1> has a constant value of 110 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <i> in unit <signal_pipe_ce_2> has a constant value of 1 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <signal_pipe_ce_1>.
+    Related source file is "signal_pipe.v".
+    Found 11-bit register for signal <out>.
+    Found 66-bit register for signal <pipe>.
+    Summary:
+	inferred  77 D-type flip-flop(s).
+Unit <signal_pipe_ce_1> synthesized.
+
+
+Synthesizing Unit <signal_pipe_ce_2>.
+    Related source file is "signal_pipe.v".
+    Found 11-bit register for signal <out>.
+    Found 11-bit register for signal <pipe<0>>.
+    Summary:
+	inferred  22 D-type flip-flop(s).
+Unit <signal_pipe_ce_2> synthesized.
+
+
+Synthesizing Unit <fixed_mul_integer>.
+    Related source file is "fixed.v".
+    Found 32-bit register for signal <r>.
+    Found 1-bit register for signal <output_valid>.
+    Found 43-bit comparator greater for signal <r$cmp_gt0000> created at line 240.
+    Found 43-bit comparator less for signal <r$cmp_lt0000> created at line 240.
+    Found 32-bit register for signal <stage1_a>.
+    Found 11-bit register for signal <stage1_b>.
+    Found 32x11-bit multiplier for signal <stage1_tmp>.
+    Found 1-bit register for signal <stage1_valid>.
+    Found 43-bit register for signal <stage2_tmp>.
+    Found 1-bit register for signal <stage2_valid>.
+    Found 43-bit register for signal <stage2a_tmp>.
+    Found 1-bit register for signal <stage2a_valid>.
+    Found 43-bit register for signal <stage2b_tmp>.
+    Found 1-bit register for signal <stage2b_valid>.
+    Found 43-bit register for signal <stage2c_tmp>.
+    Found 1-bit register for signal <stage2c_valid>.
+    Found 43-bit register for signal <stage2d_tmp>.
+    Found 1-bit register for signal <stage2d_valid>.
+    Summary:
+	inferred 297 D-type flip-flop(s).
+	inferred   1 Multiplier(s).
+	inferred   2 Comparator(s).
+Unit <fixed_mul_integer> synthesized.
+
+
+Synthesizing Unit <fixed_add_ce>.
+    Related source file is "fixed.v".
+    Found 32-bit register for signal <r>.
+    Found 1-bit register for signal <output_valid>.
+    Found 32-bit register for signal <stage1_a>.
+    Found 32-bit register for signal <stage1_b>.
+    Found 33-bit adder for signal <stage1_tmp>.
+    Found 1-bit register for signal <stage1_valid>.
+    Summary:
+	inferred  98 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <fixed_add_ce> synthesized.
+
+
+Synthesizing Unit <vector_mul_integer>.
+    Related source file is "vector_mul.v".
+Unit <vector_mul_integer> synthesized.
+
+
+Synthesizing Unit <vector_add_ce>.
+    Related source file is "vector_add.v".
+Unit <vector_add_ce> synthesized.
+
+
+Synthesizing Unit <ray_caster>.
+    Related source file is "ray_caster.v".
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 2                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | ce                        (positive)           |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 01                                             |
+    | Power Up State     | 01                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 11-bit register for signal <core_image_x>.
+    Found 11-bit register for signal <core_image_y>.
+    Found 96-bit register for signal <core_ray_direction>.
+    Found 96-bit register for signal <core_ray_origin>.
+    Found 1-bit register for signal <output_valid>.
+    Found 13-bit adder for signal <$sub0000> created at line 67.
+    Found 13-bit adder for signal <$sub0001> created at line 68.
+    Found 11-bit register for signal <stage1_cast_x>.
+    Found 11-bit adder for signal <stage1_cast_x$addsub0000> created at line 134.
+    Found 11-bit register for signal <stage1_cast_y>.
+    Found 11-bit adder for signal <stage1_cast_y$addsub0000> created at line 130.
+    Found 1-bit register for signal <stage1_valid>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 238 D-type flip-flop(s).
+	inferred   6 Adder/Subtractor(s).
+Unit <ray_caster> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 6
+ 32x11-bit multiplier                                  : 6
+# Adders/Subtractors                                   : 12
+ 11-bit adder                                          : 2
+ 11-bit subtractor                                     : 2
+ 13-bit adder                                          : 2
+ 33-bit adder                                          : 6
+# Registers                                            : 150
+ 1-bit register                                        : 56
+ 11-bit register                                       : 32
+ 32-bit register                                       : 30
+ 43-bit register                                       : 30
+ 96-bit register                                       : 2
+# Comparators                                          : 12
+ 43-bit comparator greater                             : 6
+ 43-bit comparator less                                : 6
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:1]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 01    | 0
+ 10    | 1
+-------------------
+
+Synthesizing (advanced) Unit <fixed_mul_integer>.
+	Found pipelined multiplier on signal <stage1_tmp>:
+		- 3 pipeline level(s) found in a register connected to the multiplier macro output.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <stage1_a>.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <stage1_b>.
+		Pushing register(s) into the multiplier macro.
+Unit <fixed_mul_integer> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Multipliers                                          : 6
+ 32x11-bit registered multiplier                       : 6
+# Adders/Subtractors                                   : 12
+ 11-bit adder                                          : 4
+ 11-bit subtractor                                     : 2
+ 33-bit adder                                          : 6
+# Registers                                            : 1818
+ Flip-Flops                                            : 1818
+# Comparators                                          : 12
+ 43-bit comparator greater                             : 6
+ 43-bit comparator less                                : 6
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <ray_caster> ...
+
+Optimizing unit <signal_pipe_ce_1> ...
+
+Optimizing unit <signal_pipe_ce_2> ...
+
+Optimizing unit <fixed_mul_integer> ...
+
+Optimizing unit <fixed_add_ce> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage1_valid> in Unit <ray_caster> is equivalent to the following 5 FFs/Latches, which will be removed : <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage1_valid> <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage1_valid> <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage1_valid> <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage1_valid> <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage1_valid> 
+INFO:Xst:2261 - The FF/Latch <camera_add_2/gen_vec_add[0].vec_add_ce/stage1_valid> in Unit <ray_caster> is equivalent to the following 2 FFs/Latches, which will be removed : <camera_add_2/gen_vec_add[1].vec_add_ce/stage1_valid> <camera_add_2/gen_vec_add[2].vec_add_ce/stage1_valid> 
+INFO:Xst:2261 - The FF/Latch <camera_add_1/gen_vec_add[0].vec_add_ce/stage1_valid> in Unit <ray_caster> is equivalent to the following 2 FFs/Latches, which will be removed : <camera_add_1/gen_vec_add[1].vec_add_ce/stage1_valid> <camera_add_1/gen_vec_add[2].vec_add_ce/stage1_valid> 
+INFO:Xst:2261 - The FF/Latch <camera_add_1/gen_vec_add[0].vec_add_ce/output_valid> in Unit <ray_caster> is equivalent to the following 2 FFs/Latches, which will be removed : <camera_add_1/gen_vec_add[1].vec_add_ce/output_valid> <camera_add_1/gen_vec_add[2].vec_add_ce/output_valid> 
+INFO:Xst:2261 - The FF/Latch <camera_add_2/gen_vec_add[0].vec_add_ce/output_valid> in Unit <ray_caster> is equivalent to the following 2 FFs/Latches, which will be removed : <camera_add_2/gen_vec_add[1].vec_add_ce/output_valid> <camera_add_2/gen_vec_add[2].vec_add_ce/output_valid> 
+INFO:Xst:2261 - The FF/Latch <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2a_valid> in Unit <ray_caster> is equivalent to the following 5 FFs/Latches, which will be removed : <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2a_valid> <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2a_valid> <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2a_valid> <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2a_valid> <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2a_valid> 
+INFO:Xst:2261 - The FF/Latch <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2b_valid> in Unit <ray_caster> is equivalent to the following 5 FFs/Latches, which will be removed : <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2b_valid> <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2b_valid> <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2b_valid> <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2b_valid> <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2b_valid> 
+INFO:Xst:2261 - The FF/Latch <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2c_valid> in Unit <ray_caster> is equivalent to the following 5 FFs/Latches, which will be removed : <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2c_valid> <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2c_valid> <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2c_valid> <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2c_valid> <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2c_valid> 
+INFO:Xst:2261 - The FF/Latch <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2d_valid> in Unit <ray_caster> is equivalent to the following 5 FFs/Latches, which will be removed : <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2d_valid> <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2d_valid> <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2d_valid> <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2d_valid> <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2d_valid> 
+INFO:Xst:2261 - The FF/Latch <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_valid> in Unit <ray_caster> is equivalent to the following 5 FFs/Latches, which will be removed : <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_valid> <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_valid> <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_valid> <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_valid> <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_valid> 
+INFO:Xst:2261 - The FF/Latch <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/output_valid> in Unit <ray_caster> is equivalent to the following 5 FFs/Latches, which will be removed : <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/output_valid> <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/output_valid> <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/output_valid> <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/output_valid> <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/output_valid> 
+Found area constraint ratio of 100 (+ 5) on block ray_caster, actual ratio is 3.
+
+Final Macro Processing ...
+
+Processing Unit <ray_caster> :
+	Found 12-bit shift register for signal <output_valid_OBUF>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_y/out_10>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_y/out_9>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_y/out_8>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_y/out_7>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_y/out_6>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_y/out_5>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_y/out_4>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_y/out_3>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_y/out_2>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_y/out_1>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_y/out_0>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_x/out_10>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_x/out_9>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_x/out_8>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_x/out_7>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_x/out_6>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_x/out_5>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_x/out_4>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_x/out_3>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_x/out_2>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_x/out_1>.
+	Found 11-bit shift register for signal <pipe_stage3_cast_x/out_0>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_42>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_41>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_40>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_39>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_38>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_37>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_36>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_35>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_34>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_33>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_32>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_31>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_30>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_29>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_28>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_27>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_26>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_25>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_24>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_23>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_22>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_21>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_20>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_19>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_18>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_17>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_16>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_15>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_14>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_13>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_12>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_11>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_10>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_9>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_8>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_7>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_6>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_5>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_4>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_3>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_2>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_1>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_0>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_42>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_41>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_40>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_39>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_38>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_37>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_36>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_35>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_34>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_33>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_32>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_31>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_30>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_29>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_28>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_27>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_26>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_25>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_24>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_23>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_22>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_21>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_20>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_19>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_18>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_17>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_16>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_15>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_14>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_13>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_12>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_11>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_10>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_9>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_8>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_7>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_6>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_5>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_4>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_3>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_2>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_1>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_0>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_42>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_41>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_40>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_39>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_38>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_37>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_36>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_35>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_34>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_33>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_32>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_31>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_30>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_29>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_28>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_27>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_26>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_25>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_24>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_23>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_22>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_21>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_20>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_19>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_18>.
+	Found 2-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_17>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_16>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_15>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_14>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_13>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_12>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_11>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_10>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_9>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_8>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_7>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_6>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_5>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_4>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_3>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_2>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_1>.
+	Found 3-bit shift register for signal <camera_mul_left/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_0>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_42>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_41>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_40>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_39>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_38>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_37>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_36>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_35>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_34>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_33>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_32>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_31>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_30>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_29>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_28>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_27>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_26>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_25>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_24>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_23>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_22>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_21>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_20>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_19>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_18>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_17>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_16>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_15>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_14>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_13>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_12>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_11>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_10>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_9>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_8>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_7>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_6>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_5>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_4>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_3>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_2>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_1>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[0].vec_mul_integer/stage2_tmp_0>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_42>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_41>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_40>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_39>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_38>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_37>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_36>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_35>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_34>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_33>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_32>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_31>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_30>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_29>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_28>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_27>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_26>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_25>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_24>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_23>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_22>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_21>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_20>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_19>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_18>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_17>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_16>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_15>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_14>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_13>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_12>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_11>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_10>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_9>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_8>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_7>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_6>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_5>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_4>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_3>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_2>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_1>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[1].vec_mul_integer/stage2_tmp_0>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_42>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_41>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_40>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_39>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_38>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_37>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_36>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_35>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_34>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_33>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_32>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_31>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_30>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_29>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_28>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_27>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_26>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_25>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_24>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_23>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_22>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_21>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_20>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_19>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_18>.
+	Found 2-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_17>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_16>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_15>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_14>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_13>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_12>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_11>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_10>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_9>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_8>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_7>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_6>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_5>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_4>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_3>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_2>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_1>.
+	Found 3-bit shift register for signal <camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/stage2_tmp_0>.
+	Found 2-bit shift register for signal <camera_add_1/gen_vec_add[0].vec_add_ce/stage1_a_31>.
+	Found 2-bit shift register for signal <camera_add_1/gen_vec_add[0].vec_add_ce/stage1_b_31>.
+	Found 2-bit shift register for signal <camera_add_1/gen_vec_add[1].vec_add_ce/stage1_a_31>.
+	Found 2-bit shift register for signal <camera_add_1/gen_vec_add[1].vec_add_ce/stage1_b_31>.
+	Found 2-bit shift register for signal <camera_add_1/gen_vec_add[2].vec_add_ce/stage1_a_31>.
+	Found 2-bit shift register for signal <camera_add_1/gen_vec_add[2].vec_add_ce/stage1_b_31>.
+Unit <ray_caster> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 994
+ Flip-Flops                                            : 994
+# Shift Registers                                      : 287
+ 11-bit shift register                                 : 22
+ 12-bit shift register                                 : 1
+ 2-bit shift register                                  : 162
+ 3-bit shift register                                  : 102
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : ray_caster.ngr
+Top Level Output File Name         : ray_caster
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 604
+
+Cell Usage :
+# BELS                             : 1085
+#      GND                         : 1
+#      INV                         : 11
+#      LUT2                        : 208
+#      LUT3                        : 195
+#      LUT4                        : 205
+#      LUT5                        : 23
+#      LUT6                        : 48
+#      MUXCY                       : 192
+#      MUXF7                       : 3
+#      VCC                         : 1
+#      XORCY                       : 198
+# FlipFlops/Latches                : 1293
+#      FDE                         : 1258
+#      FDRE                        : 35
+# Shift Registers                  : 287
+#      SRLC16E                     : 287
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 603
+#      IBUF                        : 387
+#      OBUF                        : 216
+# DSPs                             : 12
+#      DSP48E                      : 12
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vfx130tff1738-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1197  out of  81920     1%  
+ Number of Slice LUTs:                  977  out of  81920     1%  
+    Number used as Logic:               690  out of  81920     0%  
+    Number used as Memory:              287  out of  25280     1%  
+       Number used as SRL:              287
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1475
+   Number with an unused Flip Flop:     278  out of   1475    18%  
+   Number with an unused LUT:           498  out of   1475    33%  
+   Number of fully used LUT-FF pairs:   699  out of   1475    47%  
+   Number of unique control sets:         3
+
+IO Utilization: 
+ Number of IOs:                         604
+ Number of bonded IOBs:                 604  out of    840    71%  
+    IOB Flip Flops/Latches:              96
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+ Number of DSP48Es:                      12  out of    320     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1592  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 3.117ns (Maximum Frequency: 320.785MHz)
+   Minimum input arrival time before clock: 2.469ns
+   Maximum output required time after clock: 3.430ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.117ns (frequency: 320.785MHz)
+  Total number of paths / destination ports: 52712 / 2005
+-------------------------------------------------------------------------
+Delay:               3.117ns (Levels of Logic = 4)
+  Source:            stage1_cast_x_10 (FF)
+  Destination:       stage1_cast_x_8 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: stage1_cast_x_10 to stage1_cast_x_8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.396   0.914  stage1_cast_x_10 (stage1_cast_x_10)
+     LUT6:I0->O            6   0.086   0.435  state_cmp_eq0000_SW0 (N221)
+     LUT6:I5->O            1   0.086   0.901  stage1_cast_y_mux0000<8>11 (N21)
+     LUT6:I0->O            1   0.086   0.000  stage1_cast_x_mux0000<2>_G (N118)
+     MUXF7:I1->O           1   0.214   0.000  stage1_cast_x_mux0000<2> (stage1_cast_x_mux0000<2>)
+     FDRE:D                   -0.022          stage1_cast_x_8
+    ----------------------------------------
+    Total                      3.117ns (0.868ns logic, 2.249ns route)
+                                       (27.8% logic, 72.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 3648 / 2094
+-------------------------------------------------------------------------
+Offset:              2.469ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/Mmult_stage1_tmp1 (DSP)
+  Destination Clock: clk rising
+
+  Data Path: rst to camera_mul_left/gen_vec_mul_integer[0].vec_mul_integer/Mmult_stage1_tmp1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            36   0.694   0.595  rst_IBUF (rst_IBUF)
+     LUT2:I0->O         1553   0.086   0.468  core_image_x_not00011 (camera_add_1/gen_vec_add[0].vec_add_ce/stage1_a_not0001)
+     DSP48E:CEP                0.626          camera_mul_up/gen_vec_mul_integer[2].vec_mul_integer/Mmult_stage1_tmp
+    ----------------------------------------
+    Total                      2.469ns (1.406ns logic, 1.063ns route)
+                                       (56.9% logic, 43.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 216 / 216
+-------------------------------------------------------------------------
+Offset:              3.430ns (Levels of Logic = 2)
+  Source:            state_FSM_FFd1 (FF)
+  Destination:       ready (PAD)
+  Source Clock:      clk rising
+
+  Data Path: state_FSM_FFd1 to ready
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            25   0.396   0.393  state_FSM_FFd1 (state_FSM_FFd1)
+     INV:I->O              1   0.212   0.286  state_FSM_Out01_INV_0 (ready_OBUF)
+     OBUF:I->O                 2.144          ready_OBUF (ready)
+    ----------------------------------------
+    Total                      3.430ns (2.752ns logic, 0.678ns route)
+                                       (80.2% logic, 19.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.45 secs
+ 
+--> 
+
+
+Total memory usage is 578840 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
+

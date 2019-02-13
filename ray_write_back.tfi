@@ -1,0 +1,18 @@
+
+
+
+// Instantiate the module
+ray_write_back instance_name (
+    .clk(clk), 
+    .rst(rst), 
+    .image_x(image_x), 
+    .image_y(image_y), 
+    .diffuse_light_acc(diffuse_light_acc), 
+    .reflection_coeffs(reflection_coeffs), 
+    .new_data(new_data), 
+    .wea(wea), 
+    .addra(addra), 
+    .dina(dina)
+    );
+
+

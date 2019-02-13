@@ -1,0 +1,16 @@
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_caster.xst" -ofn "/home/test/FPGA/raytracing/ray_caster.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_caster.xst" -ofn "/home/test/FPGA/raytracing/ray_caster.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc5vfx130t-ff1738-2 ray_caster.ngc ray_caster.ngd  
+map -intstyle ise -p xc5vfx130t-ff1738-2 -w -logic_opt off -ol high -xe n -t 1 -register_duplication off -global_opt off -mt 2 -cm area -detail -ir off -pr off -lc off -power off -o ray_caster_map.ncd ray_caster.ngd ray_caster.pcf 
+par -w -intstyle ise -ol high -xe n -mt 2 ray_caster_map.ncd ray_caster.ncd ray_caster.pcf 
+trce -intstyle ise -v 3 -tsi ray_caster.tsi -s 2 -n 3 -fastpaths -xml ray_caster.twx ray_caster.ncd -o ray_caster.twr ray_caster.pcf 
+vhdtdtfi -lang verilog -prj raytracing -o /home/test/FPGA/raytracing/ray_caster.tfi -lib work /home/test/FPGA/raytracing//ray_caster.v -module ray_caster -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_caster.xst" -ofn "/home/test/FPGA/raytracing/ray_caster.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_caster.xst" -ofn "/home/test/FPGA/raytracing/ray_caster.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_caster.xst" -ofn "/home/test/FPGA/raytracing/ray_caster.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_caster.xst" -ofn "/home/test/FPGA/raytracing/ray_caster.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_caster.xst" -ofn "/home/test/FPGA/raytracing/ray_caster.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_caster.xst" -ofn "/home/test/FPGA/raytracing/ray_caster.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_caster.xst" -ofn "/home/test/FPGA/raytracing/ray_caster.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_caster.xst" -ofn "/home/test/FPGA/raytracing/ray_caster.syr" 
+xst -intstyle ise -ifn "/home/test/FPGA/raytracing/ray_caster.xst" -ofn "/home/test/FPGA/raytracing/ray_caster.syr" 

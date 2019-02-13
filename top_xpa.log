@@ -1,0 +1,18 @@
+Creating log file /home/test/FPGA/raytracing/top_xpa.log.
+Loading device for application Rf_Device from file '5vfx130t.nph' in environment
+/opt/Xilinx/14.7/ISE_DS/ISE/.
+   "top" is an NCD, version 3.2, device xc5vfx130t, package ff1738, speed -2
+
+INFO:Power:1693 - 
+   --------------------------------------------------------------
+                         The power estimate will be calculated using PRODUCTION
+   data.
+   --------------------------------------------------------------
+
+Design load 20% completeDesign load 25% completeDesign load 30% completeDesign load 60% completeDesign load 95% completeDesign load 100% completeRunning Vector-less Activity Propagation
+..........
+Finished Running Vector-less Activity Propagation
+Finished Running Vector-less Activity Propagation 16 secs 
+
+Design 'top.ncd' and constraints 'top.pcf' opened successfully
+
